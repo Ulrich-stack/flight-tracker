@@ -1,30 +1,34 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css'], // Correction ici
 })
 export class RegisterComponent implements OnInit {
-  router: any;
-
-  constructor(private auth: AuthService, private fb: FormBuilder){}
   signinForm!: FormGroup;
+
+  constructor(private auth: AuthService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       name: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      prenom: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
-  onSubmit(){
-    if(this.signinForm.valid){
-      this.auth.signIn(this.signinForm.value.email, this.signinForm.value.name, this.signinForm.value.password);
+  onSubmit() {
+    if (this.signinForm.valid) {
+      this.auth.signIn(
+        this.signinForm.value.email,
+        this.signinForm.value.name,
+        this.signinForm.value.password
+      );
+      console.log('submit ', this.signinForm.value);
       this.signinForm.reset();
     }
   }
