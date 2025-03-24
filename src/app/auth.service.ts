@@ -1,9 +1,13 @@
 import { inject, Inject, Injectable } from '@angular/core';
+
 import {
   Auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  sendEmailVerification,
+  User,
+  sendPasswordResetEmail,
 } from '@angular/fire/auth';
 
 import { Router } from '@angular/router';
@@ -41,14 +45,21 @@ export class AuthService {
           email: email,
           username: username,
         };
+
         const usersRef = collection(this.firestore, 'users');
-        addDoc(usersRef, user);
-        console.log('User created', user);
+
+        return addDoc(usersRef, user).then(() => {
+          console.log('User created', user);
+
+          return this.sendEmailforVerification(userCredential.user);
+        });
+      })
+      .then(() => {
         this.router.navigate(['/']);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.error('Error details:', error.code, error.message);
+        alert(`Something went wrong: ${error.message}`);
       });
   }
 
@@ -63,17 +74,16 @@ export class AuthService {
 
         this.router.navigate(['/']);
 
-        // 3. Exécuter la requête
         const querySnapshot = await getDocs(q);
 
-        // 4. Extraire les données
+        //  Extraire les données
         const userData = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
         }));
 
         console.log('User logged in', userData);
         if (userData.length > 0) {
-          this.userDataSubject.next(userData[0]); 
+          this.userDataSubject.next(userData[0]);
         } else {
           this.userDataSubject.next(null);
         }
@@ -86,12 +96,38 @@ export class AuthService {
       });
   }
 
-
   logOut() {
     this.auth.signOut().then(() => {
       console.log('User logged out');
-      alert('User logged out');
       this.router.navigate(['/login']);
     });
+  }
+
+  async sendEmailforVerification(user: User) {
+    console.log('sendEmailVerification actif');
+
+    try {
+      await sendEmailVerification(user);
+      alert('Email de vérification envoyé. Vérifie ta boîte mail.');
+      this.router.navigate(['/verification-email']);
+    } catch (err) {
+      console.error("Erreur lors de l'envoi de l'email de vérification:", err);
+      alert(
+        "Une erreur est survenue lors de l'envoi de l'email de vérification."
+      );
+    }
+  }
+  // Forgot password
+  async forgotPassword(email: string) {
+    try {
+      await sendPasswordResetEmail(this.auth, email);
+      alert(
+        'Un email de réinitialisation a été envoyé. Veuillez vérifier votre boîte mail.'
+      );
+      this.router.navigate(['verification-email']);
+    } catch (err) {
+      console.error('Erreur lors de la réinitialisation du mot de passe:', err);
+      alert('Une erreur est survenue. Vérifiez votre email et réessayez.');
+    }
   }
 }

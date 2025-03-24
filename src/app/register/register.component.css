@@ -1,0 +1,219 @@
+/* Importation de la police depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
+
+/* Conteneur pour aligner l'image et le texte */
+.title {
+    display: flex;
+    align-items: center;
+    /* Aligne verticalement */
+    justify-content: center;
+    /* Centre horizontalement */
+    gap: 10px;
+    /* Espacement entre l'image et le texte */
+    margin-bottom: 90px;
+    font-family: 'Jim Nightshade', cursive;
+    font-size: 20px;
+    /* Ajuste la taille si nécessaire */
+    font-weight: normal;
+    color: #00251a;
+    /* Couleur du texte */
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+/* Style de l'image */
+.logo {
+    width: 40px;
+    /* Ajuste la taille de l’image */
+    height: auto;
+}
+
+/* Container for logo and CLOUDTRACK */
+.cloudtrack-container {
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Vertically center the items */
+    justify-content: center;
+    /* Horizontally center the items */
+    gap: 10px;
+    /* Space between the image and text */
+    margin-bottom: 90px;
+    /* Keep the margin */
+}
+
+/* Style for CLOUDTRACK */
+.cloudtrack-login {
+    /* Renamed for clarity */
+    font-family: 'Jim Nightshade', cursive;
+    font-size: 20px;
+    font-weight: normal;
+    color: #00251a;
+    text-align: center;
+}
+
+/* Style de l'image */
+.logo {
+    width: 40px;
+    /* Ajuste la taille de l’image */
+    height: auto;
+}
+
+/* Conteneur principal */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.inscription-image img {
+    width: 200%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Partie gauche : Image */
+.inscription-image {
+    width: 75%;
+    background: url('/assets/image.png') no-repeat center center/cover;
+    /* Remplace 'image.png' par le bon chemin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.inscription-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(2, 52, 48, 0.5);
+    /* 50% de transparence */
+}
+
+/* Partie droite : Formulaire */
+.inscription-form {
+    width: 50%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Conteneur du formulaire */
+.inscription-form form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 190px;
+}
+
+/* Titre */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Texte sous le titre */
+p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+p a {
+    color: #004d40;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* -- Groupement des champs nom/prénom sur la même ligne -- */
+.input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+/* -- Champs de texte -- */
+.inscription-form input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 11.5px;
+}
+
+/* Bouton */
+button {
+    background-color: #00251a;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+.image-text {
+    position: absolute;
+    top: 68%;
+    /* Place le texte au centre */
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    /* Taille du texte */
+    color: #023430;
+    /* Couleur */
+    font-weight: bold;
+    width: 60%;
+    z-index: 2;
+}
+
+.texth {
+    position: absolute;
+    top: 85%;
+    /* Place le texte au centre */
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    /* Taille du texte */
+    color: #ffffff;
+    /* Couleur */
+    font-weight: bold;
+    width: 60%;
+    z-index: 2;
+}
+
+
+/* Pour rendre la page responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .inscription-image {
+        width: 100%;
+        height: 40vh;
+    }
+
+    .inscription-form {
+        width: 100%;
+        padding: 2rem;
+    }
+}

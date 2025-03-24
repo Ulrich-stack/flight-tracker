@@ -1,15 +1,28 @@
-<form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="" id="name" formControlName="name">
+<div class="container">
+
+    <div class="inscription-image">
+        <img src="assets/map2.png" alt="Image d'inscription">
+        <h1 class="image-text">Suivez tous les vols du <br> monde en toute simplicité</h1>
+        <h4 class="texth">Rejoignez-nous et accédez à des informations précises sur les itinéraires, les horaires,<br>
+            et bien plus encore.</h4>
     </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="text" name="" id="email" formControlName="email">
+
+    <div class="inscription-form">
+        <div class="cloudtrack-container">
+            <img src="assets/image.png" alt="Logo" class="logo">
+            <span class="cloudtrack-login">CLOUDTRACK</span>
+        </div>
+        <h2>INSCRIPTION</h2>
+        <p>Avez-vous un compte? <a href="/login">Connectez-vous</a></p>
+
+        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+                <input type="text" id="name" formControlName="name" placeholder="Nom">
+                <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom">
+            </div>
+            <input type="email" id="email" formControlName="email" placeholder="Email">
+            <input type="password" id="password" formControlName="password" placeholder="Entrez votre mot de passe">
+            <button type="button" (click)="onSubmit()">Créer le compte</button>
+        </form>
     </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="" id="password" formControlName="password">
-    </div>
-    <button type="submit">Sign In</button>
-</form>
+</div>
