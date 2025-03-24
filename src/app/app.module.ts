@@ -14,6 +14,10 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { firebaseConfig } from '../env/env';
+import { CardComponent } from './card/card.component';
+import { ProfileModalComponent } from './profile-modal/profile-modal.component';
+import { VerificationEmailComponent } from './verification-email/verification-email.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { firebaseConfig } from '../env/env';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    CardComponent,
+    ProfileModalComponent,
+    VerificationEmailComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     FormsModule,
