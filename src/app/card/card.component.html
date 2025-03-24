@@ -1,0 +1,22 @@
+<div class="cards">
+    <div class="card-header">
+        <span class="id-avion">{{ flight.flight.iata }}</span>
+        <input class="star" type="checkbox" title="bookmark page">
+    </div>
+  <div class="airports">
+    <div class="depart">
+        <img src="assets/plane-up.png" width="20" alt="Departure airport">
+        <div class="card-texts">
+        <span class="airport">Aéroport de départ</span>
+        <span class="airport-data"> {{flight.departure.airport}} </span>
+        </div>
+    </div>
+    <div class="arrival">
+        <img src="assets/plane-down.png" width="20" alt="Arrival airport">
+        <div class="card-texts">
+        <span class="airport">Aéroport d'arrivée</span>
+        <span class="airport-data"> {{flight.arrival.airport}} </span>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+.id-avion {
+  font-size: 10px;
+  font-weight: 600;
+  color: #808080;
+}
+
+.cards {
+  background-color: white;
+  font-size: 10px;
+  padding: 10px 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.airports {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.depart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.arrival {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.airport {
+  color: #808080;
+}
+
+.airport-data {
+  font-weight: 600;
+}
+
+.card-header input{
+    margin-left: 5px ;
+}
+
+
+.star {
+    visibility:hidden;
+    font-size:15px;
+    cursor:pointer;
+}
+.star:before {
+   content: "\2605";
+   visibility:visible;
+   color: yellow;
+}
+.star:checked:before {
+   content: "\2606";
+}

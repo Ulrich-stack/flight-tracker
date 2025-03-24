@@ -13,6 +13,8 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { firebaseConfig } from '../env/env';
+import { CardComponent } from './card/card.component';
+import { ProfileModalComponent } from './profile-modal/profile-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { firebaseConfig } from '../env/env';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    CardComponent,
+    ProfileModalComponent,
   ],
   imports: [
     BrowserModule,

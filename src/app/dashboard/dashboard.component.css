@@ -1,0 +1,157 @@
+#map {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#topbar{
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(2, 52, 48, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profil-search-div{
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search{
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+    font-size: 14px;
+}
+
+.profil{
+  cursor: pointer;
+}
+
+.logo-div{
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logo-div img{
+  border-radius: 50%;
+}
+
+.logo-div span{
+  color: white;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+#sidebar {
+  position: absolute;
+  z-index: 1000;
+  font-size: 14px;
+  background-color: rgba(2, 52, 48, 0.5);
+  top: 60px;
+  left: 50px;
+  bottom: 50px;
+  padding: 15px;
+  overflow: hidden
+}
+
+.favori{
+  color: white;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.list-card{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  height: calc(100% - 10px);
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #023430; /* Couleur personnalisée */
+  padding: 5px;
+}
+
+.profile-modal {
+  position: absolute;
+  top: 50px; /* Place le modal sous l'icône */
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 150px;
+  z-index: 100;
+}
+
+.profile-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-modal li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.profile-modal li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}

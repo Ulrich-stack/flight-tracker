@@ -1,81 +1,34 @@
-<button (click)="logout()">Déconnexion</button>
-<p>Utilisateur</p>
-<div>
-    <strong>Nom :</strong> {{ user.username }}
+<div id="map"></div>
+<div id="topbar">
+  <div class="logo-div">
+    <img src="assets/CLOUDtrack.png" width="30" alt="Logo" />
+    <span>CLOUDtrack</span>
+  </div>
+  <div class="profil-search-div">
+    <input type="text" placeholder="Rechercher un vol" class="search" />
+    <img
+      class="profil"
+      src="assets/profil.png"
+      width="30"
+      alt="Profil logo"
+      (click)="toggleModal()"
+    />
+    <app-profile-modal
+      [isOpen]="isModalOpen"
+      (closeModal)="toggleModal()"
+    ></app-profile-modal>
+  </div>
 </div>
-<ul *ngFor="let flight of flights">
-    <li>
-      <!-- Affichage du numéro de vol (flight.flight.number, flight.flight.iata) -->
-      <div *ngIf="flight.flight">
-        <strong>Numéro de vol :</strong>
-        {{ flight.flight.number }}
-        <span *ngIf="flight.flight.iata">({{ flight.flight.iata }})</span>
-      </div>
-  
-      <!-- Affichage des informations de la compagnie aérienne -->
-      <div *ngIf="flight.airline">
-        <strong>Compagnie :</strong>
-        {{ flight.airline.name }}
-        <span *ngIf="flight.airline.iata">({{ flight.airline.iata }})</span>
-      </div>
-  
-      <!-- Informations sur le départ -->
-      <div *ngIf="flight.departure">
-        <strong>Départ :</strong>
-        <ul>
-          <li>
-            <strong>Aéroport :</strong>
-            {{ flight.departure.airport }}
-            <span *ngIf="flight.departure.iata">
-              ({{ flight.departure.iata }})
-            </span>
-          </li>
-          <li *ngIf="flight.departure.terminal">
-            <strong>Terminal :</strong>
-            {{ flight.departure.terminal }}
-          </li>
-          <li *ngIf="flight.departure.gate">
-            <strong>Gate :</strong>
-            {{ flight.departure.gate }}
-          </li>
-          <li *ngIf="flight.departure.scheduled">
-            <strong>Heure prévue :</strong>
-            {{ flight.departure.scheduled | date:'short' }}
-          </li>
-        </ul>
-      </div>
-  
-      <!-- Informations sur l'arrivée -->
-      <div *ngIf="flight.arrival">
-        <strong>Arrivée :</strong>
-        <ul>
-          <li>
-            <strong>Aéroport :</strong>
-            {{ flight.arrival.airport }}
-            <span *ngIf="flight.arrival.iata">
-              ({{ flight.arrival.iata }})
-            </span>
-          </li>
-          <li *ngIf="flight.arrival.terminal">
-            <strong>Terminal :</strong>
-            {{ flight.arrival.terminal }}
-          </li>
-          <li *ngIf="flight.arrival.gate">
-            <strong>Gate :</strong>
-            {{ flight.arrival.gate }}
-          </li>
-          <li *ngIf="flight.arrival.scheduled">
-            <strong>Heure prévue :</strong>
-            {{ flight.arrival.scheduled | date:'short' }}
-          </li>
-        </ul>
-      </div>
-  
-      <!-- Informations complémentaires (statut de vol, appareil, etc.) -->
-      <div *ngIf="flight.flight_status">
-        <strong>Statut :</strong> {{ flight.flight_status }}
-      </div>
-  
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
+<div id="sidebar">
+  <div>
+    <span class="favori">
+      Aéroport d'arrivée favori:
+      <strong>{{ flightsByAirport[0].arrival.airport }}</strong></span
+    >
+  </div>
+  <div class="list-card">
+    <div *ngFor="let flight of flightsByAirport">
+      <app-card [flight]="flight"></app-card>
+    </div>
+  </div>
+</div>

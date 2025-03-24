@@ -1,0 +1,28 @@
+.profile-modal {
+    position: absolute;
+    font-size: 14px;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 150px;
+    z-index: 100;
+  }
+  
+  .profile-modal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .profile-modal li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .profile-modal li:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  

@@ -1,0 +1,5091 @@
+{
+    "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "count": 100,
+        "total": 588
+    },
+    "data": [
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Marseille Provence Airport",
+                "timezone": "Europe/Paris",
+                "iata": "MRS",
+                "icao": "LFML",
+                "terminal": "1",
+                "gate": "41B",
+                "delay": 18,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T06:57:00+00:00",
+                "estimated_runway": "2025-03-06T06:57:00+00:00",
+                "actual_runway": "2025-03-06T06:57:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T08:05:00+00:00",
+                "estimated": "2025-03-06T08:05:00+00:00",
+                "actual": "2025-03-06T07:57:00+00:00",
+                "estimated_runway": "2025-03-06T07:57:00+00:00",
+                "actual_runway": "2025-03-06T07:57:00+00:00"
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6001",
+                "iata": "AF6001",
+                "icao": "AFR6001",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-GRHR",
+                "iata": "A319",
+                "icao": "A319",
+                "icao24": "3944F1"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "4S",
+                "gate": "M22",
+                "delay": 19,
+                "scheduled": "2025-03-06T07:20:00+00:00",
+                "estimated": "2025-03-06T07:20:00+00:00",
+                "actual": "2025-03-06T07:38:00+00:00",
+                "estimated_runway": "2025-03-06T07:38:00+00:00",
+                "actual_runway": "2025-03-06T07:38:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Qatar Airways",
+                "iata": "QR",
+                "icao": "QTR"
+            },
+            "flight": {
+                "number": "8029",
+                "iata": "QR8029",
+                "icao": "QTR8029",
+                "codeshared": {
+                    "airline_name": "iberia",
+                    "airline_iata": "ib",
+                    "airline_icao": "ibe",
+                    "flight_number": "569",
+                    "flight_iata": "ib569",
+                    "flight_icao": "ibe569"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Laroche",
+                "timezone": "Europe/Paris",
+                "iata": "BVE",
+                "icao": "LFSL",
+                "terminal": null,
+                "gate": null,
+                "delay": 1,
+                "scheduled": "2025-03-06T07:10:00+00:00",
+                "estimated": "2025-03-06T07:10:00+00:00",
+                "actual": "2025-03-06T07:10:00+00:00",
+                "estimated_runway": "2025-03-06T07:10:00+00:00",
+                "actual_runway": "2025-03-06T07:10:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:14:00+00:00",
+                "estimated_runway": "2025-03-06T08:14:00+00:00",
+                "actual_runway": "2025-03-06T08:14:00+00:00"
+            },
+            "airline": {
+                "name": "Chalair",
+                "iata": "CE",
+                "icao": "CLG"
+            },
+            "flight": {
+                "number": "1931",
+                "iata": "CE1931",
+                "icao": "CLG1931",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HAPL",
+                "iata": "AT72",
+                "icao": "AT72",
+                "icao24": "3981EB"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "26",
+                "delay": 3,
+                "scheduled": "2025-03-06T07:30:00+00:00",
+                "estimated": "2025-03-06T07:30:00+00:00",
+                "actual": "2025-03-06T07:32:00+00:00",
+                "estimated_runway": "2025-03-06T07:32:00+00:00",
+                "actual_runway": "2025-03-06T07:32:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T08:50:00+00:00",
+                "estimated": "2025-03-06T08:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Europa",
+                "iata": "UX",
+                "icao": "AEA"
+            },
+            "flight": {
+                "number": "2237",
+                "iata": "UX2237",
+                "icao": "AEA2237",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "6107",
+                    "flight_iata": "af6107",
+                    "flight_icao": "afr6107"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": "B56",
+                "delay": 16,
+                "scheduled": "2025-03-06T07:50:00+00:00",
+                "estimated": "2025-03-06T07:50:00+00:00",
+                "actual": "2025-03-06T08:06:00+00:00",
+                "estimated_runway": "2025-03-06T08:06:00+00:00",
+                "actual_runway": "2025-03-06T08:06:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T09:45:00+00:00",
+                "estimated": "2025-03-06T09:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "8002",
+                "iata": "VY8002",
+                "icao": "VLG8002",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "EC-MAN",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "3444CC"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 44.1465,
+                "longitude": 1.3575,
+                "altitude": 10992,
+                "direction": 358,
+                "speed_horizontal": 844,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Peretola",
+                "timezone": "Europe/Rome",
+                "iata": "FLR",
+                "icao": "LIRQ",
+                "terminal": null,
+                "gate": "6",
+                "delay": 6,
+                "scheduled": "2025-03-06T07:10:00+00:00",
+                "estimated": "2025-03-06T07:10:00+00:00",
+                "actual": "2025-03-06T07:15:00+00:00",
+                "estimated_runway": "2025-03-06T07:15:00+00:00",
+                "actual_runway": "2025-03-06T07:15:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "1502",
+                "iata": "VY1502",
+                "icao": "VLG1502",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "EC-MIQ",
+                "iata": "A319",
+                "icao": "A319",
+                "icao24": "345102"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:58+00:00",
+                "latitude": 48.7307,
+                "longitude": 2.3548,
+                "altitude": 0,
+                "direction": 53.4,
+                "speed_horizontal": 26,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Menara",
+                "timezone": "Africa/Casablanca",
+                "iata": "RAK",
+                "icao": "GMMX",
+                "terminal": "1",
+                "gate": null,
+                "delay": 60,
+                "scheduled": "2025-03-06T11:10:00+00:00",
+                "estimated": "2025-03-06T11:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "5510",
+                "iata": "IB5510",
+                "icao": "IBE5510",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "8632",
+                    "flight_iata": "vy8632",
+                    "flight_icao": "vlg8632"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Agadir Almassira",
+                "timezone": "Africa/Casablanca",
+                "iata": "AGA",
+                "icao": "GMAD",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T10:50:00+00:00",
+                "estimated": "2025-03-06T10:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:30:00+00:00",
+                "estimated": "2025-03-06T15:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "3005",
+                "iata": "HV3005",
+                "icao": "TRA3005",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T11:55:00+00:00",
+                "estimated": "2025-03-06T11:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:50:00+00:00",
+                "estimated": "2025-03-06T13:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia France",
+                "iata": "TO",
+                "icao": "TVF"
+            },
+            "flight": {
+                "number": "3401",
+                "iata": "TO3401",
+                "icao": "TVF3401",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Beirut Rafic Hariri Airport",
+                "timezone": "Asia/Beirut",
+                "iata": "BEY",
+                "icao": "OLBA",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:05:00+00:00",
+                "estimated": "2025-03-06T13:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:10:00+00:00",
+                "estimated": "2025-03-06T17:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "4251",
+                "iata": "HV4251",
+                "icao": "TRA4251",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Istanbul Airport",
+                "timezone": "Europe/Istanbul",
+                "iata": "IST",
+                "icao": "LTFM",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:35:00+00:00",
+                "estimated": "2025-03-06T13:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia France",
+                "iata": "TO",
+                "icao": "TVF"
+            },
+            "flight": {
+                "number": "3281",
+                "iata": "TO3281",
+                "icao": "TVF3281",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "cancelled",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": null,
+                "scheduled": "2025-03-06T15:00:00+00:00",
+                "estimated": "2025-03-06T15:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "2",
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:20:00+00:00",
+                "estimated": "2025-03-06T16:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6127",
+                "iata": "AF6127",
+                "icao": "AFR6127",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Sur Reina Sofia",
+                "timezone": "Atlantic/Canary",
+                "iata": "TFS",
+                "icao": "GCTS",
+                "terminal": null,
+                "gate": "46",
+                "delay": null,
+                "scheduled": "2025-03-06T13:05:00+00:00",
+                "estimated": "2025-03-06T13:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T18:20:00+00:00",
+                "estimated": "2025-03-06T18:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "4731",
+                "iata": "HV4731",
+                "icao": "TRA4731",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Gatwick",
+                "timezone": "Europe/London",
+                "iata": "LGW",
+                "icao": "EGKK",
+                "terminal": "S",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:00:00+00:00",
+                "estimated": "2025-03-06T13:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:20:00+00:00",
+                "estimated": "2025-03-06T15:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "6945",
+                "iata": "VY6945",
+                "icao": "VLG6945",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Rovaniemi",
+                "timezone": "Europe/Helsinki",
+                "iata": "RVN",
+                "icao": "EFRO",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T13:35:00+00:00",
+                "estimated": "2025-03-06T13:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": null,
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:28:00+00:00",
+                "estimated": "2025-03-06T16:28:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": null,
+                "iata": "HV",
+                "icao": "TRA",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "2",
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T13:45:00+00:00",
+                "estimated": "2025-03-06T13:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:45:00+00:00",
+                "estimated": "2025-03-06T15:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "4755",
+                "iata": "HV4755",
+                "icao": "TRA4755",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T13:55:00+00:00",
+                "estimated": "2025-03-06T13:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:05:00+00:00",
+                "estimated": "2025-03-06T17:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "1986",
+                "iata": "VY1986",
+                "icao": "VLG1986",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T13:55:00+00:00",
+                "estimated": "2025-03-06T13:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:05:00+00:00",
+                "estimated": "2025-03-06T17:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "5329",
+                "iata": "IB5329",
+                "icao": "IBE5329",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "1986",
+                    "flight_iata": "vy1986",
+                    "flight_icao": "vlg1986"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Menara",
+                "timezone": "Africa/Casablanca",
+                "iata": "RAK",
+                "icao": "GMMX",
+                "terminal": "1",
+                "gate": null,
+                "delay": 60,
+                "scheduled": "2025-03-06T11:10:00+00:00",
+                "estimated": "2025-03-06T11:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "8632",
+                "iata": "VY8632",
+                "icao": "VLG8632",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Djerba-Zarzis",
+                "timezone": "Africa/Tunis",
+                "iata": "DJE",
+                "icao": "DTTJ",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T12:50:00+00:00",
+                "estimated": "2025-03-06T12:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:55:00+00:00",
+                "estimated": "2025-03-06T15:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "8497",
+                "iata": "HV8497",
+                "icao": "TRA8497",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Djerba-Zarzis",
+                "timezone": "Africa/Tunis",
+                "iata": "DJE",
+                "icao": "DTTJ",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T14:25:00+00:00",
+                "estimated": "2025-03-06T14:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "4",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:10:00+00:00",
+                "estimated": "2025-03-06T17:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Tunisair",
+                "iata": "TU",
+                "icao": "TAR"
+            },
+            "flight": {
+                "number": "634",
+                "iata": "TU634",
+                "icao": "TAR634",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Ste Catherine",
+                "timezone": "Europe/Paris",
+                "iata": "CLY",
+                "icao": "LFKC",
+                "terminal": null,
+                "gate": null,
+                "delay": 5,
+                "scheduled": "2025-03-06T12:40:00+00:00",
+                "estimated": "2025-03-06T12:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "2",
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:20:00+00:00",
+                "estimated": "2025-03-06T14:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Corsica",
+                "iata": "XK",
+                "icao": "CCM"
+            },
+            "flight": {
+                "number": "1301",
+                "iata": "XK1301",
+                "icao": "CCM1301",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7571",
+                    "flight_iata": "af7571",
+                    "flight_icao": "afr7571"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": null,
+                "scheduled": "2025-03-06T14:00:00+00:00",
+                "estimated": "2025-03-06T14:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "2",
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:20:00+00:00",
+                "estimated": "2025-03-06T15:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6125",
+                "iata": "AF6125",
+                "icao": "AFR6125",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Istanbul Airport",
+                "timezone": "Europe/Istanbul",
+                "iata": "IST",
+                "icao": "LTFM",
+                "terminal": null,
+                "gate": null,
+                "delay": 25,
+                "scheduled": "2025-03-06T13:35:00+00:00",
+                "estimated": "2025-03-06T13:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "3281",
+                "iata": "HV3281",
+                "icao": "TRA3281",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Lisbon Portela",
+                "timezone": "Europe/Lisbon",
+                "iata": "LIS",
+                "icao": "LPPT",
+                "terminal": "1",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:20:00+00:00",
+                "estimated": "2025-03-06T13:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:50:00+00:00",
+                "estimated": "2025-03-06T16:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "TAP Air Portugal",
+                "iata": "TP",
+                "icao": "TAP"
+            },
+            "flight": {
+                "number": "436",
+                "iata": "TP436",
+                "icao": "TAP436",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T13:45:00+00:00",
+                "estimated": "2025-03-06T13:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "2",
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:15:00+00:00",
+                "estimated": "2025-03-06T15:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6219",
+                "iata": "AF6219",
+                "icao": "AFR6219",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Leonardo Da Vinci (Fiumicino)",
+                "timezone": "Europe/Rome",
+                "iata": "FCO",
+                "icao": "LIRF",
+                "terminal": "1",
+                "gate": null,
+                "delay": 20,
+                "scheduled": "2025-03-06T13:35:00+00:00",
+                "estimated": "2025-03-06T13:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:50:00+00:00",
+                "estimated": "2025-03-06T15:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "6261",
+                "iata": "VY6261",
+                "icao": "VLG6261",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Marco Polo",
+                "timezone": "Europe/Rome",
+                "iata": "VCE",
+                "icao": "LIPZ",
+                "terminal": null,
+                "gate": null,
+                "delay": 8,
+                "scheduled": "2025-03-06T15:00:00+00:00",
+                "estimated": "2025-03-06T15:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:50:00+00:00",
+                "estimated": "2025-03-06T16:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "4009",
+                "iata": "U24009",
+                "icao": "EZY4009",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Menara",
+                "timezone": "Africa/Casablanca",
+                "iata": "RAK",
+                "icao": "GMMX",
+                "terminal": "1",
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T12:20:00+00:00",
+                "estimated": "2025-03-06T12:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:45:00+00:00",
+                "estimated": "2025-03-06T16:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "3015",
+                "iata": "HV3015",
+                "icao": "TRA3015",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": null,
+                "scheduled": "2025-03-06T14:45:00+00:00",
+                "estimated": "2025-03-06T14:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "2",
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:15:00+00:00",
+                "estimated": "2025-03-06T16:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6223",
+                "iata": "AF6223",
+                "icao": "AFR6223",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Rabil",
+                "timezone": "Atlantic/Cape_Verde",
+                "iata": "BVC",
+                "icao": "GVBA",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T12:20:00+00:00",
+                "estimated": "2025-03-06T12:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T20:10:00+00:00",
+                "estimated": "2025-03-06T20:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "3243",
+                "iata": "HV3243",
+                "icao": "TRA3243",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "4",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:25:00+00:00",
+                "estimated": "2025-03-06T14:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:30:00+00:00",
+                "estimated": "2025-03-06T16:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "577",
+                "iata": "IB577",
+                "icao": "IBE577",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "2",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:25:00+00:00",
+                "estimated": "2025-03-06T14:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:20:00+00:00",
+                "estimated": "2025-03-06T16:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Europa",
+                "iata": "UX",
+                "icao": "AEA"
+            },
+            "flight": {
+                "number": "1029",
+                "iata": "UX1029",
+                "icao": "AEA1029",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "1",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:50:00+00:00",
+                "estimated": "2025-03-06T14:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:00:00+00:00",
+                "estimated": "2025-03-06T17:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia France",
+                "iata": "TO",
+                "icao": "TVF"
+            },
+            "flight": {
+                "number": "4635",
+                "iata": "TO4635",
+                "icao": "TVF4635",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T12:50:00+00:00",
+                "estimated": "2025-03-06T12:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:00:00+00:00",
+                "estimated": "2025-03-06T16:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Azul",
+                "iata": "AD",
+                "icao": "AZU"
+            },
+            "flight": {
+                "number": "7301",
+                "iata": "AD7301",
+                "icao": "AZU7301",
+                "codeshared": {
+                    "airline_name": "tap air portugal",
+                    "airline_iata": "tp",
+                    "airline_icao": "tap",
+                    "flight_number": "454",
+                    "flight_iata": "tp454",
+                    "flight_icao": "tap454"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T12:50:00+00:00",
+                "estimated": "2025-03-06T12:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:00:00+00:00",
+                "estimated": "2025-03-06T16:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Azores Airlines",
+                "iata": "S4",
+                "icao": "RZO"
+            },
+            "flight": {
+                "number": "8926",
+                "iata": "S48926",
+                "icao": "RZO8926",
+                "codeshared": {
+                    "airline_name": "tap air portugal",
+                    "airline_iata": "tp",
+                    "airline_icao": "tap",
+                    "flight_number": "454",
+                    "flight_iata": "tp454",
+                    "flight_icao": "tap454"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T12:50:00+00:00",
+                "estimated": "2025-03-06T12:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:00:00+00:00",
+                "estimated": "2025-03-06T16:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "TAP Air Portugal",
+                "iata": "TP",
+                "icao": "TAP"
+            },
+            "flight": {
+                "number": "454",
+                "iata": "TP454",
+                "icao": "TAP454",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": "B39",
+                "delay": null,
+                "scheduled": "2025-03-06T14:25:00+00:00",
+                "estimated": "2025-03-06T14:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:20:00+00:00",
+                "estimated": "2025-03-06T16:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "8012",
+                "iata": "VY8012",
+                "icao": "VLG8012",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Mohamed V",
+                "timezone": "Africa/Casablanca",
+                "iata": "CMN",
+                "icao": "GMMN",
+                "terminal": "1",
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T11:20:00+00:00",
+                "estimated": "2025-03-06T11:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "4",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:15:00+00:00",
+                "estimated": "2025-03-06T15:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Royal Air Maroc",
+                "iata": "AT",
+                "icao": "RAM"
+            },
+            "flight": {
+                "number": "764",
+                "iata": "AT764",
+                "icao": "RAM764",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Carthage",
+                "timezone": "Africa/Tunis",
+                "iata": "TUN",
+                "icao": "DTTA",
+                "terminal": "M",
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T13:30:00+00:00",
+                "estimated": "2025-03-06T13:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:10:00+00:00",
+                "estimated": "2025-03-06T16:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "8231",
+                "iata": "HV8231",
+                "icao": "TRA8231",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Carthage",
+                "timezone": "Africa/Tunis",
+                "iata": "TUN",
+                "icao": "DTTA",
+                "terminal": "M",
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T13:35:00+00:00",
+                "estimated": "2025-03-06T13:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "4",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:00:00+00:00",
+                "estimated": "2025-03-06T16:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Tunisair",
+                "iata": "TU",
+                "icao": "TAR"
+            },
+            "flight": {
+                "number": "722",
+                "iata": "TU722",
+                "icao": "TAR722",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Habib Bourguiba",
+                "timezone": "Africa/Tunis",
+                "iata": "MIR",
+                "icao": "DTMB",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T09:45:00+00:00",
+                "estimated": "2025-03-06T09:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T12:35:00+00:00",
+                "estimated": "2025-03-06T12:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia France",
+                "iata": "TO",
+                "icao": "TVF"
+            },
+            "flight": {
+                "number": "8939",
+                "iata": "TO8939",
+                "icao": "TVF8939",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Valencia",
+                "timezone": "Europe/Madrid",
+                "iata": "VLC",
+                "icao": "LEVC",
+                "terminal": "1",
+                "gate": "11",
+                "delay": 3,
+                "scheduled": "2025-03-06T06:55:00+00:00",
+                "estimated": "2025-03-06T06:55:00+00:00",
+                "actual": "2025-03-06T06:58:00+00:00",
+                "estimated_runway": "2025-03-06T06:58:00+00:00",
+                "actual_runway": "2025-03-06T06:58:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "8152",
+                "iata": "VY8152",
+                "icao": "VLG8152",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "EC-KLB",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "343046"
+            },
+            "live": {
+                "updated": "2025-03-06T07:41:10+00:00",
+                "latitude": 48.7708,
+                "longitude": 2.6393,
+                "altitude": 1076,
+                "direction": 254,
+                "speed_horizontal": 372,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Sud Corse",
+                "timezone": "Europe/Paris",
+                "iata": "FSC",
+                "icao": "LFKF",
+                "terminal": null,
+                "gate": null,
+                "delay": 16,
+                "scheduled": "2025-03-06T07:00:00+00:00",
+                "estimated": "2025-03-06T07:00:00+00:00",
+                "actual": "2025-03-06T07:15:00+00:00",
+                "estimated_runway": "2025-03-06T07:15:00+00:00",
+                "actual_runway": "2025-03-06T07:15:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T08:45:00+00:00",
+                "estimated": "2025-03-06T08:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "4469",
+                "iata": "AF4469",
+                "icao": "AFR4469",
+                "codeshared": {
+                    "airline_name": "air corsica",
+                    "airline_iata": "xk",
+                    "airline_icao": "ccm",
+                    "flight_number": "752",
+                    "flight_iata": "xk752",
+                    "flight_icao": "ccm752"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Aurillac",
+                "timezone": "Europe/Paris",
+                "iata": "AUR",
+                "icao": "LFLW",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T07:05:00+00:00",
+                "estimated": "2025-03-06T07:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "OR1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T08:27:00+00:00",
+                "estimated": "2025-03-06T08:27:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Chalair",
+                "iata": "CE",
+                "icao": "CLG"
+            },
+            "flight": {
+                "number": "1551",
+                "iata": "CE1551",
+                "icao": "CLG1551",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-GPYN",
+                "iata": "AT45",
+                "icao": "AT45",
+                "icao24": "393F0D"
+            },
+            "live": {
+                "updated": "2025-03-06T07:14:50+00:00",
+                "latitude": 48.7283,
+                "longitude": 2.3544,
+                "altitude": 0,
+                "direction": 16.88,
+                "speed_horizontal": 26.856,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Loudes",
+                "timezone": "Europe/Paris",
+                "iata": "LPY",
+                "icao": "LFHP",
+                "terminal": null,
+                "gate": null,
+                "delay": 3,
+                "scheduled": "2025-03-06T06:50:00+00:00",
+                "estimated": "2025-03-06T06:50:00+00:00",
+                "actual": "2025-03-06T06:53:00+00:00",
+                "estimated_runway": "2025-03-06T06:53:00+00:00",
+                "actual_runway": "2025-03-06T06:53:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:00:00+00:00",
+                "estimated": "2025-03-06T08:00:00+00:00",
+                "actual": "2025-03-06T07:52:00+00:00",
+                "estimated_runway": "2025-03-06T07:52:00+00:00",
+                "actual_runway": "2025-03-06T07:52:00+00:00"
+            },
+            "airline": {
+                "name": "Twin Jet",
+                "iata": "T7",
+                "icao": "TJT"
+            },
+            "flight": {
+                "number": "81",
+                "iata": "T781",
+                "icao": "TJT81",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-GUPE",
+                "iata": "B190",
+                "icao": "B190",
+                "icao24": "3951E4"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": 6,
+                "scheduled": "2025-03-06T06:25:00+00:00",
+                "estimated": "2025-03-06T06:25:00+00:00",
+                "actual": "2025-03-06T06:31:00+00:00",
+                "estimated_runway": "2025-03-06T06:31:00+00:00",
+                "actual_runway": "2025-03-06T06:31:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T09:35:00+00:00",
+                "estimated": "2025-03-06T09:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Azul",
+                "iata": "AD",
+                "icao": "AZU"
+            },
+            "flight": {
+                "number": "7299",
+                "iata": "AD7299",
+                "icao": "AZU7299",
+                "codeshared": {
+                    "airline_name": "tap air portugal",
+                    "airline_iata": "tp",
+                    "airline_icao": "tap",
+                    "flight_number": "452",
+                    "flight_iata": "tp452",
+                    "flight_icao": "tap452"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "4S",
+                "gate": "M22",
+                "delay": 19,
+                "scheduled": "2025-03-06T07:20:00+00:00",
+                "estimated": "2025-03-06T07:20:00+00:00",
+                "actual": "2025-03-06T07:38:00+00:00",
+                "estimated_runway": "2025-03-06T07:38:00+00:00",
+                "actual_runway": "2025-03-06T07:38:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "5131",
+                "iata": "VY5131",
+                "icao": "VLG5131",
+                "codeshared": {
+                    "airline_name": "iberia",
+                    "airline_iata": "ib",
+                    "airline_icao": "ibe",
+                    "flight_number": "569",
+                    "flight_iata": "ib569",
+                    "flight_icao": "ibe569"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": "B56",
+                "delay": 16,
+                "scheduled": "2025-03-06T07:50:00+00:00",
+                "estimated": "2025-03-06T07:50:00+00:00",
+                "actual": "2025-03-06T08:06:00+00:00",
+                "estimated_runway": "2025-03-06T08:06:00+00:00",
+                "actual_runway": "2025-03-06T08:06:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T09:45:00+00:00",
+                "estimated": "2025-03-06T09:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "5192",
+                "iata": "IB5192",
+                "icao": "IBE5192",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "8002",
+                    "flight_iata": "vy8002",
+                    "flight_icao": "vlg8002"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "3",
+                "gate": "E71",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:00:00+00:00",
+                "estimated": "2025-03-06T08:00:00+00:00",
+                "actual": "2025-03-06T08:26:00+00:00",
+                "estimated_runway": "2025-03-06T08:26:00+00:00",
+                "actual_runway": "2025-03-06T08:26:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": 3,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Aeromexico",
+                "iata": "AM",
+                "icao": "AMX"
+            },
+            "flight": {
+                "number": "6950",
+                "iata": "AM6950",
+                "icao": "AMX6950",
+                "codeshared": {
+                    "airline_name": "air europa",
+                    "airline_iata": "ux",
+                    "airline_icao": "aea",
+                    "flight_number": "1027",
+                    "flight_iata": "ux1027",
+                    "flight_icao": "aea1027"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "3",
+                "gate": "E71",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:00:00+00:00",
+                "estimated": "2025-03-06T08:00:00+00:00",
+                "actual": "2025-03-06T08:26:00+00:00",
+                "estimated_runway": "2025-03-06T08:26:00+00:00",
+                "actual_runway": "2025-03-06T08:26:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": 3,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Europa",
+                "iata": "UX",
+                "icao": "AEA"
+            },
+            "flight": {
+                "number": "1027",
+                "iata": "UX1027",
+                "icao": "AEA1027",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "EC-NVP",
+                "iata": "B738",
+                "icao": "B738",
+                "icao24": "347311"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 41.0369,
+                "longitude": -3.2057,
+                "altitude": 5933,
+                "direction": 11,
+                "speed_horizontal": 677,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": "B56",
+                "delay": 16,
+                "scheduled": "2025-03-06T07:50:00+00:00",
+                "estimated": "2025-03-06T07:50:00+00:00",
+                "actual": "2025-03-06T08:06:00+00:00",
+                "estimated_runway": "2025-03-06T08:06:00+00:00",
+                "actual_runway": "2025-03-06T08:06:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T09:45:00+00:00",
+                "estimated": "2025-03-06T09:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Qatar Airways",
+                "iata": "QR",
+                "icao": "QTR"
+            },
+            "flight": {
+                "number": "3557",
+                "iata": "QR3557",
+                "icao": "QTR3557",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "8002",
+                    "flight_iata": "vy8002",
+                    "flight_icao": "vlg8002"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "4S",
+                "gate": "M22",
+                "delay": 19,
+                "scheduled": "2025-03-06T07:20:00+00:00",
+                "estimated": "2025-03-06T07:20:00+00:00",
+                "actual": "2025-03-06T07:38:00+00:00",
+                "estimated_runway": "2025-03-06T07:38:00+00:00",
+                "actual_runway": "2025-03-06T07:38:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "American Airlines",
+                "iata": "AA",
+                "icao": "AAL"
+            },
+            "flight": {
+                "number": "8682",
+                "iata": "AA8682",
+                "icao": "AAL8682",
+                "codeshared": {
+                    "airline_name": "iberia",
+                    "airline_iata": "ib",
+                    "airline_icao": "ibe",
+                    "flight_number": "569",
+                    "flight_iata": "ib569",
+                    "flight_icao": "ibe569"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T08:35:00+00:00",
+                "estimated": "2025-03-06T08:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "4842",
+                "iata": "U24842",
+                "icao": "EZY4842",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Marseille Provence Airport",
+                "timezone": "Europe/Paris",
+                "iata": "MRS",
+                "icao": "LFML",
+                "terminal": "1",
+                "gate": "41B",
+                "delay": 12,
+                "scheduled": "2025-03-06T08:35:00+00:00",
+                "estimated": "2025-03-06T08:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6007",
+                "iata": "AF6007",
+                "icao": "AFR6007",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Linate",
+                "timezone": "Europe/Rome",
+                "iata": "LIN",
+                "icao": "LIML",
+                "terminal": null,
+                "gate": "A2",
+                "delay": 8,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "04",
+                "delay": null,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "ITA Airways",
+                "iata": "AZ",
+                "icao": "ITY"
+            },
+            "flight": {
+                "number": "350",
+                "iata": "AZ350",
+                "icao": "ITY350",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Lisbon Portela",
+                "timezone": "Europe/Lisbon",
+                "iata": "LIS",
+                "icao": "LPPT",
+                "terminal": "1",
+                "gate": null,
+                "delay": 27,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T07:06:00+00:00",
+                "estimated_runway": "2025-03-06T07:06:00+00:00",
+                "actual_runway": "2025-03-06T07:06:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T10:10:00+00:00",
+                "estimated": "2025-03-06T10:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Azores Airlines",
+                "iata": "S4",
+                "icao": "RZO"
+            },
+            "flight": {
+                "number": "8930",
+                "iata": "S48930",
+                "icao": "RZO8930",
+                "codeshared": {
+                    "airline_name": "tap air portugal",
+                    "airline_iata": "tp",
+                    "airline_icao": "tap",
+                    "flight_number": "430",
+                    "flight_iata": "tp430",
+                    "flight_icao": "tap430"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "San Pablo",
+                "timezone": "Europe/Madrid",
+                "iata": "SVQ",
+                "icao": "LEZL",
+                "terminal": "1",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T12:35:00+00:00",
+                "estimated": "2025-03-06T12:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:05:00+00:00",
+                "estimated": "2025-03-06T15:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "4605",
+                "iata": "HV4605",
+                "icao": "TRA4605",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Lisbon Portela",
+                "timezone": "Europe/Lisbon",
+                "iata": "LIS",
+                "icao": "LPPT",
+                "terminal": "1",
+                "gate": null,
+                "delay": 27,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T07:06:00+00:00",
+                "estimated_runway": "2025-03-06T07:06:00+00:00",
+                "actual_runway": "2025-03-06T07:06:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T10:10:00+00:00",
+                "estimated": "2025-03-06T10:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "TAP Air Portugal",
+                "iata": "TP",
+                "icao": "TAP"
+            },
+            "flight": {
+                "number": "430",
+                "iata": "TP430",
+                "icao": "TAP430",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "CS-TNY",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "4951D9"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:58+00:00",
+                "latitude": 40.8527,
+                "longitude": -6.4708,
+                "altitude": 10992,
+                "direction": 46,
+                "speed_horizontal": 828,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Lisbon Portela",
+                "timezone": "Europe/Lisbon",
+                "iata": "LIS",
+                "icao": "LPPT",
+                "terminal": "1",
+                "gate": null,
+                "delay": 27,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T07:06:00+00:00",
+                "estimated_runway": "2025-03-06T07:06:00+00:00",
+                "actual_runway": "2025-03-06T07:06:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T10:10:00+00:00",
+                "estimated": "2025-03-06T10:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Azul",
+                "iata": "AD",
+                "icao": "AZU"
+            },
+            "flight": {
+                "number": "7272",
+                "iata": "AD7272",
+                "icao": "AZU7272",
+                "codeshared": {
+                    "airline_name": "tap air portugal",
+                    "airline_iata": "tp",
+                    "airline_icao": "tap",
+                    "flight_number": "430",
+                    "flight_iata": "tp430",
+                    "flight_icao": "tap430"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "3",
+                "gate": "E71",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:00:00+00:00",
+                "estimated": "2025-03-06T08:00:00+00:00",
+                "actual": "2025-03-06T08:26:00+00:00",
+                "estimated_runway": "2025-03-06T08:26:00+00:00",
+                "actual_runway": "2025-03-06T08:26:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": 3,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Azul",
+                "iata": "AD",
+                "icao": "AZU"
+            },
+            "flight": {
+                "number": "7858",
+                "iata": "AD7858",
+                "icao": "AZU7858",
+                "codeshared": {
+                    "airline_name": "air europa",
+                    "airline_iata": "ux",
+                    "airline_icao": "aea",
+                    "flight_number": "1027",
+                    "flight_iata": "ux1027",
+                    "flight_icao": "aea1027"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "4S",
+                "gate": "M22",
+                "delay": 19,
+                "scheduled": "2025-03-06T07:20:00+00:00",
+                "estimated": "2025-03-06T07:20:00+00:00",
+                "actual": "2025-03-06T07:38:00+00:00",
+                "estimated_runway": "2025-03-06T07:38:00+00:00",
+                "actual_runway": "2025-03-06T07:38:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "569",
+                "iata": "IB569",
+                "icao": "IBE569",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "EC-JGS",
+                "iata": "A321",
+                "icao": "A321",
+                "icao24": "342210"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 46.4068,
+                "longitude": 0.2885,
+                "altitude": 10352,
+                "direction": 28,
+                "speed_horizontal": 837,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": null,
+                "delay": 17,
+                "scheduled": "2025-03-06T06:30:00+00:00",
+                "estimated": "2025-03-06T06:30:00+00:00",
+                "actual": "2025-03-06T06:46:00+00:00",
+                "estimated_runway": "2025-03-06T06:46:00+00:00",
+                "actual_runway": "2025-03-06T06:46:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T08:00:00+00:00",
+                "estimated": "2025-03-06T08:00:00+00:00",
+                "actual": "2025-03-06T07:53:00+00:00",
+                "estimated_runway": "2025-03-06T07:53:00+00:00",
+                "actual_runway": "2025-03-06T07:53:00+00:00"
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "1631",
+                "iata": "U21631",
+                "icao": "EZY1631",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "XXB",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "440128"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Tarbes Ossun Lourdes",
+                "timezone": "Europe/Paris",
+                "iata": "LDE",
+                "icao": "LFBT",
+                "terminal": null,
+                "gate": null,
+                "delay": 2,
+                "scheduled": "2025-03-06T06:45:00+00:00",
+                "estimated": "2025-03-06T06:45:00+00:00",
+                "actual": "2025-03-06T06:46:00+00:00",
+                "estimated_runway": "2025-03-06T06:46:00+00:00",
+                "actual_runway": "2025-03-06T06:46:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "A",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:10:00+00:00",
+                "estimated": "2025-03-06T08:10:00+00:00",
+                "actual": "2025-03-06T07:52:00+00:00",
+                "estimated_runway": "2025-03-06T07:52:00+00:00",
+                "actual_runway": "2025-03-06T07:52:00+00:00"
+            },
+            "airline": {
+                "name": "Volotea",
+                "iata": "V7",
+                "icao": "VOE"
+            },
+            "flight": {
+                "number": "2180",
+                "iata": "V72180",
+                "icao": "VOE2180",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "XXB",
+                "iata": "A319",
+                "icao": "A319",
+                "icao24": "3463C6"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Mazamet",
+                "timezone": "Europe/Paris",
+                "iata": "DCM",
+                "icao": "LFCK",
+                "terminal": null,
+                "gate": null,
+                "delay": 12,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T06:52:00+00:00",
+                "estimated_runway": "2025-03-06T06:52:00+00:00",
+                "actual_runway": "2025-03-06T06:52:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:15:00+00:00",
+                "estimated": "2025-03-06T08:15:00+00:00",
+                "actual": "2025-03-06T08:10:00+00:00",
+                "estimated_runway": "2025-03-06T08:10:00+00:00",
+                "actual_runway": "2025-03-06T08:10:00+00:00"
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "7041",
+                "iata": "AF7041",
+                "icao": "AFR7041",
+                "codeshared": {
+                    "airline_name": "chalair",
+                    "airline_iata": "ce",
+                    "airline_icao": "clg",
+                    "flight_number": "8101",
+                    "flight_iata": "ce8101",
+                    "flight_icao": "clg8101"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Mazamet",
+                "timezone": "Europe/Paris",
+                "iata": "DCM",
+                "icao": "LFCK",
+                "terminal": null,
+                "gate": null,
+                "delay": 12,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T06:52:00+00:00",
+                "estimated_runway": "2025-03-06T06:52:00+00:00",
+                "actual_runway": "2025-03-06T06:52:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:15:00+00:00",
+                "estimated": "2025-03-06T08:15:00+00:00",
+                "actual": "2025-03-06T08:10:00+00:00",
+                "estimated_runway": "2025-03-06T08:10:00+00:00",
+                "actual_runway": "2025-03-06T08:10:00+00:00"
+            },
+            "airline": {
+                "name": "Chalair",
+                "iata": "CE",
+                "icao": "CLG"
+            },
+            "flight": {
+                "number": "8101",
+                "iata": "CE8101",
+                "icao": "CLG8101",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-GPYM",
+                "iata": "AT45",
+                "icao": "AT45",
+                "icao24": "393F0C"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Valerio Catullo",
+                "timezone": "Europe/Rome",
+                "iata": "VRN",
+                "icao": "LIPX",
+                "terminal": null,
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T06:30:00+00:00",
+                "estimated": "2025-03-06T06:30:00+00:00",
+                "actual": "2025-03-06T06:41:00+00:00",
+                "estimated_runway": "2025-03-06T06:41:00+00:00",
+                "actual_runway": "2025-03-06T06:41:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "A",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:10:00+00:00",
+                "estimated": "2025-03-06T08:10:00+00:00",
+                "actual": "2025-03-06T07:48:00+00:00",
+                "estimated_runway": "2025-03-06T07:48:00+00:00",
+                "actual_runway": "2025-03-06T07:48:00+00:00"
+            },
+            "airline": {
+                "name": "Volotea",
+                "iata": "V7",
+                "icao": "VOE"
+            },
+            "flight": {
+                "number": "1784",
+                "iata": "V71784",
+                "icao": "VOE1784",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "XXB",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "346611"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "21",
+                "delay": 2,
+                "scheduled": "2025-03-06T06:30:00+00:00",
+                "estimated": "2025-03-06T06:30:00+00:00",
+                "actual": "2025-03-06T06:31:00+00:00",
+                "estimated_runway": "2025-03-06T06:31:00+00:00",
+                "actual_runway": "2025-03-06T06:31:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T07:55:00+00:00",
+                "estimated": "2025-03-06T07:55:00+00:00",
+                "actual": "2025-03-06T07:34:00+00:00",
+                "estimated_runway": "2025-03-06T07:34:00+00:00",
+                "actual_runway": "2025-03-06T07:34:00+00:00"
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6103",
+                "iata": "AF6103",
+                "icao": "AFR6103",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HBNJ",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "3985A9"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": "B69",
+                "delay": 16,
+                "scheduled": "2025-03-06T06:30:00+00:00",
+                "estimated": "2025-03-06T06:30:00+00:00",
+                "actual": "2025-03-06T06:45:00+00:00",
+                "estimated_runway": "2025-03-06T06:45:00+00:00",
+                "actual_runway": "2025-03-06T06:45:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:12:00+00:00",
+                "estimated_runway": "2025-03-06T08:12:00+00:00",
+                "actual_runway": "2025-03-06T08:12:00+00:00"
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "8000",
+                "iata": "VY8000",
+                "icao": "VLG8000",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "XXB",
+                "iata": "A321",
+                "icao": "A321",
+                "icao24": "345248"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Llabanere",
+                "timezone": "Europe/Paris",
+                "iata": "PGF",
+                "icao": "LFMP",
+                "terminal": null,
+                "gate": null,
+                "delay": 5,
+                "scheduled": "2025-03-06T06:45:00+00:00",
+                "estimated": "2025-03-06T06:45:00+00:00",
+                "actual": "2025-03-06T06:43:00+00:00",
+                "estimated_runway": "2025-03-06T06:43:00+00:00",
+                "actual_runway": "2025-03-06T06:43:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": "03",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:20:00+00:00",
+                "estimated": "2025-03-06T08:20:00+00:00",
+                "actual": "2025-03-06T07:56:00+00:00",
+                "estimated_runway": "2025-03-06T07:56:00+00:00",
+                "actual_runway": "2025-03-06T07:56:00+00:00"
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "7041",
+                "iata": "HV7041",
+                "icao": "TRA7041",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Biarritz Parme",
+                "timezone": "Europe/Paris",
+                "iata": "BIQ",
+                "icao": "LFBZ",
+                "terminal": null,
+                "gate": null,
+                "delay": 8,
+                "scheduled": "2025-03-06T06:45:00+00:00",
+                "estimated": "2025-03-06T06:45:00+00:00",
+                "actual": "2025-03-06T06:52:00+00:00",
+                "estimated_runway": "2025-03-06T06:52:00+00:00",
+                "actual_runway": "2025-03-06T06:52:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": "03",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:15:00+00:00",
+                "estimated": "2025-03-06T08:15:00+00:00",
+                "actual": "2025-03-06T08:03:00+00:00",
+                "estimated_runway": "2025-03-06T08:03:00+00:00",
+                "actual_runway": "2025-03-06T08:03:00+00:00"
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "7001",
+                "iata": "HV7001",
+                "icao": "TRA7001",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": "B69",
+                "delay": 16,
+                "scheduled": "2025-03-06T06:30:00+00:00",
+                "estimated": "2025-03-06T06:30:00+00:00",
+                "actual": "2025-03-06T06:45:00+00:00",
+                "estimated_runway": "2025-03-06T06:45:00+00:00",
+                "actual_runway": "2025-03-06T06:45:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:12:00+00:00",
+                "estimated_runway": "2025-03-06T08:12:00+00:00",
+                "actual_runway": "2025-03-06T08:12:00+00:00"
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "5188",
+                "iata": "IB5188",
+                "icao": "IBE5188",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "8000",
+                    "flight_iata": "vy8000",
+                    "flight_icao": "vlg8000"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "25",
+                "delay": 2,
+                "scheduled": "2025-03-06T07:00:00+00:00",
+                "estimated": "2025-03-06T07:00:00+00:00",
+                "actual": "2025-03-06T07:02:00+00:00",
+                "estimated_runway": "2025-03-06T07:02:00+00:00",
+                "actual_runway": "2025-03-06T07:02:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:07:00+00:00",
+                "estimated_runway": "2025-03-06T08:07:00+00:00",
+                "actual_runway": "2025-03-06T08:07:00+00:00"
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6105",
+                "iata": "AF6105",
+                "icao": "AFR6105",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HEPB",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "3991E1"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "25",
+                "delay": 2,
+                "scheduled": "2025-03-06T07:00:00+00:00",
+                "estimated": "2025-03-06T07:00:00+00:00",
+                "actual": "2025-03-06T07:02:00+00:00",
+                "estimated_runway": "2025-03-06T07:02:00+00:00",
+                "actual_runway": "2025-03-06T07:02:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:07:00+00:00",
+                "estimated_runway": "2025-03-06T08:07:00+00:00",
+                "actual_runway": "2025-03-06T08:07:00+00:00"
+            },
+            "airline": {
+                "name": "Air Europa",
+                "iata": "UX",
+                "icao": "AEA"
+            },
+            "flight": {
+                "number": "2241",
+                "iata": "UX2241",
+                "icao": "AEA2241",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "6105",
+                    "flight_iata": "af6105",
+                    "flight_icao": "afr6105"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": "B69",
+                "delay": 16,
+                "scheduled": "2025-03-06T06:30:00+00:00",
+                "estimated": "2025-03-06T06:30:00+00:00",
+                "actual": "2025-03-06T06:45:00+00:00",
+                "estimated_runway": "2025-03-06T06:45:00+00:00",
+                "actual_runway": "2025-03-06T06:45:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:12:00+00:00",
+                "estimated_runway": "2025-03-06T08:12:00+00:00",
+                "actual_runway": "2025-03-06T08:12:00+00:00"
+            },
+            "airline": {
+                "name": "Qatar Airways",
+                "iata": "QR",
+                "icao": "QTR"
+            },
+            "flight": {
+                "number": "3793",
+                "iata": "QR3793",
+                "icao": "QTR3793",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "8000",
+                    "flight_iata": "vy8000",
+                    "flight_icao": "vlg8000"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Montpellier Méditerranée",
+                "timezone": "Europe/Paris",
+                "iata": "MPL",
+                "icao": "LFMT",
+                "terminal": null,
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T06:45:00+00:00",
+                "estimated": "2025-03-06T06:45:00+00:00",
+                "actual": "2025-03-06T06:59:00+00:00",
+                "estimated_runway": "2025-03-06T06:59:00+00:00",
+                "actual_runway": "2025-03-06T06:59:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": "03",
+                "baggage": "04",
+                "delay": null,
+                "scheduled": "2025-03-06T08:15:00+00:00",
+                "estimated": "2025-03-06T08:15:00+00:00",
+                "actual": "2025-03-06T07:59:00+00:00",
+                "estimated_runway": "2025-03-06T07:59:00+00:00",
+                "actual_runway": "2025-03-06T07:59:00+00:00"
+            },
+            "airline": {
+                "name": "Transavia",
+                "iata": "HV",
+                "icao": "TRA"
+            },
+            "flight": {
+                "number": "7071",
+                "iata": "HV7071",
+                "icao": "TRA7071",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Geneve-cointrin",
+                "timezone": "Europe/Zurich",
+                "iata": "GVA",
+                "icao": "LSGG",
+                "terminal": "1",
+                "gate": "F11",
+                "delay": null,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T06:40:00+00:00",
+                "estimated_runway": "2025-03-06T06:40:00+00:00",
+                "actual_runway": "2025-03-06T06:40:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T07:50:00+00:00",
+                "estimated": "2025-03-06T07:50:00+00:00",
+                "actual": "2025-03-06T07:26:00+00:00",
+                "estimated_runway": "2025-03-06T07:26:00+00:00",
+                "actual_runway": "2025-03-06T07:26:00+00:00"
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "1338",
+                "iata": "U21338",
+                "icao": "EZY1338",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "HB-JXS",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "4B1A2C"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Laroche",
+                "timezone": "Europe/Paris",
+                "iata": "BVE",
+                "icao": "LFSL",
+                "terminal": null,
+                "gate": null,
+                "delay": 1,
+                "scheduled": "2025-03-06T07:10:00+00:00",
+                "estimated": "2025-03-06T07:10:00+00:00",
+                "actual": "2025-03-06T07:10:00+00:00",
+                "estimated_runway": "2025-03-06T07:10:00+00:00",
+                "actual_runway": "2025-03-06T07:10:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:14:00+00:00",
+                "estimated_runway": "2025-03-06T08:14:00+00:00",
+                "actual_runway": "2025-03-06T08:14:00+00:00"
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "7011",
+                "iata": "AF7011",
+                "icao": "AFR7011",
+                "codeshared": {
+                    "airline_name": "chalair",
+                    "airline_iata": "ce",
+                    "airline_icao": "clg",
+                    "flight_number": "1931",
+                    "flight_iata": "ce1931",
+                    "flight_icao": "clg1931"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Aurillac",
+                "timezone": "Europe/Paris",
+                "iata": "AUR",
+                "icao": "LFLW",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T07:05:00+00:00",
+                "estimated": "2025-03-06T07:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "7031",
+                "iata": "AF7031",
+                "icao": "AFR7031",
+                "codeshared": {
+                    "airline_name": "chalair",
+                    "airline_iata": "ce",
+                    "airline_icao": "clg",
+                    "flight_number": "1501",
+                    "flight_iata": "ce1501",
+                    "flight_icao": "clg1501"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Poretta",
+                "timezone": "Europe/Paris",
+                "iata": "BIA",
+                "icao": "LFKB",
+                "terminal": "1",
+                "gate": "I",
+                "delay": 14,
+                "scheduled": "2025-03-06T06:55:00+00:00",
+                "estimated": "2025-03-06T06:55:00+00:00",
+                "actual": "2025-03-06T07:08:00+00:00",
+                "estimated_runway": "2025-03-06T07:08:00+00:00",
+                "actual_runway": "2025-03-06T07:08:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T08:35:00+00:00",
+                "estimated": "2025-03-06T08:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Corsica",
+                "iata": "XK",
+                "icao": "CCM"
+            },
+            "flight": {
+                "number": "780",
+                "iata": "XK780",
+                "icao": "CCM780",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "XXB",
+                "iata": "A20N",
+                "icao": "A20N",
+                "icao24": "39DD49"
+            },
+            "live": {
+                "updated": "2025-03-06T07:36:12+00:00",
+                "latitude": 48.7561,
+                "longitude": 2.5584,
+                "altitude": 741,
+                "direction": 254,
+                "speed_horizontal": 277,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Campo Dell Oro",
+                "timezone": "Europe/Paris",
+                "iata": "AJA",
+                "icao": "LFKJ",
+                "terminal": null,
+                "gate": null,
+                "delay": 7,
+                "scheduled": "2025-03-06T06:55:00+00:00",
+                "estimated": "2025-03-06T06:55:00+00:00",
+                "actual": "2025-03-06T07:01:00+00:00",
+                "estimated_runway": "2025-03-06T07:01:00+00:00",
+                "actual_runway": "2025-03-06T07:01:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": "02",
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T08:35:00+00:00",
+                "estimated": "2025-03-06T08:35:00+00:00",
+                "actual": "2025-03-06T08:17:00+00:00",
+                "estimated_runway": "2025-03-06T08:17:00+00:00",
+                "actual_runway": "2025-03-06T08:17:00+00:00"
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "4442",
+                "iata": "AF4442",
+                "icao": "AFR4442",
+                "codeshared": {
+                    "airline_name": "air corsica",
+                    "airline_iata": "xk",
+                    "airline_icao": "ccm",
+                    "flight_number": "770",
+                    "flight_iata": "xk770",
+                    "flight_icao": "ccm770"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Campo Dell Oro",
+                "timezone": "Europe/Paris",
+                "iata": "AJA",
+                "icao": "LFKJ",
+                "terminal": null,
+                "gate": null,
+                "delay": 7,
+                "scheduled": "2025-03-06T06:55:00+00:00",
+                "estimated": "2025-03-06T06:55:00+00:00",
+                "actual": "2025-03-06T07:01:00+00:00",
+                "estimated_runway": "2025-03-06T07:01:00+00:00",
+                "actual_runway": "2025-03-06T07:01:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": "02",
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T08:35:00+00:00",
+                "estimated": "2025-03-06T08:35:00+00:00",
+                "actual": "2025-03-06T08:17:00+00:00",
+                "estimated_runway": "2025-03-06T08:17:00+00:00",
+                "actual_runway": "2025-03-06T08:17:00+00:00"
+            },
+            "airline": {
+                "name": "Air Corsica",
+                "iata": "XK",
+                "icao": "CCM"
+            },
+            "flight": {
+                "number": "770",
+                "iata": "XK770",
+                "icao": "CCM770",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HXKB",
+                "iata": "A20N",
+                "icao": "A20N",
+                "icao24": "39DD41"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Poretta",
+                "timezone": "Europe/Paris",
+                "iata": "BIA",
+                "icao": "LFKB",
+                "terminal": "1",
+                "gate": "I",
+                "delay": 14,
+                "scheduled": "2025-03-06T06:55:00+00:00",
+                "estimated": "2025-03-06T06:55:00+00:00",
+                "actual": "2025-03-06T07:08:00+00:00",
+                "estimated_runway": "2025-03-06T07:08:00+00:00",
+                "actual_runway": "2025-03-06T07:08:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T08:35:00+00:00",
+                "estimated": "2025-03-06T08:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "4458",
+                "iata": "AF4458",
+                "icao": "AFR4458",
+                "codeshared": {
+                    "airline_name": "air corsica",
+                    "airline_iata": "xk",
+                    "airline_icao": "ccm",
+                    "flight_number": "780",
+                    "flight_iata": "xk780",
+                    "flight_icao": "ccm780"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Aurillac",
+                "timezone": "Europe/Paris",
+                "iata": "AUR",
+                "icao": "LFLW",
+                "terminal": null,
+                "gate": null,
+                "delay": 2,
+                "scheduled": "2025-03-06T07:05:00+00:00",
+                "estimated": "2025-03-06T07:05:00+00:00",
+                "actual": "2025-03-06T07:06:00+00:00",
+                "estimated_runway": "2025-03-06T07:06:00+00:00",
+                "actual_runway": "2025-03-06T07:06:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "OR1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:06:00+00:00",
+                "estimated_runway": "2025-03-06T08:06:00+00:00",
+                "actual_runway": "2025-03-06T08:06:00+00:00"
+            },
+            "airline": {
+                "name": "Chalair",
+                "iata": "CE",
+                "icao": "CLG"
+            },
+            "flight": {
+                "number": "1501",
+                "iata": "CE1501",
+                "icao": "CLG1501",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Leonardo Da Vinci (Fiumicino)",
+                "timezone": "Europe/Rome",
+                "iata": "FCO",
+                "icao": "LIRF",
+                "terminal": "1",
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T06:50:00+00:00",
+                "estimated_runway": "2025-03-06T06:50:00+00:00",
+                "actual_runway": "2025-03-06T06:50:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": "2025-03-06T08:23:00+00:00",
+                "estimated_runway": "2025-03-06T08:23:00+00:00",
+                "actual_runway": "2025-03-06T08:23:00+00:00"
+            },
+            "airline": {
+                "name": "Vueling",
+                "iata": "VY",
+                "icao": "VLG"
+            },
+            "flight": {
+                "number": "6255",
+                "iata": "VY6255",
+                "icao": "VLG6255",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "EC-JSY",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "342396"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "26",
+                "delay": 3,
+                "scheduled": "2025-03-06T07:30:00+00:00",
+                "estimated": "2025-03-06T07:30:00+00:00",
+                "actual": "2025-03-06T07:32:00+00:00",
+                "estimated_runway": "2025-03-06T07:32:00+00:00",
+                "actual_runway": "2025-03-06T07:32:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "09",
+                "delay": null,
+                "scheduled": "2025-03-06T08:50:00+00:00",
+                "estimated": "2025-03-06T08:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6107",
+                "iata": "AF6107",
+                "icao": "AFR6107",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HBNG",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "3985A6"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 48.749,
+                "longitude": 2.5193,
+                "altitude": 558,
+                "direction": 253,
+                "speed_horizontal": 316,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Sud Corse",
+                "timezone": "Europe/Paris",
+                "iata": "FSC",
+                "icao": "LFKF",
+                "terminal": null,
+                "gate": null,
+                "delay": 16,
+                "scheduled": "2025-03-06T07:00:00+00:00",
+                "estimated": "2025-03-06T07:00:00+00:00",
+                "actual": "2025-03-06T07:15:00+00:00",
+                "estimated_runway": "2025-03-06T07:15:00+00:00",
+                "actual_runway": "2025-03-06T07:15:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "3",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T08:45:00+00:00",
+                "estimated": "2025-03-06T08:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Corsica",
+                "iata": "XK",
+                "icao": "CCM"
+            },
+            "flight": {
+                "number": "752",
+                "iata": "XK752",
+                "icao": "CCM752",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HBSA",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "398640"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 48.7288,
+                "longitude": 2.4094,
+                "altitude": 124,
+                "direction": 256,
+                "speed_horizontal": 231,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Leonardo Da Vinci (Fiumicino)",
+                "timezone": "Europe/Rome",
+                "iata": "FCO",
+                "icao": "LIRF",
+                "terminal": "1",
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T06:50:00+00:00",
+                "estimated_runway": "2025-03-06T06:50:00+00:00",
+                "actual_runway": "2025-03-06T06:50:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": "2025-03-06T08:23:00+00:00",
+                "estimated_runway": "2025-03-06T08:23:00+00:00",
+                "actual_runway": "2025-03-06T08:23:00+00:00"
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "5490",
+                "iata": "IB5490",
+                "icao": "IBE5490",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "6255",
+                    "flight_iata": "vy6255",
+                    "flight_icao": "vlg6255"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Peretola",
+                "timezone": "Europe/Rome",
+                "iata": "FLR",
+                "icao": "LIRQ",
+                "terminal": null,
+                "gate": "6",
+                "delay": 6,
+                "scheduled": "2025-03-06T07:10:00+00:00",
+                "estimated": "2025-03-06T07:10:00+00:00",
+                "actual": "2025-03-06T07:15:00+00:00",
+                "estimated_runway": "2025-03-06T07:15:00+00:00",
+                "actual_runway": "2025-03-06T07:15:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "01",
+                "delay": null,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "5280",
+                "iata": "IB5280",
+                "icao": "IBE5280",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "1502",
+                    "flight_iata": "vy1502",
+                    "flight_icao": "vlg1502"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Valencia",
+                "timezone": "Europe/Madrid",
+                "iata": "VLC",
+                "icao": "LEVC",
+                "terminal": "1",
+                "gate": "11",
+                "delay": 3,
+                "scheduled": "2025-03-06T06:55:00+00:00",
+                "estimated": "2025-03-06T06:55:00+00:00",
+                "actual": "2025-03-06T06:58:00+00:00",
+                "estimated_runway": "2025-03-06T06:58:00+00:00",
+                "actual_runway": "2025-03-06T06:58:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "5673",
+                "iata": "IB5673",
+                "icao": "IBE5673",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "8152",
+                    "flight_iata": "vy8152",
+                    "flight_icao": "vlg8152"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Leonardo Da Vinci (Fiumicino)",
+                "timezone": "Europe/Rome",
+                "iata": "FCO",
+                "icao": "LIRF",
+                "terminal": "1",
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T06:40:00+00:00",
+                "estimated": "2025-03-06T06:40:00+00:00",
+                "actual": "2025-03-06T06:50:00+00:00",
+                "estimated_runway": "2025-03-06T06:50:00+00:00",
+                "actual_runway": "2025-03-06T06:50:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": "01",
+                "baggage": "02",
+                "delay": null,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": "2025-03-06T08:23:00+00:00",
+                "estimated_runway": "2025-03-06T08:23:00+00:00",
+                "actual_runway": "2025-03-06T08:23:00+00:00"
+            },
+            "airline": {
+                "name": "Qatar Airways",
+                "iata": "QR",
+                "icao": "QTR"
+            },
+            "flight": {
+                "number": "3734",
+                "iata": "QR3734",
+                "icao": "QTR3734",
+                "codeshared": {
+                    "airline_name": "vueling",
+                    "airline_iata": "vy",
+                    "airline_icao": "vlg",
+                    "flight_number": "6255",
+                    "flight_iata": "vy6255",
+                    "flight_icao": "vlg6255"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T07:30:00+00:00",
+                "estimated": "2025-03-06T07:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "4",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T08:44:00+00:00",
+                "estimated": "2025-03-06T08:44:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": null,
+                "iata": "AF",
+                "icao": "AFR",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": null,
+                "delay": 4,
+                "scheduled": "2025-03-06T07:00:00+00:00",
+                "estimated": "2025-03-06T07:00:00+00:00",
+                "actual": "2025-03-06T07:04:00+00:00",
+                "estimated_runway": "2025-03-06T07:04:00+00:00",
+                "actual_runway": "2025-03-06T07:04:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T08:25:00+00:00",
+                "estimated": "2025-03-06T08:25:00+00:00",
+                "actual": "2025-03-06T08:11:00+00:00",
+                "estimated_runway": "2025-03-06T08:11:00+00:00",
+                "actual_runway": "2025-03-06T08:11:00+00:00"
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "4911",
+                "iata": "U24911",
+                "icao": "EZY4911",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "XXB",
+                "iata": "A319",
+                "icao": "A319",
+                "icao24": "44056B"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Marcillac",
+                "timezone": "Europe/Paris",
+                "iata": "RDZ",
+                "icao": "LFCR",
+                "terminal": null,
+                "gate": null,
+                "delay": 14,
+                "scheduled": "2025-03-06T06:25:00+00:00",
+                "estimated": "2025-03-06T06:25:00+00:00",
+                "actual": "2025-03-06T06:38:00+00:00",
+                "estimated_runway": "2025-03-06T06:38:00+00:00",
+                "actual_runway": "2025-03-06T06:38:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "A",
+                "gate": "01",
+                "baggage": "02",
+                "delay": 2,
+                "scheduled": "2025-03-06T07:40:00+00:00",
+                "estimated": "2025-03-06T07:40:00+00:00",
+                "actual": "2025-03-06T07:42:00+00:00",
+                "estimated_runway": "2025-03-06T07:42:00+00:00",
+                "actual_runway": "2025-03-06T07:42:00+00:00"
+            },
+            "airline": {
+                "name": "Volotea",
+                "iata": "V7",
+                "icao": "VOE"
+            },
+            "flight": {
+                "number": "2004",
+                "iata": "V72004",
+                "icao": "VOE2004",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "EC-MTL",
+                "iata": "A319",
+                "icao": "A319",
+                "icao24": "345611"
+            },
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "A04",
+                "delay": 2,
+                "scheduled": "2025-03-06T07:45:00+00:00",
+                "estimated": "2025-03-06T07:45:00+00:00",
+                "actual": "2025-03-06T07:46:00+00:00",
+                "estimated_runway": "2025-03-06T07:46:00+00:00",
+                "actual_runway": "2025-03-06T07:46:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "2",
+                "gate": "02",
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T09:15:00+00:00",
+                "estimated": "2025-03-06T09:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6203",
+                "iata": "AF6203",
+                "icao": "AFR6203",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HBNB",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "3985A1"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 48.0196,
+                "longitude": 3.3791,
+                "altitude": 4947,
+                "direction": 327,
+                "speed_horizontal": 672,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": 6,
+                "scheduled": "2025-03-06T06:25:00+00:00",
+                "estimated": "2025-03-06T06:25:00+00:00",
+                "actual": "2025-03-06T06:31:00+00:00",
+                "estimated_runway": "2025-03-06T06:31:00+00:00",
+                "actual_runway": "2025-03-06T06:31:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T09:35:00+00:00",
+                "estimated": "2025-03-06T09:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Azores Airlines",
+                "iata": "S4",
+                "icao": "RZO"
+            },
+            "flight": {
+                "number": "8150",
+                "iata": "S48150",
+                "icao": "RZO8150",
+                "codeshared": {
+                    "airline_name": "tap air portugal",
+                    "airline_iata": "tp",
+                    "airline_icao": "tap",
+                    "flight_number": "452",
+                    "flight_iata": "tp452",
+                    "flight_icao": "tap452"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": 6,
+                "scheduled": "2025-03-06T06:25:00+00:00",
+                "estimated": "2025-03-06T06:25:00+00:00",
+                "actual": "2025-03-06T06:31:00+00:00",
+                "estimated_runway": "2025-03-06T06:31:00+00:00",
+                "actual_runway": "2025-03-06T06:31:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": "08",
+                "delay": null,
+                "scheduled": "2025-03-06T09:35:00+00:00",
+                "estimated": "2025-03-06T09:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "TAP Air Portugal",
+                "iata": "TP",
+                "icao": "TAP"
+            },
+            "flight": {
+                "number": "452",
+                "iata": "TP452",
+                "icao": "TAP452",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "CS-TAY",
+                "iata": "E195",
+                "icao": "E195",
+                "icao24": "495039"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:58+00:00",
+                "latitude": 46.8922,
+                "longitude": -2.1423,
+                "altitude": 10383,
+                "direction": 54,
+                "speed_horizontal": 874,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Francisco Sá Carneiro",
+                "timezone": "Europe/Lisbon",
+                "iata": "OPO",
+                "icao": "LPPR",
+                "terminal": null,
+                "gate": null,
+                "delay": 3,
+                "scheduled": "2025-03-06T06:00:00+00:00",
+                "estimated": "2025-03-06T06:00:00+00:00",
+                "actual": "2025-03-06T06:02:00+00:00",
+                "estimated_runway": "2025-03-06T06:02:00+00:00",
+                "actual_runway": "2025-03-06T06:02:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T09:15:00+00:00",
+                "estimated": "2025-03-06T09:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "7723",
+                "iata": "U27723",
+                "icao": "EZY7723",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "OE-IVT",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "4400EB"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 48.255,
+                "longitude": 1.5843,
+                "altitude": 3362,
+                "direction": 33,
+                "speed_horizontal": 588,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Leonardo Da Vinci (Fiumicino)",
+                "timezone": "Europe/Rome",
+                "iata": "FCO",
+                "icao": "LIRF",
+                "terminal": "3",
+                "gate": null,
+                "delay": 29,
+                "scheduled": "2025-03-06T06:55:00+00:00",
+                "estimated": "2025-03-06T06:55:00+00:00",
+                "actual": "2025-03-06T07:23:00+00:00",
+                "estimated_runway": "2025-03-06T07:23:00+00:00",
+                "actual_runway": "2025-03-06T07:23:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "B",
+                "gate": null,
+                "baggage": "05",
+                "delay": null,
+                "scheduled": "2025-03-06T09:10:00+00:00",
+                "estimated": "2025-03-06T09:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Wizz Air",
+                "iata": "W6",
+                "icao": "WZZ"
+            },
+            "flight": {
+                "number": "6061",
+                "iata": "W66061",
+                "icao": "WZZ6061",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Pau-Pyrénées",
+                "timezone": "Europe/Paris",
+                "iata": "PUF",
+                "icao": "LFBP",
+                "terminal": null,
+                "gate": null,
+                "delay": 10,
+                "scheduled": "2025-03-06T07:30:00+00:00",
+                "estimated": "2025-03-06T07:30:00+00:00",
+                "actual": "2025-03-06T07:39:00+00:00",
+                "estimated_runway": "2025-03-06T07:39:00+00:00",
+                "actual_runway": "2025-03-06T07:39:00+00:00"
+            },
+            "arrival": {
+                "airport": "Orly",
+                "timezone": "Europe/Paris",
+                "iata": "ORY",
+                "icao": "LFPO",
+                "terminal": "OR2",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Amelia",
+                "iata": "8R",
+                "icao": "AIA"
+            },
+            "flight": {
+                "number": "6411",
+                "iata": "8R6411",
+                "icao": "AIA6411",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "F-HRAM",
+                "iata": "E145",
+                "icao": "E145",
+                "icao24": "39C40C"
+            },
+            "live": {
+                "updated": "2025-03-06T07:41:10+00:00",
+                "latitude": 48.318,
+                "longitude": 1.6509,
+                "altitude": 3538,
+                "direction": 34,
+                "speed_horizontal": 624,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        }
+    ]
+}

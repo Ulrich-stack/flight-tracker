@@ -26,6 +26,8 @@ export class RegisterComponent implements OnInit {
     if(this.signinForm.valid){
       this.auth.signIn(this.signinForm.value.email, this.signinForm.value.name, this.signinForm.value.password);
       this.signinForm.reset();
+      console.log();
+      
     }
   }
 }

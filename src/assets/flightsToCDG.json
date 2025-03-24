@@ -1,0 +1,5100 @@
+{
+    "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "count": 100,
+        "total": 3824
+    },
+    "data": [
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Marco Polo",
+                "timezone": "Europe/Rome",
+                "iata": "VCE",
+                "icao": "LIPZ",
+                "terminal": null,
+                "gate": null,
+                "delay": 18,
+                "scheduled": "2025-03-06T09:45:00+00:00",
+                "estimated": "2025-03-06T09:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T11:40:00+00:00",
+                "estimated": "2025-03-06T11:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "4552",
+                "iata": "U24552",
+                "icao": "EZY4552",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Peretola",
+                "timezone": "Europe/Rome",
+                "iata": "FLR",
+                "icao": "LIRQ",
+                "terminal": null,
+                "gate": "11",
+                "delay": 20,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "21",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "WestJet",
+                "iata": "WS",
+                "icao": "WJA"
+            },
+            "flight": {
+                "number": "5170",
+                "iata": "WS5170",
+                "icao": "WJA5170",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1067",
+                    "flight_iata": "af1067",
+                    "flight_icao": "afr1067"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Peretola",
+                "timezone": "Europe/Rome",
+                "iata": "FLR",
+                "icao": "LIRQ",
+                "terminal": null,
+                "gate": "11",
+                "delay": 20,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "21",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1067",
+                "iata": "AF1067",
+                "icao": "AFR1067",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Heathrow",
+                "timezone": "Europe/London",
+                "iata": "LHR",
+                "icao": "EGLL",
+                "terminal": "4",
+                "gate": "C",
+                "delay": 21,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "41",
+                "delay": null,
+                "scheduled": "2025-03-06T11:25:00+00:00",
+                "estimated": "2025-03-06T11:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1681",
+                "iata": "AF1681",
+                "icao": "AFR1681",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Heathrow",
+                "timezone": "Europe/London",
+                "iata": "LHR",
+                "icao": "EGLL",
+                "terminal": "5",
+                "gate": null,
+                "delay": 20,
+                "scheduled": "2025-03-06T08:15:00+00:00",
+                "estimated": "2025-03-06T08:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2C",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T10:35:00+00:00",
+                "estimated": "2025-03-06T10:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "British Airways",
+                "iata": "BA",
+                "icao": "BAW"
+            },
+            "flight": {
+                "number": "328",
+                "iata": "BA328",
+                "icao": "BAW328",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "China Eastern Airlines",
+                "iata": "MU",
+                "icao": "CES"
+            },
+            "flight": {
+                "number": "1514",
+                "iata": "MU1514",
+                "icao": "CES1514",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7301",
+                    "flight_iata": "af7301",
+                    "flight_icao": "afr7301"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Mauritius",
+                "iata": "MK",
+                "icao": "MAU"
+            },
+            "flight": {
+                "number": "9081",
+                "iata": "MK9081",
+                "icao": "MAU9081",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7301",
+                    "flight_iata": "af7301",
+                    "flight_icao": "afr7301"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Etihad Airways",
+                "iata": "EY",
+                "icao": "ETD"
+            },
+            "flight": {
+                "number": "6041",
+                "iata": "EY6041",
+                "icao": "ETD6041",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7301",
+                    "flight_iata": "af7301",
+                    "flight_icao": "afr7301"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8396",
+                "iata": "DL8396",
+                "icao": "DAL8396",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7301",
+                    "flight_iata": "af7301",
+                    "flight_icao": "afr7301"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Aeromexico",
+                "iata": "AM",
+                "icao": "AMX"
+            },
+            "flight": {
+                "number": "5882",
+                "iata": "AM5882",
+                "icao": "AMX5882",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7301",
+                    "flight_iata": "af7301",
+                    "flight_icao": "afr7301"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T09:35:00+00:00",
+                "estimated": "2025-03-06T09:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T11:15:00+00:00",
+                "estimated": "2025-03-06T11:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "4526",
+                "iata": "U24526",
+                "icao": "EZY4526",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Saudia",
+                "iata": "SV",
+                "icao": "SVA"
+            },
+            "flight": {
+                "number": "6046",
+                "iata": "SV6046",
+                "icao": "SVA6046",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7301",
+                    "flight_iata": "af7301",
+                    "flight_icao": "afr7301"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "WestJet",
+                "iata": "WS",
+                "icao": "WJA"
+            },
+            "flight": {
+                "number": "5135",
+                "iata": "WS5135",
+                "icao": "WJA5135",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7301",
+                    "flight_iata": "af7301",
+                    "flight_icao": "afr7301"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Cote D'azur International Airport",
+                "timezone": "Europe/Paris",
+                "iata": "NCE",
+                "icao": "LFMN",
+                "terminal": "2",
+                "gate": "2C",
+                "delay": 8,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:30:00+00:00",
+                "estimated": "2025-03-06T11:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "7301",
+                "iata": "AF7301",
+                "icao": "AFR7301",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Prague Vaclav Havel Airport",
+                "timezone": "Europe/Prague",
+                "iata": "PRG",
+                "icao": "LKPR",
+                "terminal": "2",
+                "gate": "C2",
+                "delay": null,
+                "scheduled": "2025-03-06T09:40:00+00:00",
+                "estimated": "2025-03-06T09:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2G",
+                "gate": null,
+                "baggage": "53",
+                "delay": null,
+                "scheduled": "2025-03-06T11:40:00+00:00",
+                "estimated": "2025-03-06T11:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1183",
+                "iata": "AF1183",
+                "icao": "AFR1183",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Prague Vaclav Havel Airport",
+                "timezone": "Europe/Prague",
+                "iata": "PRG",
+                "icao": "LKPR",
+                "terminal": "2",
+                "gate": "C2",
+                "delay": null,
+                "scheduled": "2025-03-06T09:40:00+00:00",
+                "estimated": "2025-03-06T09:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2G",
+                "gate": null,
+                "baggage": "53",
+                "delay": null,
+                "scheduled": "2025-03-06T11:40:00+00:00",
+                "estimated": "2025-03-06T11:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Etihad Airways",
+                "iata": "EY",
+                "icao": "ETD"
+            },
+            "flight": {
+                "number": "6022",
+                "iata": "EY6022",
+                "icao": "ETD6022",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1183",
+                    "flight_iata": "af1183",
+                    "flight_icao": "afr1183"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Prague Vaclav Havel Airport",
+                "timezone": "Europe/Prague",
+                "iata": "PRG",
+                "icao": "LKPR",
+                "terminal": "2",
+                "gate": "C2",
+                "delay": null,
+                "scheduled": "2025-03-06T09:40:00+00:00",
+                "estimated": "2025-03-06T09:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2G",
+                "gate": null,
+                "baggage": "53",
+                "delay": null,
+                "scheduled": "2025-03-06T11:40:00+00:00",
+                "estimated": "2025-03-06T11:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8383",
+                "iata": "DL8383",
+                "icao": "DAL8383",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1183",
+                    "flight_iata": "af1183",
+                    "flight_icao": "afr1183"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Frankfurt International Airport",
+                "timezone": "Europe/Berlin",
+                "iata": "FRA",
+                "icao": "EDDF",
+                "terminal": "2",
+                "gate": "D23",
+                "delay": null,
+                "scheduled": "2025-03-06T09:40:00+00:00",
+                "estimated": "2025-03-06T09:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2G",
+                "gate": null,
+                "baggage": "1G",
+                "delay": null,
+                "scheduled": "2025-03-06T11:10:00+00:00",
+                "estimated": "2025-03-06T11:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1519",
+                "iata": "AF1519",
+                "icao": "AFR1519",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Athens International Airport \"Eleftherios Venizelos\"",
+                "timezone": "Europe/Athens",
+                "iata": "ATH",
+                "icao": "LGAV",
+                "terminal": null,
+                "gate": "70",
+                "delay": null,
+                "scheduled": "2025-03-06T10:40:00+00:00",
+                "estimated": "2025-03-06T10:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:15:00+00:00",
+                "estimated": "2025-03-06T13:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Sky Express",
+                "iata": "GQ",
+                "icao": "SEH"
+            },
+            "flight": {
+                "number": "900",
+                "iata": "GQ900",
+                "icao": "SEH900",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Aeromexico",
+                "iata": "AM",
+                "icao": "AMX"
+            },
+            "flight": {
+                "number": "5898",
+                "iata": "AM5898",
+                "icao": "AMX5898",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Ben Gurion International",
+                "timezone": "Asia/Jerusalem",
+                "iata": "TLV",
+                "icao": "LLBG",
+                "terminal": "3",
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:55:00+00:00",
+                "estimated": "2025-03-06T14:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Aeromexico",
+                "iata": "AM",
+                "icao": "AMX"
+            },
+            "flight": {
+                "number": "7897",
+                "iata": "AM7897",
+                "icao": "AMX7897",
+                "codeshared": {
+                    "airline_name": "el al",
+                    "airline_iata": "ly",
+                    "airline_icao": "ely",
+                    "flight_number": "221",
+                    "flight_iata": "ly221",
+                    "flight_icao": "ely221"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Frankfurt International Airport",
+                "timezone": "Europe/Berlin",
+                "iata": "FRA",
+                "icao": "EDDF",
+                "terminal": "1",
+                "gate": "A56",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:15:00+00:00",
+                "estimated": "2025-03-06T09:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": "64",
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T10:30:00+00:00",
+                "estimated": "2025-03-06T10:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Lufthansa",
+                "iata": "LH",
+                "icao": "DLH"
+            },
+            "flight": {
+                "number": "1030",
+                "iata": "LH1030",
+                "icao": "DLH1030",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Ben Gurion International",
+                "timezone": "Asia/Jerusalem",
+                "iata": "TLV",
+                "icao": "LLBG",
+                "terminal": "3",
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:55:00+00:00",
+                "estimated": "2025-03-06T14:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "El Al",
+                "iata": "LY",
+                "icao": "ELY"
+            },
+            "flight": {
+                "number": "221",
+                "iata": "LY221",
+                "icao": "ELY221",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "7401",
+                "iata": "AF7401",
+                "icao": "AFR7401",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "WestJet",
+                "iata": "WS",
+                "icao": "WJA"
+            },
+            "flight": {
+                "number": "5023",
+                "iata": "WS5023",
+                "icao": "WJA5023",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Vietnam Airlines",
+                "iata": "VN",
+                "icao": "HVN"
+            },
+            "flight": {
+                "number": "3219",
+                "iata": "VN3219",
+                "icao": "HVN3219",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Singapore Airlines",
+                "iata": "SQ",
+                "icao": "SIA"
+            },
+            "flight": {
+                "number": "1853",
+                "iata": "SQ1853",
+                "icao": "SIA1853",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "SAS",
+                "iata": "SK",
+                "icao": "SAS"
+            },
+            "flight": {
+                "number": "9884",
+                "iata": "SK9884",
+                "icao": "SAS9884",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "TAROM",
+                "iata": "RO",
+                "icao": "ROT"
+            },
+            "flight": {
+                "number": "9576",
+                "iata": "RO9576",
+                "icao": "ROT9576",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "China Eastern Airlines",
+                "iata": "MU",
+                "icao": "CES"
+            },
+            "flight": {
+                "number": "1541",
+                "iata": "MU1541",
+                "icao": "CES1541",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Mauritius",
+                "iata": "MK",
+                "icao": "MAU"
+            },
+            "flight": {
+                "number": "9131",
+                "iata": "MK9131",
+                "icao": "MAU9131",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Jet Linx Aviation",
+                "iata": "JL",
+                "icao": "JTL"
+            },
+            "flight": {
+                "number": "5330",
+                "iata": "JL5330",
+                "icao": "JTL5330",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Ben Gurion International",
+                "timezone": "Asia/Jerusalem",
+                "iata": "TLV",
+                "icao": "LLBG",
+                "terminal": "3",
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:55:00+00:00",
+                "estimated": "2025-03-06T14:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "6176",
+                "iata": "AF6176",
+                "icao": "AFR6176",
+                "codeshared": {
+                    "airline_name": "el al",
+                    "airline_iata": "ly",
+                    "airline_icao": "ely",
+                    "flight_number": "221",
+                    "flight_iata": "ly221",
+                    "flight_icao": "ely221"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Ben Gurion International",
+                "timezone": "Asia/Jerusalem",
+                "iata": "TLV",
+                "icao": "LLBG",
+                "terminal": "3",
+                "gate": null,
+                "delay": 15,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:55:00+00:00",
+                "estimated": "2025-03-06T14:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "SAS",
+                "iata": "SK",
+                "icao": "SAS"
+            },
+            "flight": {
+                "number": "3195",
+                "iata": "SK3195",
+                "icao": "SAS3195",
+                "codeshared": {
+                    "airline_name": "el al",
+                    "airline_iata": "ly",
+                    "airline_icao": "ely",
+                    "flight_number": "221",
+                    "flight_iata": "ly221",
+                    "flight_icao": "ely221"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8318",
+                "iata": "DL8318",
+                "icao": "DAL8318",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Gol",
+                "iata": "G3",
+                "icao": "GLO"
+            },
+            "flight": {
+                "number": "5286",
+                "iata": "G35286",
+                "icao": "GLO5286",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Blagnac",
+                "timezone": "Europe/Paris",
+                "iata": "TLS",
+                "icao": "LFBO",
+                "terminal": null,
+                "gate": "HD",
+                "delay": 10,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T10:55:00+00:00",
+                "estimated": "2025-03-06T10:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Alitalia",
+                "iata": "AZ",
+                "icao": "AZA"
+            },
+            "flight": {
+                "number": "2567",
+                "iata": "AZ2567",
+                "icao": "AZA2567",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7401",
+                    "flight_iata": "af7401",
+                    "flight_icao": "afr7401"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Montpellier Méditerranée",
+                "timezone": "Europe/Paris",
+                "iata": "MPL",
+                "icao": "LFMT",
+                "terminal": null,
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:20:00+00:00",
+                "estimated": "2025-03-06T11:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8689",
+                "iata": "DL8689",
+                "icao": "DAL8689",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7469",
+                    "flight_iata": "af7469",
+                    "flight_icao": "afr7469"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Montpellier Méditerranée",
+                "timezone": "Europe/Paris",
+                "iata": "MPL",
+                "icao": "LFMT",
+                "terminal": null,
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:20:00+00:00",
+                "estimated": "2025-03-06T11:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "KLM",
+                "iata": "KL",
+                "icao": "KLM"
+            },
+            "flight": {
+                "number": "2019",
+                "iata": "KL2019",
+                "icao": "KLM2019",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7469",
+                    "flight_iata": "af7469",
+                    "flight_icao": "afr7469"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Montpellier Méditerranée",
+                "timezone": "Europe/Paris",
+                "iata": "MPL",
+                "icao": "LFMT",
+                "terminal": null,
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:20:00+00:00",
+                "estimated": "2025-03-06T11:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "WestJet",
+                "iata": "WS",
+                "icao": "WJA"
+            },
+            "flight": {
+                "number": "5086",
+                "iata": "WS5086",
+                "icao": "WJA5086",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "7469",
+                    "flight_iata": "af7469",
+                    "flight_icao": "afr7469"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Montpellier Méditerranée",
+                "timezone": "Europe/Paris",
+                "iata": "MPL",
+                "icao": "LFMT",
+                "terminal": null,
+                "gate": null,
+                "delay": 11,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T11:20:00+00:00",
+                "estimated": "2025-03-06T11:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "7469",
+                "iata": "AF7469",
+                "icao": "AFR7469",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Aeromexico",
+                "iata": "AM",
+                "icao": "AMX"
+            },
+            "flight": {
+                "number": "5749",
+                "iata": "AM5749",
+                "icao": "AMX5749",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8569",
+                "iata": "DL8569",
+                "icao": "DAL8569",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Etihad Airways",
+                "iata": "EY",
+                "icao": "ETD"
+            },
+            "flight": {
+                "number": "5883",
+                "iata": "EY5883",
+                "icao": "ETD5883",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Korean Air",
+                "iata": "KE",
+                "icao": "KAL"
+            },
+            "flight": {
+                "number": "6462",
+                "iata": "KE6462",
+                "icao": "KAL6462",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Mauritius",
+                "iata": "MK",
+                "icao": "MAU"
+            },
+            "flight": {
+                "number": "9681",
+                "iata": "MK9681",
+                "icao": "MAU9681",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Austral",
+                "iata": "UU",
+                "icao": "REU"
+            },
+            "flight": {
+                "number": "8435",
+                "iata": "UU8435",
+                "icao": "REU8435",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "WestJet",
+                "iata": "WS",
+                "icao": "WJA"
+            },
+            "flight": {
+                "number": "5106",
+                "iata": "WS5106",
+                "icao": "WJA5106",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Jet Linx Aviation",
+                "iata": "JL",
+                "icao": "JTL"
+            },
+            "flight": {
+                "number": "5302",
+                "iata": "JL5302",
+                "icao": "JTL5302",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1435",
+                    "flight_iata": "af1435",
+                    "flight_icao": "afr1435"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Berlin Brandenburg Airport",
+                "timezone": "+1",
+                "iata": "BER",
+                "icao": "EDDB",
+                "terminal": "1",
+                "gate": "811",
+                "delay": 7,
+                "scheduled": "2025-03-06T09:55:00+00:00",
+                "estimated": "2025-03-06T09:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "26",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1435",
+                "iata": "AF1435",
+                "icao": "AFR1435",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Luton Airport",
+                "timezone": "Europe/London",
+                "iata": "LTN",
+                "icao": "EGGW",
+                "terminal": null,
+                "gate": "44",
+                "delay": null,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T11:20:00+00:00",
+                "estimated": "2025-03-06T11:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "2437",
+                "iata": "U22437",
+                "icao": "EZY2437",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "4",
+                "gate": "J42",
+                "delay": 16,
+                "scheduled": "2025-03-06T09:50:00+00:00",
+                "estimated": "2025-03-06T09:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T12:00:00+00:00",
+                "estimated": "2025-03-06T12:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "585",
+                "iata": "IB585",
+                "icao": "IBE585",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Barajas",
+                "timezone": "Europe/Madrid",
+                "iata": "MAD",
+                "icao": "LEMD",
+                "terminal": "2",
+                "gate": "DE",
+                "delay": 18,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "24",
+                "delay": null,
+                "scheduled": "2025-03-06T12:10:00+00:00",
+                "estimated": "2025-03-06T12:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1001",
+                "iata": "AF1001",
+                "icao": "AFR1001",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Peretola",
+                "timezone": "Europe/Rome",
+                "iata": "FLR",
+                "icao": "LIRQ",
+                "terminal": null,
+                "gate": "11",
+                "delay": 20,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "21",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8563",
+                "iata": "DL8563",
+                "icao": "DAL8563",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1067",
+                    "flight_iata": "af1067",
+                    "flight_icao": "afr1067"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Peretola",
+                "timezone": "Europe/Rome",
+                "iata": "FLR",
+                "icao": "LIRQ",
+                "terminal": null,
+                "gate": "11",
+                "delay": 20,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "21",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Gol",
+                "iata": "G3",
+                "icao": "GLO"
+            },
+            "flight": {
+                "number": "5246",
+                "iata": "G35246",
+                "icao": "GLO5246",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1067",
+                    "flight_iata": "af1067",
+                    "flight_icao": "afr1067"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Peretola",
+                "timezone": "Europe/Rome",
+                "iata": "FLR",
+                "icao": "LIRQ",
+                "terminal": null,
+                "gate": "11",
+                "delay": 20,
+                "scheduled": "2025-03-06T10:00:00+00:00",
+                "estimated": "2025-03-06T10:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "21",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "KLM",
+                "iata": "KL",
+                "icao": "KLM"
+            },
+            "flight": {
+                "number": "2127",
+                "iata": "KL2127",
+                "icao": "KLM2127",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1067",
+                    "flight_iata": "af1067",
+                    "flight_icao": "afr1067"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Aldergrove International Airport",
+                "timezone": "Europe/London",
+                "iata": "BFS",
+                "icao": "EGAA",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T08:30:00+00:00",
+                "estimated": "2025-03-06T08:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T11:15:00+00:00",
+                "estimated": "2025-03-06T11:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "4642",
+                "iata": "U24642",
+                "icao": "EZY4642",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Houari Boumediene",
+                "timezone": "Africa/Algiers",
+                "iata": "ALG",
+                "icao": "DAAG",
+                "terminal": "I",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T11:10:00+00:00",
+                "estimated": "2025-03-06T11:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:45:00+00:00",
+                "estimated": "2025-03-06T13:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "ASL Airlines France",
+                "iata": "5O",
+                "icao": "FPO"
+            },
+            "flight": {
+                "number": "272",
+                "iata": "5O272",
+                "icao": "FPO272",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T12:35:00+00:00",
+                "estimated": "2025-03-06T12:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "27",
+                "delay": null,
+                "scheduled": "2025-03-06T14:05:00+00:00",
+                "estimated": "2025-03-06T14:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "China Eastern Airlines",
+                "iata": "MU",
+                "icao": "CES"
+            },
+            "flight": {
+                "number": "1860",
+                "iata": "MU1860",
+                "icao": "CES1860",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1131",
+                    "flight_iata": "af1131",
+                    "flight_icao": "afr1131"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T12:35:00+00:00",
+                "estimated": "2025-03-06T12:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "27",
+                "delay": null,
+                "scheduled": "2025-03-06T14:05:00+00:00",
+                "estimated": "2025-03-06T14:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Mauritius",
+                "iata": "MK",
+                "icao": "MAU"
+            },
+            "flight": {
+                "number": "9359",
+                "iata": "MK9359",
+                "icao": "MAU9359",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1131",
+                    "flight_iata": "af1131",
+                    "flight_icao": "afr1131"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T12:35:00+00:00",
+                "estimated": "2025-03-06T12:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "27",
+                "delay": null,
+                "scheduled": "2025-03-06T14:05:00+00:00",
+                "estimated": "2025-03-06T14:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Kenya Airways",
+                "iata": "KQ",
+                "icao": "KQA"
+            },
+            "flight": {
+                "number": "3925",
+                "iata": "KQ3925",
+                "icao": "KQA3925",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1131",
+                    "flight_iata": "af1131",
+                    "flight_icao": "afr1131"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Gatwick",
+                "timezone": "Europe/London",
+                "iata": "LGW",
+                "icao": "EGKK",
+                "terminal": "N",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:50:00+00:00",
+                "estimated": "2025-03-06T13:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T16:05:00+00:00",
+                "estimated": "2025-03-06T16:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "8405",
+                "iata": "U28405",
+                "icao": "EZY8405",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Dublin International",
+                "timezone": "Europe/Dublin",
+                "iata": "DUB",
+                "icao": "EIDW",
+                "terminal": "1",
+                "gate": "301",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "31",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1717",
+                "iata": "AF1717",
+                "icao": "AFR1717",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Dublin International",
+                "timezone": "Europe/Dublin",
+                "iata": "DUB",
+                "icao": "EIDW",
+                "terminal": "1",
+                "gate": "301",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "31",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "WestJet",
+                "iata": "WS",
+                "icao": "WJA"
+            },
+            "flight": {
+                "number": "5126",
+                "iata": "WS5126",
+                "icao": "WJA5126",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1717",
+                    "flight_iata": "af1717",
+                    "flight_icao": "afr1717"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Dublin International",
+                "timezone": "Europe/Dublin",
+                "iata": "DUB",
+                "icao": "EIDW",
+                "terminal": "1",
+                "gate": "301",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "31",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Saudia",
+                "iata": "SV",
+                "icao": "SVA"
+            },
+            "flight": {
+                "number": "6282",
+                "iata": "SV6282",
+                "icao": "SVA6282",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1717",
+                    "flight_iata": "af1717",
+                    "flight_icao": "afr1717"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Dublin International",
+                "timezone": "Europe/Dublin",
+                "iata": "DUB",
+                "icao": "EIDW",
+                "terminal": "1",
+                "gate": "301",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "31",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Gol",
+                "iata": "G3",
+                "icao": "GLO"
+            },
+            "flight": {
+                "number": "5197",
+                "iata": "G35197",
+                "icao": "GLO5197",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1717",
+                    "flight_iata": "af1717",
+                    "flight_icao": "afr1717"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Dublin International",
+                "timezone": "Europe/Dublin",
+                "iata": "DUB",
+                "icao": "EIDW",
+                "terminal": "1",
+                "gate": "301",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "31",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8243",
+                "iata": "DL8243",
+                "icao": "DAL8243",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1717",
+                    "flight_iata": "af1717",
+                    "flight_icao": "afr1717"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Dublin International",
+                "timezone": "Europe/Dublin",
+                "iata": "DUB",
+                "icao": "EIDW",
+                "terminal": "1",
+                "gate": "301",
+                "delay": 27,
+                "scheduled": "2025-03-06T08:55:00+00:00",
+                "estimated": "2025-03-06T08:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "31",
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Aeromexico",
+                "iata": "AM",
+                "icao": "AMX"
+            },
+            "flight": {
+                "number": "5770",
+                "iata": "AM5770",
+                "icao": "AMX5770",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1717",
+                    "flight_iata": "af1717",
+                    "flight_icao": "afr1717"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Riga International",
+                "timezone": "Europe/Riga",
+                "iata": "RIX",
+                "icao": "EVRA",
+                "terminal": null,
+                "gate": null,
+                "delay": 12,
+                "scheduled": "2025-03-06T16:00:00+00:00",
+                "estimated": "2025-03-06T16:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:50:00+00:00",
+                "estimated": "2025-03-06T17:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Baltic",
+                "iata": "BT",
+                "icao": "BTI"
+            },
+            "flight": {
+                "number": "693",
+                "iata": "BT693",
+                "icao": "BTI693",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Riga International",
+                "timezone": "Europe/Riga",
+                "iata": "RIX",
+                "icao": "EVRA",
+                "terminal": null,
+                "gate": null,
+                "delay": 12,
+                "scheduled": "2025-03-06T16:00:00+00:00",
+                "estimated": "2025-03-06T16:00:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:50:00+00:00",
+                "estimated": "2025-03-06T17:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "7985",
+                "iata": "AF7985",
+                "icao": "AFR7985",
+                "codeshared": {
+                    "airline_name": "air baltic",
+                    "airline_iata": "bt",
+                    "airline_icao": "bti",
+                    "flight_number": "693",
+                    "flight_iata": "bt693",
+                    "flight_icao": "bti693"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Istanbul Airport",
+                "timezone": "Europe/Istanbul",
+                "iata": "IST",
+                "icao": "LTFM",
+                "terminal": null,
+                "gate": "D10",
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:25:00+00:00",
+                "estimated": "2025-03-06T17:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Turkish Airlines",
+                "iata": "TK",
+                "icao": "THY"
+            },
+            "flight": {
+                "number": "1827",
+                "iata": "TK1827",
+                "icao": "THY1827",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Istanbul Airport",
+                "timezone": "Europe/Istanbul",
+                "iata": "IST",
+                "icao": "LTFM",
+                "terminal": null,
+                "gate": "D10",
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:25:00+00:00",
+                "estimated": "2025-03-06T17:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Seychelles",
+                "iata": "HM",
+                "icao": "SEY"
+            },
+            "flight": {
+                "number": "6408",
+                "iata": "HM6408",
+                "icao": "SEY6408",
+                "codeshared": {
+                    "airline_name": "turkish airlines",
+                    "airline_iata": "tk",
+                    "airline_icao": "thy",
+                    "flight_number": "1827",
+                    "flight_iata": "tk1827",
+                    "flight_icao": "thy1827"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Istanbul Airport",
+                "timezone": "Europe/Istanbul",
+                "iata": "IST",
+                "icao": "LTFM",
+                "terminal": null,
+                "gate": "D10",
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:25:00+00:00",
+                "estimated": "2025-03-06T17:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "IndiGo",
+                "iata": "6E",
+                "icao": "IGO"
+            },
+            "flight": {
+                "number": "4012",
+                "iata": "6E4012",
+                "icao": "IGO4012",
+                "codeshared": {
+                    "airline_name": "turkish airlines",
+                    "airline_iata": "tk",
+                    "airline_icao": "thy",
+                    "flight_number": "1827",
+                    "flight_iata": "tk1827",
+                    "flight_icao": "thy1827"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Istanbul Airport",
+                "timezone": "Europe/Istanbul",
+                "iata": "IST",
+                "icao": "LTFM",
+                "terminal": null,
+                "gate": "D10",
+                "delay": null,
+                "scheduled": "2025-03-06T15:35:00+00:00",
+                "estimated": "2025-03-06T15:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T17:25:00+00:00",
+                "estimated": "2025-03-06T17:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Sichuan Airlines",
+                "iata": "3U",
+                "icao": "CSC"
+            },
+            "flight": {
+                "number": "7217",
+                "iata": "3U7217",
+                "icao": "CSC7217",
+                "codeshared": {
+                    "airline_name": "turkish airlines",
+                    "airline_iata": "tk",
+                    "airline_icao": "thy",
+                    "flight_number": "1827",
+                    "flight_iata": "tk1827",
+                    "flight_icao": "thy1827"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "2",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T11:50:00+00:00",
+                "estimated": "2025-03-06T11:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:20:00+00:00",
+                "estimated": "2025-03-06T13:20:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "3807",
+                "iata": "U23807",
+                "icao": "EZY3807",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T11:35:00+00:00",
+                "estimated": "2025-03-06T11:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T13:10:00+00:00",
+                "estimated": "2025-03-06T13:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1831",
+                "iata": "AF1831",
+                "icao": "AFR1831",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T11:35:00+00:00",
+                "estimated": "2025-03-06T11:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T13:10:00+00:00",
+                "estimated": "2025-03-06T13:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Mauritius",
+                "iata": "MK",
+                "icao": "MAU"
+            },
+            "flight": {
+                "number": "9357",
+                "iata": "MK9357",
+                "icao": "MAU9357",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1831",
+                    "flight_iata": "af1831",
+                    "flight_icao": "afr1831"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T11:35:00+00:00",
+                "estimated": "2025-03-06T11:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T13:10:00+00:00",
+                "estimated": "2025-03-06T13:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Kenya Airways",
+                "iata": "KQ",
+                "icao": "KQA"
+            },
+            "flight": {
+                "number": "3923",
+                "iata": "KQ3923",
+                "icao": "KQA3923",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1831",
+                    "flight_iata": "af1831",
+                    "flight_icao": "afr1831"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T11:35:00+00:00",
+                "estimated": "2025-03-06T11:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T13:10:00+00:00",
+                "estimated": "2025-03-06T13:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Gol",
+                "iata": "G3",
+                "icao": "GLO"
+            },
+            "flight": {
+                "number": "5095",
+                "iata": "G35095",
+                "icao": "GLO5095",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1831",
+                    "flight_iata": "af1831",
+                    "flight_icao": "afr1831"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "1",
+                "gate": "A",
+                "delay": 17,
+                "scheduled": "2025-03-06T11:35:00+00:00",
+                "estimated": "2025-03-06T11:35:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T13:10:00+00:00",
+                "estimated": "2025-03-06T13:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8260",
+                "iata": "DL8260",
+                "icao": "DAL8260",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1831",
+                    "flight_iata": "af1831",
+                    "flight_icao": "afr1831"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "El Prat De Llobregat",
+                "timezone": "Europe/Madrid",
+                "iata": "BCN",
+                "icao": "LEBL",
+                "terminal": "1",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T15:05:00+00:00",
+                "estimated": "2025-03-06T15:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "27",
+                "delay": null,
+                "scheduled": "2025-03-06T17:05:00+00:00",
+                "estimated": "2025-03-06T17:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1649",
+                "iata": "AF1649",
+                "icao": "AFR1649",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Geneve-cointrin",
+                "timezone": "Europe/Zurich",
+                "iata": "GVA",
+                "icao": "LSGG",
+                "terminal": "1",
+                "gate": "F12",
+                "delay": 10,
+                "scheduled": "2025-03-06T12:05:00+00:00",
+                "estimated": "2025-03-06T12:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "27",
+                "delay": null,
+                "scheduled": "2025-03-06T13:25:00+00:00",
+                "estimated": "2025-03-06T13:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8603",
+                "iata": "DL8603",
+                "icao": "DAL8603",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1843",
+                    "flight_iata": "af1843",
+                    "flight_icao": "afr1843"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Geneve-cointrin",
+                "timezone": "Europe/Zurich",
+                "iata": "GVA",
+                "icao": "LSGG",
+                "terminal": "1",
+                "gate": "F12",
+                "delay": 10,
+                "scheduled": "2025-03-06T12:05:00+00:00",
+                "estimated": "2025-03-06T12:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "27",
+                "delay": null,
+                "scheduled": "2025-03-06T13:25:00+00:00",
+                "estimated": "2025-03-06T13:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Baltic",
+                "iata": "BT",
+                "icao": "BTI"
+            },
+            "flight": {
+                "number": "5793",
+                "iata": "BT5793",
+                "icao": "BTI5793",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1843",
+                    "flight_iata": "af1843",
+                    "flight_icao": "afr1843"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Vienna International",
+                "timezone": "Europe/Vienna",
+                "iata": "VIE",
+                "icao": "LOWW",
+                "terminal": "1",
+                "gate": "C",
+                "delay": null,
+                "scheduled": "2025-03-06T12:25:00+00:00",
+                "estimated": "2025-03-06T12:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T14:30:00+00:00",
+                "estimated": "2025-03-06T14:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1139",
+                "iata": "AF1139",
+                "icao": "AFR1139",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Vienna International",
+                "timezone": "Europe/Vienna",
+                "iata": "VIE",
+                "icao": "LOWW",
+                "terminal": "1",
+                "gate": "C",
+                "delay": null,
+                "scheduled": "2025-03-06T12:25:00+00:00",
+                "estimated": "2025-03-06T12:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T14:30:00+00:00",
+                "estimated": "2025-03-06T14:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Austral",
+                "iata": "UU",
+                "icao": "REU"
+            },
+            "flight": {
+                "number": "8139",
+                "iata": "UU8139",
+                "icao": "REU8139",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1139",
+                    "flight_iata": "af1139",
+                    "flight_icao": "afr1139"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Vienna International",
+                "timezone": "Europe/Vienna",
+                "iata": "VIE",
+                "icao": "LOWW",
+                "terminal": "1",
+                "gate": "C",
+                "delay": null,
+                "scheduled": "2025-03-06T12:25:00+00:00",
+                "estimated": "2025-03-06T12:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T14:30:00+00:00",
+                "estimated": "2025-03-06T14:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "China Eastern Airlines",
+                "iata": "MU",
+                "icao": "CES"
+            },
+            "flight": {
+                "number": "1910",
+                "iata": "MU1910",
+                "icao": "CES1910",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1139",
+                    "flight_iata": "af1139",
+                    "flight_icao": "afr1139"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Vienna International",
+                "timezone": "Europe/Vienna",
+                "iata": "VIE",
+                "icao": "LOWW",
+                "terminal": "1",
+                "gate": "C",
+                "delay": null,
+                "scheduled": "2025-03-06T12:25:00+00:00",
+                "estimated": "2025-03-06T12:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T14:30:00+00:00",
+                "estimated": "2025-03-06T14:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Mauritius",
+                "iata": "MK",
+                "icao": "MAU"
+            },
+            "flight": {
+                "number": "9491",
+                "iata": "MK9491",
+                "icao": "MAU9491",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1139",
+                    "flight_iata": "af1139",
+                    "flight_icao": "afr1139"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Vienna International",
+                "timezone": "Europe/Vienna",
+                "iata": "VIE",
+                "icao": "LOWW",
+                "terminal": "1",
+                "gate": "C",
+                "delay": null,
+                "scheduled": "2025-03-06T12:25:00+00:00",
+                "estimated": "2025-03-06T12:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T14:30:00+00:00",
+                "estimated": "2025-03-06T14:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Kenya Airways",
+                "iata": "KQ",
+                "icao": "KQA"
+            },
+            "flight": {
+                "number": "3997",
+                "iata": "KQ3997",
+                "icao": "KQA3997",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1139",
+                    "flight_iata": "af1139",
+                    "flight_icao": "afr1139"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Vienna International",
+                "timezone": "Europe/Vienna",
+                "iata": "VIE",
+                "icao": "LOWW",
+                "terminal": "1",
+                "gate": "C",
+                "delay": null,
+                "scheduled": "2025-03-06T12:25:00+00:00",
+                "estimated": "2025-03-06T12:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T14:30:00+00:00",
+                "estimated": "2025-03-06T14:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Delta Air Lines",
+                "iata": "DL",
+                "icao": "DAL"
+            },
+            "flight": {
+                "number": "8333",
+                "iata": "DL8333",
+                "icao": "DAL8333",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1139",
+                    "flight_iata": "af1139",
+                    "flight_icao": "afr1139"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Vienna International",
+                "timezone": "Europe/Vienna",
+                "iata": "VIE",
+                "icao": "LOWW",
+                "terminal": "1",
+                "gate": "C",
+                "delay": null,
+                "scheduled": "2025-03-06T12:25:00+00:00",
+                "estimated": "2025-03-06T12:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2F",
+                "gate": null,
+                "baggage": "22",
+                "delay": null,
+                "scheduled": "2025-03-06T14:30:00+00:00",
+                "estimated": "2025-03-06T14:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "China Airlines",
+                "iata": "CI",
+                "icao": "CAL"
+            },
+            "flight": {
+                "number": "9295",
+                "iata": "CI9295",
+                "icao": "CAL9295",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1139",
+                    "flight_iata": "af1139",
+                    "flight_icao": "afr1139"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Sale",
+                "timezone": "Africa/Casablanca",
+                "iata": "RBA",
+                "icao": "GMME",
+                "terminal": null,
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T05:30:00+00:00",
+                "estimated": "2025-03-06T05:30:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "3",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T09:25:00+00:00",
+                "estimated": "2025-03-06T09:25:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air Arabia Maroc",
+                "iata": "3O",
+                "icao": "MAC"
+            },
+            "flight": {
+                "number": "827",
+                "iata": "3O827",
+                "icao": "MAC827",
+                "codeshared": null
+            },
+            "aircraft": {
+                "registration": "CN-NMQ",
+                "iata": "A320",
+                "icao": "A320",
+                "icao24": "020176"
+            },
+            "live": {
+                "updated": "2025-03-06T07:35:57+00:00",
+                "latitude": 46.7041,
+                "longitude": 0.2032,
+                "altitude": 9895,
+                "direction": 25,
+                "speed_horizontal": 709,
+                "speed_vertical": 0,
+                "is_ground": false
+            }
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "landed",
+            "departure": {
+                "airport": "Halle",
+                "timezone": "Europe/Berlin",
+                "iata": "LEJ",
+                "icao": "EDDP",
+                "terminal": null,
+                "gate": null,
+                "delay": 17,
+                "scheduled": "2025-03-06T02:25:00+00:00",
+                "estimated": "2025-03-06T02:25:00+00:00",
+                "actual": "2025-03-06T02:41:00+00:00",
+                "estimated_runway": "2025-03-06T02:41:00+00:00",
+                "actual_runway": "2025-03-06T02:41:00+00:00"
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "CF",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T04:20:00+00:00",
+                "estimated": "2025-03-06T04:20:00+00:00",
+                "actual": "2025-03-06T03:55:00+00:00",
+                "estimated_runway": "2025-03-06T03:55:00+00:00",
+                "actual_runway": "2025-03-06T03:55:00+00:00"
+            },
+            "airline": {
+                "name": "DHL Air",
+                "iata": "D0",
+                "icao": "DHK"
+            },
+            "flight": {
+                "number": "1262",
+                "iata": "D01262",
+                "icao": "DHK1262",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Doha International",
+                "timezone": "Asia/Qatar",
+                "iata": "DOH",
+                "icao": "OTHH",
+                "terminal": null,
+                "gate": "A9",
+                "delay": 25,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": "2025-03-06T09:25:00+00:00",
+                "estimated_runway": "2025-03-06T09:25:00+00:00",
+                "actual_runway": "2025-03-06T09:25:00+00:00"
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:10:00+00:00",
+                "estimated": "2025-03-06T14:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Virgin Australia",
+                "iata": "VA",
+                "icao": "VOZ"
+            },
+            "flight": {
+                "number": "6005",
+                "iata": "VA6005",
+                "icao": "VOZ6005",
+                "codeshared": {
+                    "airline_name": "qatar airways",
+                    "airline_iata": "qr",
+                    "airline_icao": "qtr",
+                    "flight_number": "43",
+                    "flight_iata": "qr43",
+                    "flight_icao": "qtr43"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Doha International",
+                "timezone": "Asia/Qatar",
+                "iata": "DOH",
+                "icao": "OTHH",
+                "terminal": null,
+                "gate": "A9",
+                "delay": 25,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": "2025-03-06T09:25:00+00:00",
+                "estimated_runway": "2025-03-06T09:25:00+00:00",
+                "actual_runway": "2025-03-06T09:25:00+00:00"
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:10:00+00:00",
+                "estimated": "2025-03-06T14:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Iberia",
+                "iata": "IB",
+                "icao": "IBE"
+            },
+            "flight": {
+                "number": "6248",
+                "iata": "IB6248",
+                "icao": "IBE6248",
+                "codeshared": {
+                    "airline_name": "qatar airways",
+                    "airline_iata": "qr",
+                    "airline_icao": "qtr",
+                    "flight_number": "43",
+                    "flight_iata": "qr43",
+                    "flight_icao": "qtr43"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "active",
+            "departure": {
+                "airport": "Doha International",
+                "timezone": "Asia/Qatar",
+                "iata": "DOH",
+                "icao": "OTHH",
+                "terminal": null,
+                "gate": "A9",
+                "delay": 25,
+                "scheduled": "2025-03-06T09:00:00+00:00",
+                "estimated": "2025-03-06T09:00:00+00:00",
+                "actual": "2025-03-06T09:25:00+00:00",
+                "estimated_runway": "2025-03-06T09:25:00+00:00",
+                "actual_runway": "2025-03-06T09:25:00+00:00"
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "1",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:10:00+00:00",
+                "estimated": "2025-03-06T14:10:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "RwandAir",
+                "iata": "WB",
+                "icao": "RWD"
+            },
+            "flight": {
+                "number": "1154",
+                "iata": "WB1154",
+                "icao": "RWD1154",
+                "codeshared": {
+                    "airline_name": "qatar airways",
+                    "airline_iata": "qr",
+                    "airline_icao": "qtr",
+                    "flight_number": "43",
+                    "flight_iata": "qr43",
+                    "flight_icao": "qtr43"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Houari Boumediene",
+                "timezone": "Africa/Algiers",
+                "iata": "ALG",
+                "icao": "DAAG",
+                "terminal": "4",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:40:00+00:00",
+                "estimated": "2025-03-06T14:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "32",
+                "delay": null,
+                "scheduled": "2025-03-06T17:15:00+00:00",
+                "estimated": "2025-03-06T17:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "1855",
+                "iata": "AF1855",
+                "icao": "AFR1855",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Houari Boumediene",
+                "timezone": "Africa/Algiers",
+                "iata": "ALG",
+                "icao": "DAAG",
+                "terminal": "4",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:40:00+00:00",
+                "estimated": "2025-03-06T14:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "32",
+                "delay": null,
+                "scheduled": "2025-03-06T17:15:00+00:00",
+                "estimated": "2025-03-06T17:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "China Eastern Airlines",
+                "iata": "MU",
+                "icao": "CES"
+            },
+            "flight": {
+                "number": "1562",
+                "iata": "MU1562",
+                "icao": "CES1562",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1855",
+                    "flight_iata": "af1855",
+                    "flight_icao": "afr1855"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Houari Boumediene",
+                "timezone": "Africa/Algiers",
+                "iata": "ALG",
+                "icao": "DAAG",
+                "terminal": "4",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:40:00+00:00",
+                "estimated": "2025-03-06T14:40:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "32",
+                "delay": null,
+                "scheduled": "2025-03-06T17:15:00+00:00",
+                "estimated": "2025-03-06T17:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "KLM",
+                "iata": "KL",
+                "icao": "KLM"
+            },
+            "flight": {
+                "number": "2183",
+                "iata": "KL2183",
+                "icao": "KLM2183",
+                "codeshared": {
+                    "airline_name": "air france",
+                    "airline_iata": "af",
+                    "airline_icao": "afr",
+                    "flight_number": "1855",
+                    "flight_iata": "af1855",
+                    "flight_icao": "afr1855"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Milano Malpensa",
+                "timezone": "Europe/Rome",
+                "iata": "MXP",
+                "icao": "LIMC",
+                "terminal": "2",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T13:15:00+00:00",
+                "estimated": "2025-03-06T13:15:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2B",
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-06T14:45:00+00:00",
+                "estimated": "2025-03-06T14:45:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "easyJet",
+                "iata": "U2",
+                "icao": "EZY"
+            },
+            "flight": {
+                "number": "4544",
+                "iata": "U24544",
+                "icao": "EZY4544",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        },
+        {
+            "flight_date": "2025-03-06",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Shanghai Pudong International",
+                "timezone": "Asia/Shanghai",
+                "iata": "PVG",
+                "icao": "ZSPD",
+                "terminal": "1",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-06T22:05:00+00:00",
+                "estimated": "2025-03-06T22:05:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Charles De Gaulle",
+                "timezone": "Europe/Paris",
+                "iata": "CDG",
+                "icao": "LFPG",
+                "terminal": "2E",
+                "gate": null,
+                "baggage": "33",
+                "delay": null,
+                "scheduled": "2025-03-07T05:50:00+00:00",
+                "estimated": "2025-03-07T05:50:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air France",
+                "iata": "AF",
+                "icao": "AFR"
+            },
+            "flight": {
+                "number": "111",
+                "iata": "AF111",
+                "icao": "AFR111",
+                "codeshared": null
+            },
+            "aircraft": null,
+            "live": null
+        }
+    ]
+}
