@@ -6,7 +6,7 @@
   left: 0;
 }
 
-#topbar{
+#topbar {
   position: absolute;
   z-index: 1000;
   width: 100%;
@@ -15,42 +15,64 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-.profil-search-div{
-  padding-right: 20px;
+.profil-search-div {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.search{
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search {
   background-color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px;
-    font-size: 14px;
+  padding: 10px 35px 10px 10px; /* Espace à droite pour l'icône */
+  font-size: 14px;
+  width: 200px;
 }
 
-.profil{
+.search-icon {
+  position: absolute;
+  right: 10px;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
 }
 
-.logo-div{
-  padding-left: 20px;
+
+.profil {
+  cursor: pointer;
+}
+
+.logo-div {
   display: flex;
   align-items: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.logo-div img{
+.logo-div img {
   border-radius: 50%;
 }
 
-.logo-div span{
+.logo-div span {
   color: white;
   font-size: 16px;
   margin-left: 10px;
+}
+
+.clock {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 1000px;
 }
 
 #sidebar {
@@ -62,16 +84,16 @@
   left: 50px;
   bottom: 50px;
   padding: 15px;
-  overflow: hidden
+  overflow: hidden;
 }
 
-.favori{
+.favori {
   color: white;
   font-size: 12px;
   margin-bottom: 5px;
 }
 
-.list-card{
+.list-card {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -84,13 +106,8 @@
   width: 2px;
   height: 2px;
 }
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
 ::-webkit-scrollbar-thumb {
   background: #e1e1e1;
-  border: 0px none #ffffff;
   border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -101,7 +118,6 @@
 }
 ::-webkit-scrollbar-track {
   background: #666666;
-  border: 0px none #ffffff;
   border-radius: 50px;
 }
 ::-webkit-scrollbar-track:hover {
@@ -114,7 +130,6 @@
   background: transparent;
 }
 
-
 .profile-container {
   position: relative;
   display: inline-block;
@@ -125,13 +140,13 @@
   height: 40px;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #023430; /* Couleur personnalisée */
+  background-color: #023430;
   padding: 5px;
 }
 
 .profile-modal {
   position: absolute;
-  top: 50px; /* Place le modal sous l'icône */
+  top: 50px;
   right: 0;
   background: white;
   border-radius: 8px;

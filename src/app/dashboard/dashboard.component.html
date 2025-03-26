@@ -2,10 +2,16 @@
 <div id="topbar">
   <div class="logo-div">
     <img src="assets/CLOUDtrack.png" width="30" alt="Logo" />
+
     <span>CLOUDtrack</span>
   </div>
+  <div class="clock">{{ currentTime }}</div>
+
   <div class="profil-search-div">
-    <input type="text" placeholder="Rechercher un vol" class="search" />
+    <div class="search-container">
+      <input type="text" placeholder="Rechercher un vol" class="search" />
+      <img src="assets/loupe.png" class="search-icon" alt="Rechercher" />
+    </div>
     <img
       class="profil"
       src="assets/profil.png"
@@ -23,8 +29,8 @@
   <div>
     <span class="favori">
       Aéroport d'arrivée favori:
-      <strong>{{ flightsByAirport[0].arrival.airport }}</strong></span
-    >
+      <strong>{{ flightsByAirport[0].arrival.airport }}</strong>
+    </span>
   </div>
   <div class="list-card">
     <div *ngFor="let flight of flightsByAirport">

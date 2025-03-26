@@ -250,12 +250,11 @@
 
 
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ApiService } from '../api.service';
-import { FlightState, FlightsApiData } from '../modelsOpenSky';
-import * as L from 'leaflet';
 import { HttpClient } from '@angular/common/http';
+import * as L from 'leaflet';
 import 'leaflet-rotatedmarker';
 
 @Component({
@@ -263,15 +262,18 @@ import 'leaflet-rotatedmarker';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   private data: any | null = null;
   private map!: L.Map;
   private markers: { [key: string]: L.Marker } = {};
-  
+
   @Input() flightsByAirport: any | null = null;
   @Input() flights?: any[];
   @Input() user?: any;
   isModalOpen = false;
+
+  currentTime: string = '';  // 🕒 Propriété pour stocker l'heure
+  private clockInterval: any; // Intervalle pour l'horloge
 
   constructor(
     private authService: AuthService,
@@ -279,21 +281,40 @@ export class DashboardComponent implements OnInit {
     private http: HttpClient
   ) {}
 
-
-  toggleModal() {
-    this.isModalOpen = !this.isModalOpen;
-  }
-
-  
-  logout() {
-    this.authService.logOut();
-    console.log('User logged out');
-  }
-
   ngOnInit(): void {
     this.initMap();
     this.fetchFlights();
     this.fetchFlightsByAirport('CDG');
+
+    // 🕒 Initialisation de l'horloge en temps réel
+    this.updateClock();
+    this.clockInterval = setInterval(() => {
+      this.updateClock();
+    }, 1000);
+  }
+
+  ngOnDestroy(): void {
+    // 🛑 Nettoyage de l'intervalle pour éviter les fuites de mémoire
+    if (this.clockInterval) {
+      clearInterval(this.clockInterval);
+    }
+  }
+
+  private updateClock(): void {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    this.currentTime = `${hours}:${minutes}:${seconds}`;
+  }
+
+  toggleModal(): void {
+    this.isModalOpen = !this.isModalOpen;
+  }
+
+  logout(): void {
+    this.authService.logOut();
+    console.log('User logged out');
   }
 
   private initMap(): void {
@@ -310,42 +331,17 @@ export class DashboardComponent implements OnInit {
   }
 
   private fetchFlights(): void {
-    // this.api.getFlights().subscribe(
-    //   (response: FlightsApiData) => {
-    //     console.log("Vols: ", response);
-        
-    //     this.data = response;
-    //     this.updateMap(this.data);
-    //   },
-    //   (error) => {
-    //     console.error('Erreur lors de la récupération des vols:', error);
-    //   }
-    // );
-
-        this.http.get('../assets/flightsOpenSky.json').subscribe((response) => {
-        this.data = response;
-        console.log("Vols: ", this.data);
-        
-        this.updateMap(this.data);
-      });
+    this.http.get('../assets/flightsOpenSky.json').subscribe((response) => {
+      this.data = response;
+      console.log("Vols: ", this.data);
+      this.updateMap(this.data);
+    });
   }
 
   private fetchFlightsByAirport(airport: string): void {
-    //     this.api.getFlightsByAirpot(airport).subscribe(
-    //   (response: any) => {
-    //     console.log("Vols: ", response);
-        
-    //     this.flightsByAirport = response;
-    //   },
-    //   (error) => {
-    //     console.error('Erreur lors de la récupération des vols de l\'aéroport ', airport, '. ', error);
-    //   }
-    // );
-
     this.http.get<any>('../assets/flightsToCDG.json').subscribe((response) => {
       this.flightsByAirport = response.data.slice(0, 5);
       console.log("Vols par aéroport: ", this.flightsByAirport);
-      
     });
   }
 
@@ -430,7 +426,6 @@ export class DashboardComponent implements OnInit {
             </a>
           </div>
         `);
-        
       }
     });
   }
