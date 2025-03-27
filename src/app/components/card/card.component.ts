@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() flight: any;
+
+  // changed(evt: any){
+  //   console.log(evt);
+  // }
 }

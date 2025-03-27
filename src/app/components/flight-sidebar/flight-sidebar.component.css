@@ -1,0 +1,23 @@
+#flight-info{
+    position: absolute;
+    z-index: 1000;
+    font-size: 14px;
+    background-color: rgba(2, 52, 48, 0.5);
+    top: 60px;
+    left: 50px;
+    bottom: 50px;
+    padding: 15px;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(-400px); /* cachée par défaut */
+    width: 200px;
+    height: 200px;
+}
+
+#flight-info.open{
+    transform: translateX(0);
+}
+
+#flight-info.hidden{
+    display: hidden;
+}

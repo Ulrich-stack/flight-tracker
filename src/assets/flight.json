@@ -1,0 +1,63 @@
+{
+    "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "count": 1,
+        "total": 1
+    },
+    "data": [
+        {
+            "flight_date": "2025-03-26",
+            "flight_status": "scheduled",
+            "departure": {
+                "airport": "Auckland International",
+                "timezone": "Pacific/Auckland",
+                "iata": "AKL",
+                "icao": "NZAA",
+                "terminal": "I",
+                "gate": null,
+                "delay": null,
+                "scheduled": "2025-03-26T00:55:00+00:00",
+                "estimated": "2025-03-26T00:55:00+00:00",
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "arrival": {
+                "airport": "Singapore Changi",
+                "timezone": "Asia/Singapore",
+                "iata": "SIN",
+                "icao": "WSSS",
+                "terminal": null,
+                "gate": null,
+                "baggage": null,
+                "delay": null,
+                "scheduled": "2025-03-26T06:30:00+00:00",
+                "estimated": null,
+                "actual": null,
+                "estimated_runway": null,
+                "actual_runway": null
+            },
+            "airline": {
+                "name": "Air India",
+                "iata": "AI",
+                "icao": "AIC"
+            },
+            "flight": {
+                "number": "8105",
+                "iata": "AI8105",
+                "icao": "AIC8105",
+                "codeshared": {
+                    "airline_name": "singapore airlines",
+                    "airline_iata": "sq",
+                    "airline_icao": "sia",
+                    "flight_number": "282",
+                    "flight_iata": "sq282",
+                    "flight_icao": "sia282"
+                }
+            },
+            "aircraft": null,
+            "live": null
+        }
+    ]
+}

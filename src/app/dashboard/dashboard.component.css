@@ -53,6 +53,10 @@
   margin-left: 10px;
 }
 
+.hidden{
+  display: none;
+}
+
 #sidebar {
   position: absolute;
   z-index: 1000;
@@ -62,7 +66,35 @@
   left: 50px;
   bottom: 50px;
   padding: 15px;
-  overflow: hidden
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-200%); /* cachée par défaut */
+}
+
+#sidebar.open {
+  transform: translateX(0); /* affichée */
+}
+
+#filters{
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  z-index: 1000;
+  background-color: #023430;
+  border: none;
+  padding: 10px;
+  color: white  ;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+#filters:hover{
+  background-color: #025c54;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .favori{
@@ -79,6 +111,8 @@
   height: calc(100% - 10px);
   overflow-y: auto;
 }
+
+
 
 ::-webkit-scrollbar {
   width: 2px;
@@ -154,4 +188,60 @@
 
 .profile-modal li:hover {
   background: rgba(0, 0, 0, 0.1);
+}
+/* 
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: #e93434;
+    color: #ffffff;
+} */
+
+.search{
+  border: none;
+}
+
+.search:focus{
+  outline: none;
+}
+
+#sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#sidebar-header button{
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+.arrow{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1000;
+}
+
+
+
+.arrow button{
+  border: none;
+  background-color: rgba(2, 52, 48, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.arrow button:hover{
+  background-color: rgba(2, 52, 48, 0.8);
+}
+
+.info-button:hover {
+  background-color: black; /* exemple : fond gris clair */
+  border-radius: 4px;       /* pour arrondir légèrement */
 }

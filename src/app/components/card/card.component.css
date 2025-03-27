@@ -6,7 +6,7 @@
 
 .cards {
   background-color: white;
-  font-size: 10px;
+  font-size: 12px;
   padding: 10px 8px;
   border-radius: 5px;
   margin-top: 5px;
@@ -69,3 +69,4 @@
 .star:checked:before {
    content: "\2606";
 }
+

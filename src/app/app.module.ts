@@ -14,10 +14,11 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { firebaseConfig } from '../env/env';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './components/card/card.component';
 import { ProfileModalComponent } from './profile-modal/profile-modal.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { FlightSidebarComponent } from './components/flight-sidebar/flight-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     ProfileModalComponent,
     VerificationEmailComponent,
     ForgotPasswordComponent,
+    FlightSidebarComponent,
   ],
   imports: [
     FormsModule,

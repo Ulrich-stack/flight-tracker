@@ -25,7 +25,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { FlightsApiData } from './modelsOpenSky';
 
 @Injectable({
@@ -47,5 +47,30 @@ export class ApiService {
     return this.http.get<any>(
             this.baseUrlOpenSky + '/flights?access_key=' + this.apiKey + '&arr_iata=' + airport
     )
+  }
+  public getFlightByIcao24(icao24: string): Observable<any> {
+         
+    const statesUrl = `https://opensky-network.org/api/states/all?icao24=${icao24}`;
+    const trackUrl = `https://opensky-network.org/api/tracks/all?icao24=${icao24}&time=0`;
+
+    const states$ = this.http.get<any>(statesUrl);
+    const track$ = this.http.get<any>(trackUrl);
+
+    console.log("Response: ", states$, " ", track$);
+    
+    return forkJoin({
+      states: states$,
+      track: track$
+    })
+  }
+
+  public getFlightInfoByIcao24(icao: string): Observable<any>{ /*utilise aviationstack pour avoir des infos supplémentaires sur l'appareil
+      Je n'ai pas mis dans getFlightByIcao car cette dernière est beaucoup plus sollicitée
+    */
+
+      return this.http.get<any>(
+              this.baseUrlAviationSky + '/flights?access_key=' + this.apiKey + '&flight_iata=' + icao
+      )
+
   }
 }
