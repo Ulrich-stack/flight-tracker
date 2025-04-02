@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
       //   console.log(results.data);
         
       // })
+      this.authService.loadUserDataOnAppStart();
 
       
   }

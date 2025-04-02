@@ -1,0 +1,106 @@
+[
+    {
+      "name": "Afrique du Sud",
+      "code": "za"
+    },
+    {
+      "name": "Algérie",
+      "code": "dz"
+    },
+    {
+      "name": "Allemagne",
+      "code": "de"
+    },
+    {
+      "name": "Argentine",
+      "code": "ar"
+    },
+    {
+      "name": "Australie",
+      "code": "au"
+    },
+    {
+      "name": "Brésil",
+      "code": "br"
+    },
+    {
+      "name": "Canada",
+      "code": "ca"
+    },
+    {
+      "name": "Chine",
+      "code": "cn"
+    },
+    {
+      "name": "Corée du Sud",
+      "code": "kr"
+    },
+    {
+      "name": "Espagne",
+      "code": "es"
+    },
+    {
+      "name": "France",
+      "code": "fr"
+    },
+    {
+      "name": "Inde",
+      "code": "in"
+    },
+    {
+      "name": "Italie",
+      "code": "it"
+    },
+    {
+      "name": "Japon",
+      "code": "jp"
+    },
+    {
+      "name": "Maroc",
+      "code": "ma"
+    },
+    {
+      "name": "Nigéria",
+      "code": "ng"
+    },
+    {
+      "name": "Nouvelle-Zélande",
+      "code": "nz"
+    },
+    {
+      "name": "Pays-Bas",
+      "code": "nl"
+    },
+    {
+      "name": "Portugal",
+      "code": "pt"
+    },
+    {
+      "name": "Royaume-Uni",
+      "code": "gb"
+    },
+    {
+      "name": "Russie",
+      "code": "ru"
+    },
+    {
+      "name": "Suisse",
+      "code": "ch"
+    },
+    {
+      "name": "Tunisie",
+      "code": "tn"
+    },
+    {
+      "name": "Turquie",
+      "code": "tr"
+    },
+    {
+      "name": "Égypte",
+      "code": "eg"
+    },
+    {
+      "name": "États-Unis",
+      "code": "us"
+    }
+  ]

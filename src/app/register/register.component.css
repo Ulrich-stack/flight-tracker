@@ -1,5 +1,4 @@
 /* Importation de la police depuis Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
 
 /* Conteneur pour aligner l'image et le texte */
 .title {
@@ -76,8 +75,6 @@
 /* Partie gauche : Image */
 .inscription-image {
     width: 75%;
-    background: url('/assets/image.png') no-repeat center center/cover;
-    /* Remplace 'image.png' par le bon chemin */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,20 +197,57 @@ button:hover {
 }
 
 
-/* Pour rendre la page responsive */
-@media (max-width: 768px) {
+/* ✅ Équilibrage tablette */
+@media (min-width: 768px) and (max-width: 1024px) {
     .container {
-        flex-direction: column;
-        height: auto;
+      flex-direction: row;
+      height: auto;
     }
-
+  
     .inscription-image {
-        width: 100%;
-        height: 40vh;
+      width: 50%;
+      height: 100vh;
     }
-
+  
+    .inscription-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
     .inscription-form {
-        width: 100%;
-        padding: 2rem;
+      width: 50%;
+      padding: 2rem;
+      justify-content: center;
     }
-}
+  
+    .image-text {
+      font-size: 40px;
+      left: 50%;
+      width: 80%;
+    }
+  
+    .texth {
+      font-size: 14px;
+      left: 50%;
+      width: 80%;
+    }
+  }
+  
+  /* ✅ Mobile : masquer image */
+  @media (max-width: 767px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .inscription-image {
+      display: none;
+    }
+  
+    .inscription-form {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+  

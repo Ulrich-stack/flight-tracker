@@ -1,3 +1,93 @@
-<div id="flight-info" [ngClass]="{open: showModal, hidden: !showModal}">
-    {{flight}}
+<div id="flight-info-container" [ngClass]="{ open: showModal, hidden: !showModal }"  *ngIf="flight">
+    <div id="flight-info" >
+        <button class="close" (click)="handleClose()">
+        <img  src="assets/close.png" alt="close" width="12">
+
+        </button>
+        <div class="flight-card">
+            <!-- En-tête avec le numéro de vol et le statut -->
+            <div class="flight-header">
+              <div class="flight-number">
+                <!-- Afficher le flightNumber + callsign ou autre identifiant -->
+                <span class="callsign">{{ flight.flightNumber }}</span>
+                <small>({{ flight.callsign }})</small>
+              </div>
+              
+            </div>
+          
+            <!-- Nom de la compagnie aérienne -->
+            <!-- <div class="airline-info">
+              <img src="assets/airline.png" alt="Airline logo" class="airline-logo" />
+              <span class="airline-name">
+                {{ flight.airlineName }} ({{ flight.airlineCode }})
+              </span>
+            </div> -->
+          
+            <!-- Bloc Départ / Arrivée -->
+            <div class="flight-schedule">
+              <!-- Départ -->
+              <div class="schedule-block  departure">
+                <img src="assets/plane-up.png" alt="Departure" class="icon" width="20"/>
+                <div class="airport">
+                    <span class="airport-text">Aéroport de départ</span>
+                  <div class="airport-value">{{ flight.departureAirport }} ({{ flight.departureIata }})</div>
+    
+                </div>
+              </div>
+          
+              <!-- Arrivée -->
+              <div class="schedule-block arrival">
+                <img src="assets/plane-down.png" alt="Arrival" class="icon" width="20" />
+                <div class="airport">
+                    <span class="airport-text">Aéroport d'arrivée</span>
+                  <div class="airport-value">{{ flight.arrivalAirport }} ({{ flight.arrivalIata }})</div>
+    
+                </div>
+              </div>
+            </div>
+            <div class="times">
+                  <div class="time">
+                    
+                    <span>Départ</span>
+                    <strong *ngIf="flight.departureScheduled">
+                      {{ flight.departureScheduled | date:'shortTime' }}
+                    </strong>
+                    <em *ngIf="!flight.departureScheduled">N/A</em>
+                  </div>
+                  <div class="time">
+                    <span>
+                    Arrivée
+                    </span>
+                    <strong *ngIf="flight.arrivalScheduled">
+                      {{ flight.arrivalScheduled | date:'shortTime' }}
+                    </strong>
+                    <em *ngIf="!flight.arrivalScheduled">N/A</em>
+                  </div>
+            </div>
+    
+            <div class="flight-status" *ngIf="flight.flightStatus">
+                <div class="status" [ngClass]="getTranslatedStatus(flight.flightStatus).class"></div>
+                <span class="status-value scheduled">{{ getTranslatedStatus(flight.flightStatus).label }}</span>
+            </div>
+          
+            <!-- Bloc Informations live (OpenSky) -->
+            <div class="live-info">
+              <div class="item"><strong>Position: </strong> {{ flight.latitude }}, {{ flight.longitude }}</div>
+              <div class="item"><strong>Altitude: </strong> 
+                <span *ngIf="flight.altitude; else noAltitude">{{ flight.altitude }} m</span>
+                <ng-template #noAltitude>N/A</ng-template>
+              </div>
+              <div class="item"><strong>Vitesse: </strong>
+                <span *ngIf="flight.speed; else noSpeed">{{ flight.speed }} km/h</span>
+                <ng-template #noSpeed>N/A</ng-template>
+              </div>
+              <div class="item"><strong>Cap :</strong>
+                <span *ngIf="flight.heading; else noHeading">{{ flight.heading | number:'1.0-2' }}°</span>
+                <ng-template #noHeading>N/A</ng-template>
+              </div>
+              <div class="item"><strong>Pays immatriculation :</strong> {{ flight.originCountry }}</div>
+            </div>
+          </div>
+          
+    </div>
 </div>

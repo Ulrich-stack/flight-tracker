@@ -1,0 +1,72 @@
+<div class="filter-panel">
+    <h3>Filtres de vols OpenSky</h3>
+    <form (ngSubmit)="applyFilters()">
+      <!-- Aéroport de départ -->
+      <div class="form-group">
+        <label for="depAirport">Aéroport de départ (ICAO):</label>
+        <input
+          type="text"
+          id="depAirport"
+          name="depAirport"
+          [(ngModel)]="filters.depAirport"
+          placeholder="ex: LFPG"
+        />
+      </div>
+  
+      <!-- Aéroport d'arrivée -->
+      <div class="form-group">
+        <label for="arrAirport">Aéroport d'arrivée (ICAO):</label>
+        <input
+          type="text"
+          id="arrAirport"
+          name="arrAirport"
+          [(ngModel)]="filters.arrAirport"
+          placeholder="ex: LFPG"
+        />
+      </div>
+  
+      <!-- Sélecteur de date et heure pour le début -->
+      <div class="form-group">
+        <label for="beginDate">Début :</label>
+        <!-- Utilisez matInput avec Angular Material ou input type="date" -->
+        <input
+          type="date"
+          id="beginDate"
+          name="beginDate"
+          [(ngModel)]="beginDate"
+        />
+      </div>
+      <div class="form-group">
+        <label for="beginTime">Heure de début :</label>
+        <input
+          type="time"
+          id="beginTime"
+          name="beginTime"
+          [(ngModel)]="beginTime"
+        />
+      </div>
+  
+      <!-- Sélecteur de date et heure pour la fin -->
+      <div class="form-group">
+        <label for="endDate">Fin :</label>
+        <input
+          type="date"
+          id="endDate"
+          name="endDate"
+          [(ngModel)]="endDate"
+        />
+      </div>
+      <div class="form-group">
+        <label for="endTime">Heure de fin :</label>
+        <input
+          type="time"
+          id="endTime"
+          name="endTime"
+          [(ngModel)]="endTime"
+        />
+      </div>
+  
+      <button type="submit">Appliquer les filtres</button>
+    </form>
+  </div>
+  

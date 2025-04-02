@@ -13,16 +13,16 @@
             <span class="cloudtrack-login">CLOUDTRACK</span>
         </div>
         <h2>INSCRIPTION</h2>
-        <p>Avez-vous un compte? <a href="/login">Connectez-vous</a></p>
+        <p>Avez-vous un compte? <a routerLink="/login">Connectez-vous</a></p>
 
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
             <div class="input-group">
-                <input type="text" id="name" formControlName="name" placeholder="Nom">
+                <input type="text" id="nom" formControlName="nom" placeholder="Nom">
                 <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom">
             </div>
             <input type="email" id="email" formControlName="email" placeholder="Email">
             <input type="password" id="password" formControlName="password" placeholder="Entrez votre mot de passe">
-            <button type="button" (click)="onSubmit()">Créer le compte</button>
+            <button type="button" (click)="onSubmit()">S'inscrire</button>
         </form>
     </div>
 </div>

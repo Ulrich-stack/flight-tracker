@@ -1,0 +1,61 @@
+<div class="profile-wrapper">
+    <div class="profile-container" *ngIf="userData">
+        <h2 class="header">
+            <a class="go-back" routerLink="/">
+              <img src="assets/fleche-gauche-vert.png" width="20" alt="Retour" />
+              Mon profil
+            </a>
+          </h2>  
+      <div class="profile-item">
+        <label>Email :</label>
+        <span>{{ userData.email }}</span>
+      </div>
+  
+      <div class="profile-item">
+        <label>Nom d'utilisateur :</label>
+        <ng-container *ngIf="!editMode; else editUsername">
+          <span>{{ userData.username }}</span>
+        </ng-container>
+        <ng-template #editUsername>
+          <input type="text" [(ngModel)]="updatedUsername" (keyup.enter)="saveChanges()" />
+        </ng-template>
+      </div>
+  
+      <div class="profile-item">
+        <label>Aéroport Favori :</label>
+        <span>
+          {{ userData.favoriteAirport.name }}
+          ({{ userData.favoriteAirport.code }})
+        </span>
+      </div>
+  
+      <div class="profile-item">
+        <label>Pays Favoris :</label>
+        <div class="country-list">
+          <span
+            class="country-tag"
+            *ngFor="let code of userData.favoriteCountries"
+          >
+            <img
+              [src]="'https://flagcdn.com/24x18/' + code + '.png'"
+              alt="{{ code }}"
+            />
+            {{ code.toUpperCase() }}
+          </span>
+        </div>
+      </div>
+  
+      <div class="profile-buttons">
+        <button *ngIf="!editMode" class="edit" (click)="enableEdit()">Modifier</button>
+        <ng-container *ngIf="editMode">
+          <button class="cancel" (click)="cancelEdit()">❌ Annuler</button>
+        </ng-container>
+        <button class="logout" (click)="logOut()">Se déconnecter</button>
+      </div>
+    </div>
+  
+    <div *ngIf="!userData" class="loading">
+      Chargement du profil...
+    </div>
+  </div>
+  

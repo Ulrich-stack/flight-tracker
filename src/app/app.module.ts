@@ -19,6 +19,12 @@ import { ProfileModalComponent } from './profile-modal/profile-modal.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { FlightSidebarComponent } from './components/flight-sidebar/flight-sidebar.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FlightFiltersComponent } from './components/flight-filters/flight-filters.component';
+import { StatsPageComponent } from './stats-page/stats-page.component';
+import { NgChartsModule } from 'ng2-charts';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +37,9 @@ import { FlightSidebarComponent } from './components/flight-sidebar/flight-sideb
     VerificationEmailComponent,
     ForgotPasswordComponent,
     FlightSidebarComponent,
+    FlightFiltersComponent,
+    StatsPageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     FormsModule,
@@ -38,9 +47,11 @@ import { FlightSidebarComponent } from './components/flight-sidebar/flight-sideb
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgSelectModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    NgChartsModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

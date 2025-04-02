@@ -101,3 +101,15 @@ export interface Flight{
 //   speed_vertical: number; // Vitesse verticale (en m/s)
 //   is_ground: boolean; // Indique si l'appareil est au sol
 // }
+
+export interface UserData {
+  uid: string;
+  email: string;
+  username: string;
+  favoriteAirport: {
+    name: string,
+    code: string
+  },
+  favoriteCountries: string[];
+  favoriteFlights: string[];
+}

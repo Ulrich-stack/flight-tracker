@@ -1,0 +1,153 @@
+<div class="stats-wrapper">
+  <h2 class="header">
+    <a class="go-back" routerLink="/">
+      <img src="assets/fleche-gauche.png" width="20" alt="Retour" />
+      Statistiques
+    </a>
+  </h2>
+
+  <!-- 🔹 Section 1 : Statistiques Globales -->
+  <section class="global-stats">
+    <h2 class="header">Statistiques Globales</h2>
+    <div class="card-row">
+      <ng-container *ngIf="!isLoadingGlobal; else shimmerGlobal">
+        <div class="stat-card">
+          <h4>Vols en cours</h4>
+          <p>{{ globalStats.inFlight }}</p>
+        </div>
+        <div class="stat-card">
+          <h4>Altitude moyenne</h4>
+          <p>{{ globalStats.avgAltitude }} m</p>
+        </div>
+        <div class="stat-card">
+          <h4>Vitesse moyenne</h4>
+          <p>{{ globalStats.avgSpeed }} km/h</p>
+        </div>
+      </ng-container>
+      <ng-template #shimmerGlobal>
+        <div class="stat-card shimmer" *ngFor="let x of [1, 2, 3]"></div>
+      </ng-template>
+    </div>
+  </section>
+
+  <!-- 🔹 Section 2 : Activité d’un Aéroport -->
+  <section class="airport-stats">
+    <div class="airport-header header">
+      <h2>Activité de l'aéroport ({{ selectedAirport.name }})</h2>
+      <div class="autocomplete-container">
+        <input
+          type="text"
+          [(ngModel)]="airportSearch"
+          (input)="filterAirports()"
+          placeholder="Rechercher un aéroport..."
+          (focus)="showAirportDropdown = true"
+          (blur)="hideDropdownWithDelay()"
+        />
+        <ul *ngIf="showAirportDropdown" class="autocomplete-dropdown">
+          <li
+            *ngFor="let airport of filteredAirports"
+            (mousedown)="selectAirport(airport)"
+          >
+            {{ airport.name }} ({{ airport.code }})
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="airport-row">
+      <!-- Gauche : Stats -->
+      <div class="airport-left">
+        <ng-container *ngIf="!isLoadingAirport; else shimmerAirport">
+          <div class="stat-card vols">
+            <h4>Vols arrivés (6h)</h4>
+            <p>{{ airportStats.arrivals }}</p>
+          </div>
+          <div class="stat-card vols">
+            <h4>Vols partis (6h)</h4>
+            <p>{{ airportStats.departures }}</p>
+          </div>
+        </ng-container>
+        <ng-template #shimmerAirport>
+          <div class="stat-card shimmer"></div>
+          <div class="stat-card shimmer"></div>
+        </ng-template>
+      </div>
+
+      <!-- Droite : Graphique -->
+      <div class="airport-right stat-company-card">
+        <ng-container *ngIf="!isLoadingCompanies; else shimmerChart">
+          <h4>Top compagnies à {{ selectedAirport.name }}</h4>
+          <div *ngIf="showNoDataMessage" class="no-data">
+            Aucun vol trouvé pour cet aéroport récemment.
+          </div>
+          <div class="company-chart" *ngIf="!showNoDataMessage">
+            <canvas
+              baseChart
+              [type]="'doughnut'"
+              [data]="companyChartData"
+              [options]="companyChartOptions"
+            >
+            </canvas>
+          </div>
+        </ng-container>
+        <ng-template #shimmerChart>
+          <div class="company-chart shimmer"></div>
+        </ng-template>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-stats">
+    <div class="header country-header">
+      <h2>Survols par pays</h2>
+
+      <div class="autocomplete-container" *ngIf="showCountryInput">
+        <input
+          type="text"
+          [(ngModel)]="countrySearch"
+          (input)="filterCountries()"
+          placeholder="Ajouter un pays..."
+          (focus)="showCountryDropdown = true"
+          (blur)="hideCountryDropdownWithDelay()"
+        />
+        <ul *ngIf="showCountryDropdown" class="autocomplete-dropdown">
+            <li
+              *ngFor="let country of filteredCountries"
+              (mousedown)="selectCountry(country)"
+            >
+              <img [src]="'https://flagcdn.com/w20/' + country.code + '.png'" width="20" />
+              {{ country.name }}
+            </li>
+          </ul>
+          
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <!-- 🟢 Pays affichés -->
+      <div class="country-card removable" *ngFor="let country of selectedCountries">
+        <button class="remove-btn" (click)="removeCountry(country)">
+            ✖
+          </button>
+        <img
+          [src]="'https://flagcdn.com/w40/' + country.code + '.png'"
+          [alt]="country.name"
+        />
+        <h4>{{ country.name }}</h4>
+        <p>{{ country.count }} vols</p>
+      </div>
+
+      <!-- Carte + ou ✖ cliquable -->
+      <div
+        *ngIf="selectedCountries.length < 5"
+        class="country-card add-card"
+        [ngClass]="{ 'cancel-mode': showCountryInput }"
+        (click)="toggleCountryInput()"
+        [attr.title]="showCountryInput ? 'Annuler' : 'Ajouter un pays'"
+      >
+        <div class="symbol">
+          {{ showCountryInput ? "✖" : "+" }}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

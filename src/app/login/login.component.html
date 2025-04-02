@@ -14,14 +14,14 @@
         </div>
 
         <h2>CONNEXION</h2>
-        <p>Pas encore de compte ? <a href="/signin">Inscrivez-vous</a></p>
+        <p>Pas encore de compte ? <a routerLink="/signin">Inscrivez-vous</a></p>
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <input type="email" id="email" formControlName="email" placeholder="Email">
             <input type="password" id="password" formControlName="password" placeholder="Mot de passe">
             <button type="submit">Se connecter</button>
             <div class="links">
-                <a href="/forgot-password">Mot de passe oublié ?</a>
+                <a routerLink="/forgot-password">Mot de passe oublié ?</a>
             </div>
         </form>
 

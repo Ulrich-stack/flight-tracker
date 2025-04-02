@@ -1,64 +1,89 @@
-import { inject, Inject, Injectable } from '@angular/core';
-
+import { inject, Injectable } from '@angular/core';
 import {
   Auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile,
   sendEmailVerification,
   User,
   sendPasswordResetEmail,
+  onAuthStateChanged,
 } from '@angular/fire/auth';
-
 import { Router } from '@angular/router';
-import { BehaviorSubject, from, Observable } from 'rxjs';
-import { UserInterface } from './user.interface';
+import { BehaviorSubject } from 'rxjs';
 import {
-  addDoc,
   collection,
-  CollectionReference,
   doc,
   Firestore,
   getDoc,
   getDocs,
   query,
+  setDoc,
+  updateDoc,
   where,
 } from '@angular/fire/firestore';
+import { UserData } from './models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private auth = inject(Auth);
-  private firestore = inject(Firestore); // inject Cloud Firestor
-  private userDataSubject = new BehaviorSubject<any>(null);
-  // Observable que les autres composants peuvent écouter
+  private firestore = inject(Firestore);
+  private userDataSubject = new BehaviorSubject<UserData | null>(null);
   public userData$ = this.userDataSubject.asObservable();
 
   constructor(private router: Router) {}
 
+  // Recharge les données utilisateur à l'ouverture de l'app
+  loadUserDataOnAppStart() {
+    onAuthStateChanged(this.auth, async (user) => {
+      if (user) {
+        const q = query(
+          collection(this.firestore, 'users'),
+          where('uid', '==', user.uid)
+        );
+        const snapshot = await getDocs(q);
+
+        if (!snapshot.empty) {
+          const userData = snapshot.docs[0].data() as UserData;
+          this.userDataSubject.next(userData);
+          console.log('userData rechargé automatiquement :', userData);
+        }
+      } else {
+        this.userDataSubject.next(null);
+        console.log('Aucun utilisateur connecté.');
+      }
+    });
+  }
+
   signIn(email: string, username: string, password: string) {
     createUserWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
-        const user = {
+        const newUser: UserData = {
           uid: userCredential.user.uid,
-          email: email,
-          username: username,
+          email,
+          username,
+          favoriteAirport: {
+            name: 'Paris Charles de Gaulle',
+            code: 'LFPG',
+          },
+          favoriteCountries: [],
+          favoriteFlights: [],
         };
 
-        const usersRef = collection(this.firestore, 'users');
+        const userDoc = doc(this.firestore, 'users', newUser.uid);
 
-        return addDoc(usersRef, user).then(() => {
-          console.log('User created', user);
+        return setDoc(userDoc, newUser).then(() => {
+          console.log('Utilisateur créé avec préférences par défaut', newUser);
 
-          return this.sendEmailforVerification(userCredential.user);
+          this.sendEmailforVerification(userCredential.user);
         });
       })
       .then(() => {
         this.router.navigate(['/']);
       })
       .catch((error) => {
-        console.error('Error details:', error.code, error.message);
+        console.error('Erreur:', error.code, error.message);
         alert(`Something went wrong: ${error.message}`);
       });
   }
@@ -67,67 +92,90 @@ export class AuthService {
     signInWithEmailAndPassword(this.auth, email, password)
       .then(async (userCredential) => {
         const uid = userCredential.user.uid;
-        console.log('User logged in', userCredential.user);
-        const user = userCredential.user;
-        const usersRef = collection(this.firestore, 'users');
-        const q = query(usersRef, where('uid', '==', uid));
+        const q = query(
+          collection(this.firestore, 'users'),
+          where('uid', '==', uid)
+        );
+        const snapshot = await getDocs(q);
 
-        this.router.navigate(['/']);
-
-        const querySnapshot = await getDocs(q);
-
-        //  Extraire les données
-        const userData = querySnapshot.docs.map((doc) => ({
-          ...doc.data(),
-        }));
-
-        console.log('User logged in', userData);
-        if (userData.length > 0) {
-          this.userDataSubject.next(userData[0]);
+        if (!snapshot.empty) {
+          const userData = snapshot.docs[0].data() as UserData;
+          this.userDataSubject.next(userData);
+          console.log('Connexion réussie', userData);
         } else {
           this.userDataSubject.next(null);
         }
+
+        this.router.navigate(['/']);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log('User not logged in');
+        console.error('Connexion échouée:', error);
         alert('User not logged in');
       });
   }
 
   logOut() {
     this.auth.signOut().then(() => {
-      console.log('User logged out');
+      this.userDataSubject.next(null);
+      console.log('Déconnexion réussie');
       this.router.navigate(['/login']);
     });
   }
 
-  async sendEmailforVerification(user: User) {
-    console.log('sendEmailVerification actif');
+  updateUserPreferences(uid: string, preferences: Partial<UserData>) {
+    const userDocRef = doc(this.firestore, 'users', uid);
+
+    return updateDoc(userDocRef, preferences)
+      .then(() => {
+        console.log('Préférences mises à jour');
+      })
+      .catch((err) => {
+        console.error('Erreur lors de la mise à jour des préférences:', err);
+        alert('Impossible de mettre à jour les préférences.');
+      });
+  }
+  
+  toggleFlightFavorite(
+    uid: string,
+    flightIcao: string,
+    currentFavorites: string[] = []
+  ) {
+    const userDocRef = doc(this.firestore, 'users', uid);
+    const updatedFavorites = currentFavorites.includes(flightIcao)
+      ? currentFavorites.filter((f) => f !== flightIcao)
+      : [...currentFavorites, flightIcao];
 
     try {
-      await sendEmailVerification(user);
-      alert('Email de vérification envoyé. Vérifie ta boîte mail.');
-      this.router.navigate(['/verification-email']);
+      updateDoc(userDocRef, {
+        favoriteFlights: updatedFavorites,
+      });
+      console.log('Vol mis à jour dans les favoris');
+      return updatedFavorites;
     } catch (err) {
-      console.error("Erreur lors de l'envoi de l'email de vérification:", err);
-      alert(
-        "Une erreur est survenue lors de l'envoi de l'email de vérification."
-      );
+      console.error('Erreur de mise à jour favoris', err);
+      return currentFavorites;
     }
   }
-  // Forgot password
+
+  async sendEmailforVerification(user: User) {
+    try {
+      await sendEmailVerification(user);
+      alert('Email de vérification envoyé.');
+      this.router.navigate(['/verification-email']);
+    } catch (err) {
+      console.error("Erreur d'envoi de l'email de vérification:", err);
+      alert("Erreur lors de l'envoi de l'email de vérification.");
+    }
+  }
+
   async forgotPassword(email: string) {
     try {
       await sendPasswordResetEmail(this.auth, email);
-      alert(
-        'Un email de réinitialisation a été envoyé. Veuillez vérifier votre boîte mail.'
-      );
+      alert('Email de réinitialisation envoyé.');
       this.router.navigate(['verification-email']);
     } catch (err) {
-      console.error('Erreur lors de la réinitialisation du mot de passe:', err);
-      alert('Une erreur est survenue. Vérifiez votre email et réessayez.');
+      console.error('Erreur de mot de passe oublié:', err);
+      alert('Erreur lors de la réinitialisation du mot de passe.');
     }
   }
 }

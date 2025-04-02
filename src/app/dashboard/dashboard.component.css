@@ -4,6 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 #topbar {
@@ -24,19 +25,22 @@
   gap: 10px;
 }
 
-.search-container {
+.search-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 250px;
 }
 
 .search {
   background-color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 35px 10px 10px; /* Espace à droite pour l'icône */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
   font-size: 14px;
-  width: 200px;
+  width: 100%;
+}
+
+.search:focus {
+  outline: none;
 }
 
 .search-icon {
@@ -47,9 +51,28 @@
   cursor: pointer;
 }
 
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-.profil {
+.dropdown-item {
+  padding: 10px;
+  font-size: 14px;
   cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
 }
 
 .logo-div {
@@ -68,9 +91,14 @@
   margin-left: 10px;
 }
 
-.hidden{
+.profil {
+  cursor: pointer;
+}
+
+.hidden {
   display: none;
 }
+
 #sidebar {
   position: absolute;
   z-index: 1000;
@@ -82,31 +110,39 @@
   padding: 15px;
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
-  transform: translateX(-200%); /* cachée par défaut */
+  transform: translateX(-200%);
 }
 
 #sidebar.open {
-  transform: translateX(0); /* affichée */
+  transform: translateX(0);
 }
 
-#filters{
+#filters {
   position: absolute;
   bottom: 50px;
   left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#more-filter {
   background-color: #023430;
   border: none;
   padding: 10px;
-  color: white  ;
-  border-radius: 5px;
+  color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
+  border-radius: 5px;
 }
 
-#filters:hover{
+#more-filter:hover {
   background-color: #025c54;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -125,8 +161,6 @@
   height: calc(100% - 10px);
   overflow-y: auto;
 }
-
-
 
 ::-webkit-scrollbar {
   width: 2px;
@@ -196,20 +230,6 @@
 .profile-modal li:hover {
   background: rgba(0, 0, 0, 0.1);
 }
-/* 
-.custom .leaflet-popup-tip,
-.custom .leaflet-popup-content-wrapper {
-    background: #e93434;
-    color: #ffffff;
-} */
-
-.search{
-  border: none;
-}
-
-.search:focus{
-  outline: none;
-}
 
 #sidebar-header {
   display: flex;
@@ -218,37 +238,35 @@
   gap: 10px;
 }
 
-#sidebar-header button{
+#sidebar-header button {
   background: none;
   cursor: pointer;
   border: none;
 }
 
-.arrow{
+.arrow {
   position: absolute;
   top: 50%;
   left: 0;
   z-index: 1000;
 }
 
-
-
-.arrow button{
+.arrow button {
   border: none;
   background-color: rgba(2, 52, 48, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 5px 0px;
   cursor: pointer;
   border-radius: 0 5px 5px 0;
 }
 
-.arrow button:hover{
+.arrow button:hover {
   background-color: rgba(2, 52, 48, 0.8);
 }
 
 .info-button:hover {
-  background-color: black; /* exemple : fond gris clair */
-  border-radius: 4px;       /* pour arrondir légèrement */
+  background-color: black;
+  border-radius: 4px;
 }

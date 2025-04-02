@@ -1,12 +1,10 @@
-
-
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ApiService } from '../api.service';
 import * as L from 'leaflet';
 import { HttpClient } from '@angular/common/http';
 import 'leaflet-rotatedmarker';
-import { Flight } from '../models';
+import { Flight, UserData } from '../models';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,11 +19,16 @@ export class DashboardComponent implements OnInit {
   @Input() flights?: any[];
   @Input() user?: any;
 
+  userId!: any;
+  userData!: UserData;
   isModalOpen = false;
   sibebarOpen = false;
   searchValueICAO: string = '';
   currentFlightInfo: Flight | null = {};
   sidebarFlightInfoOpen = false;
+  showDropdown: boolean = false;
+  favoriteFlights: string[] = [];
+  filteredFavorites: string[] = []; // résultats des vols filtrés
 
   constructor(
     private authService: AuthService,
@@ -46,11 +49,11 @@ export class DashboardComponent implements OnInit {
     this.isModalOpen = true;
   }
 
-  toggleFlightInfoModal(){
+  toggleFlightInfoModal() {
     this.sidebarFlightInfoOpen = true;
   }
 
-  hideFlightInfoModal(){
+  hideFlightInfoModal() {
     this.sidebarFlightInfoOpen = false;
   }
 
@@ -62,7 +65,19 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.initMap();
     this.fetchFlights();
-    this.fetchFlightsByAirport('CDG');
+
+    this.authService.userData$.subscribe((user) => {
+      if (user) {
+        this.userData = user;
+        this.favoriteFlights = user.favoriteFlights;
+        this.filteredFavorites = [...this.favoriteFlights];
+        this.userId = user.uid;
+        console.log('UID récupéré :', this.userId);
+        this.fetchFlightsByAirport(this.userData.favoriteAirport.code);
+      } else {
+        console.warn('Aucun utilisateur connecté !');
+      }
+    });
   }
 
   /**
@@ -97,11 +112,15 @@ export class DashboardComponent implements OnInit {
   }
 
   private fetchFlightsByAirport(airport: string): void {
-    this.http.get<any>('../assets/flightsToCDG.json').subscribe((response) => {
-      // On ne prend que 5 exemples
-      this.flightsByAirport = response.data.slice(0, 5);
-      console.log('Vols par aéroport : ', this.flightsByAirport);
-    });
+    // this.http.get<any>('../assets/flightsToCDG.json').subscribe((response) => {
+    //   // On ne prend que 5 exemples
+    //   this.flightsByAirport = response.data.slice(0, 5);
+    //   console.log('Vols par aéroport : ', this.flightsByAirport);
+    // });
+    // this.api.getFlightsByAirpot(airport).subscribe((response) =>{
+    //   this.flightsByAirport = response.data;
+    //   console.log('Vols par aéroport : ', this.flightsByAirport);
+    // })
   }
 
   private getPlaneIcon(): L.Icon {
@@ -124,66 +143,70 @@ export class DashboardComponent implements OnInit {
   /**
    * Construit le contenu HTML pour le popup d'un vol (à partir de l'array states)
    */
-  private buildPopupContent(flight: any): string {
+  private buildPopupContent(flight: any, isFavorite: boolean): string {
+    const starClass = isFavorite ? 'fas' : 'far'; // plein ou vide
     return `
+    <div>
       <span style="color: #808080; font-size: 10px; font-weight: 600">
         ${flight[1] || 'N/A'}
-      </span><br>
-
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12px">
-        
-        <div style="border: 1px solid #ccc; border-radius: 5px; padding: 5px; margin-top: 10px; width: 100%">
-          <div style="display: flex; align-items: center; gap: 8px">
-            <img src="assets/plane-up.png" style="width: 20px; height: 20px;"/>
-            <div style="display: flex; flex-direction: column; gap: 8px">
-              <span style="color: #808080">Pays d'origine</span>
-              <span style="font-weight: 600">${
-                flight[2] || 'Non spécifié'
-              }</span>
-            </div>
-          </div>
-        </div>
-        
-        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap:10px">
-          <div style="display: flex; flex-direction: column; border: 1px solid #ccc; border-radius: 5px; width: 100%; padding: 5px">
-            <span style="color: #808080;">Altitude</span>
-            <span style="font-weight: 600">
-              ${flight[7] ? flight[7].toFixed(0) + ' m' : 'N/A'}
-            </span>
-          </div>
-          
-          <div style="display: flex; flex-direction: column; border: 1px solid #ccc; border-radius: 5px; width: 100%; padding: 5px">
-            <span style="color: #808080;">Vitesse</span>
-            <span style="font-weight: 600">
-              ${flight[9] ? (flight[9] * 3.6).toFixed(0) + ' km/h' : 'N/A'}
-            </span>
-          </div>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; border: 1px solid #ccc; border-radius: 5px; width: 100%; padding: 5px">
-          <span style="color: #808080;">Direction</span>
-          <span style="font-weight: 600">
-            ${flight[10] ? flight[10].toFixed(0) + '°' : 'N/A'}
-          </span>
-        </div>
-        
-      <div style=" width: 100%;display: flex; justify-content: center; align-items: center; gap: 5px">
-              <a 
-          target="_blank" 
-          href="https://www.google.com/maps?q=${flight[6]},${flight[5]}"
-          style="cursor: pointer; width: 80%; background-color: #023430; color: white; padding: 8px; text-decoration: none; display: flex; align-items: center; border-radius: 4px; gap: 5px; justify-content: center"
-        >
-          <span>Ouvrir maps</span>
-          <img src="assets/carte.png" style="width: 15px;"/>
-        </a>
-      <button id="info-btn-${flight[0]}"
-              style="width: 20%; padding: 8px; border: none; border-radius: 2px; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer">
-         <img src="assets/info.png" style="width: 20px;"/>
+      </span>
+      <button id="fav-btn-${flight[0]}"
+        title="${isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'}"
+        style="border: none; background: none; cursor: pointer; font-size: 12px; color: gold">
+        <i class="${starClass} fa-star"></i>
       </button>
+    </div>
 
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12px; margin-top: 5px">
+
+      <div style="border: 1px solid #ccc; border-radius: 5px; padding: 5px; width: 100%">
+        <div style="display: flex; align-items: center; gap: 8px">
+          <img src="assets/plane-up.png" style="width: 20px; height: 20px;" />
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <span style="color: #808080">Pays d'origine</span>
+            <span style="font-weight: 600">${flight[2] || 'Non spécifié'}</span>
+          </div>
+        </div>
       </div>
+
+      <div style="display: flex; justify-content: space-between; width: 100%; gap:10px">
+        <div style="flex:1; display: flex; flex-direction: column; border: 1px solid #ccc; border-radius: 5px; padding: 5px">
+          <span style="color: #808080;">Altitude</span>
+          <span style="font-weight: 600">${
+            flight[7] ? flight[7].toFixed(0) + ' m' : 'N/A'
+          }</span>
+        </div>
+        <div style="flex:1; display: flex; flex-direction: column; border: 1px solid #ccc; border-radius: 5px; padding: 5px">
+          <span style="color: #808080;">Vitesse</span>
+          <span style="font-weight: 600">${
+            flight[9] ? (flight[9] * 3.6).toFixed(0) + ' km/h' : 'N/A'
+          }</span>
+        </div>
       </div>
-    `;
+
+      <div style="width: 100%; display: flex; flex-direction: column; border: 1px solid #ccc; border-radius: 5px; padding: 5px">
+        <span style="color: #808080;">Direction</span>
+        <span style="font-weight: 600">${
+          flight[10] ? flight[10].toFixed(0) + '°' : 'N/A'
+        }</span>
+      </div>
+
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 5px">
+        <a
+          target="_blank"
+          href="https://www.google.com/maps?q=${flight[6]},${flight[5]}"
+          style="cursor: pointer; width: 100%; background-color: #023430; color: white; padding: 8px; text-decoration: none; display: flex; align-items: center; border-radius: 4px; gap: 5px; justify-content: center">
+          <span>Ouvrir maps</span>
+          <img src="assets/carte.png" style="width: 15px;" />
+        </a>
+
+        <button id="info-btn-${flight[0]}"
+          style=" padding: 8px; border: none; border-radius: 2px; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <img src="assets/info.png" style="width: 20px;" />
+        </button>
+      </div>
+    </div>
+  `;
   }
 
   private updateMap(flightsResponse: any): void {
@@ -207,22 +230,49 @@ export class DashboardComponent implements OnInit {
           rotationAngle: flight[10] || 0,
           rotationOrigin: 'center',
         };
+        const isFav = this.userData?.favoriteFlights?.includes(flight[0]);
 
         // On crée le marker
         const marker = L.marker([flight[6], flight[5]], markerOptions)
-          // On associe un popup "statique" montrant l'état actuel (states)
-          .bindPopup(this.buildPopupContent(flight), this.customOptions)
+          .bindPopup(this.buildPopupContent(flight, isFav), this.customOptions)
           .addTo(this.map);
 
-        // -- 1) Quand on ouvre le popup => Récupération track + traçage --
         marker.on('popupopen', () => {
-          // Récupérer le bouton par son ID
           const btn = document.getElementById(`info-btn-${flight[0]}`);
           if (btn) {
             btn.addEventListener('click', () => {
               this.showFlightInfo(flight);
             });
           }
+
+          const favBtn = document.getElementById(`fav-btn-${flight[0]}`);
+          if (favBtn) {
+            favBtn.addEventListener('click', async () => {
+              const icon = favBtn.querySelector('i');
+              const flightId = flight[0];
+              const isFav = this.userData?.favoriteFlights?.includes(flightId);
+
+              // Mise à jour du firestore
+              const updated = this.authService.toggleFlightFavorite(
+                this.userData.uid,
+                flightId,
+                this.userData.favoriteFlights || []
+              );
+
+              // Mise à jour de l'icone
+              if (icon) {
+                icon.classList.toggle('fas', !isFav); // si c’était favori, on retire
+                icon.classList.toggle('far', isFav);
+                favBtn.title = isFav
+                  ? 'Ajouter aux favoris'
+                  : 'Retirer des favoris';
+              }
+
+              this.userData.favoriteFlights = updated;
+              this.filteredFavorites = updated;
+            });
+          }
+
           this.api.getFlightByIcao24(icao24).subscribe(
             (response) => {
               const track = response.track;
@@ -251,7 +301,7 @@ export class DashboardComponent implements OnInit {
           );
         });
 
-        // -- 2) Quand on ferme le popup => on supprime la trajectoire --
+        //Quand on ferme le popup => on supprime la trajectoire --
         marker.on('popupclose', () => {
           const polyline = (marker as any)._flightPolyline;
           if (polyline) {
@@ -286,7 +336,12 @@ export class DashboardComponent implements OnInit {
 
     this.toggleFlightInfoModal();
     this.hideSidebar();
-    console.log('Flight info: ', this.currentFlightInfo,' ' ,this.sidebarFlightInfoOpen);
+    console.log(
+      'Flight info: ',
+      this.currentFlightInfo,
+      ' ',
+      this.sidebarFlightInfoOpen
+    );
   }
 
   searchFlight(): void {
@@ -319,7 +374,9 @@ export class DashboardComponent implements OnInit {
         const marker = L.marker([latitude, longitude], markerOptions).addTo(
           this.map
         );
-        marker.bindPopup(this.buildPopupContent(flight)).openPopup();
+        const isFav = this.userData?.favoriteFlights?.includes(flight[0]);
+
+        marker.bindPopup(this.buildPopupContent(flight, isFav)).openPopup();
         this.map.setView([latitude, longitude], 8);
 
         if (track && track.path && track.path.length > 0) {
@@ -350,6 +407,19 @@ export class DashboardComponent implements OnInit {
         alert('Le vol n’existe pas ou erreur API.');
       }
     );
+  }
+
+  filterFavorites() {
+    const search = this.searchValueICAO.toLowerCase();
+    this.filteredFavorites = this.favoriteFlights.filter((f) =>
+      f.toLowerCase().includes(search)
+    );
+  }
+
+  selectFavorite(flight: string) {
+    this.searchValueICAO = flight;
+    this.showDropdown = false;
+    this.searchFlight();
   }
 
   private buildFlightModel(
@@ -438,5 +508,9 @@ export class DashboardComponent implements OnInit {
     console.log('A la fin: ', flight);
 
     return flight;
+  }
+
+  hideDropdownWithDelay() {
+    setTimeout(() => (this.showDropdown = false), 150);
   }
 }

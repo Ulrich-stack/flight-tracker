@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      name: ['', Validators.required],
+      nom: ['', Validators.required],
       prenom: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     if (this.signinForm.valid) {
       this.auth.signIn(
         this.signinForm.value.email,
-        this.signinForm.value.name,
+        this.signinForm.value.nom + " " + this.signinForm.value.prenom,
         this.signinForm.value.password
       );
       console.log('submit ', this.signinForm.value);
