@@ -124,16 +124,22 @@ export class AuthService {
 
   updateUserPreferences(uid: string, preferences: Partial<UserData>) {
     const userDocRef = doc(this.firestore, 'users', uid);
-
+  
     return updateDoc(userDocRef, preferences)
-      .then(() => {
+      .then(async () => {
         console.log('Préférences mises à jour');
+  
+        // Recharge les données utilisateur à jour
+        const updatedDoc = await getDoc(userDocRef);
+        const newUserData = updatedDoc.data() as UserData;
+        this.userDataSubject.next(newUserData);
       })
       .catch((err) => {
         console.error('Erreur lors de la mise à jour des préférences:', err);
         alert('Impossible de mettre à jour les préférences.');
       });
   }
+  
   
   toggleFlightFavorite(
     uid: string,
@@ -160,7 +166,6 @@ export class AuthService {
   async sendEmailforVerification(user: User) {
     try {
       await sendEmailVerification(user);
-      alert('Email de vérification envoyé.');
       this.router.navigate(['/verification-email']);
     } catch (err) {
       console.error("Erreur d'envoi de l'email de vérification:", err);

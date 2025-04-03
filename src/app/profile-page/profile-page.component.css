@@ -115,6 +115,10 @@
     color: #023430;
   }
 
-  .go-back:hover{
+  .go-back, a:hover{
     text-decoration: underline;
+  }
+
+  a{
+    color: #023430;
   }

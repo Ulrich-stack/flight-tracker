@@ -1,253 +1,151 @@
-/* Importation de la police depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
 
-/* Conteneur pour aligner l'image et le texte */
-.title {
-    display: flex;
-    align-items: center;
-    /* Aligne verticalement */
-    justify-content: center;
-    /* Centre horizontalement */
-    gap: 10px;
-    /* Espacement entre l'image et le texte */
-    margin-bottom: 90px;
-    font-family: 'Jim Nightshade', cursive;
-    font-size: 20px;
-    /* Ajuste la taille si nécessaire */
-    font-weight: normal;
-    color: #00251a;
-    /* Couleur du texte */
-    text-align: center;
-    margin-bottom: 90px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Style de l'image */
-.logo {
-    width: 40px;
-    /* Ajuste la taille de l’image */
-    height: auto;
+.register-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Container for logo and CLOUDTRACK */
-.cloudtrack-container {
-    display: flex;
-    /* Use flexbox */
-    align-items: center;
-    /* Vertically center the items */
-    justify-content: center;
-    /* Horizontally center the items */
-    gap: 10px;
-    /* Space between the image and text */
-    margin-bottom: 90px;
-    /* Keep the margin */
+/* --- Partie gauche : image + overlay --- */
+.register-image {
+  width: 60%;
+  background-image: url('/assets/map_plane.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Style for CLOUDTRACK */
-.cloudtrack-login {
-    /* Renamed for clarity */
-    font-family: 'Jim Nightshade', cursive;
-    font-size: 20px;
-    font-weight: normal;
-    color: #00251a;
-    text-align: center;
+.overlay {
+  background-color: rgba(2, 52, 48, 0.6);
+  padding: 60px 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: white;
 }
 
-/* Style de l'image */
-.logo {
-    width: 40px;
-    /* Ajuste la taille de l’image */
-    height: auto;
+.overlay h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #00251a;
 }
 
-/* Conteneur principal */
-.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+.overlay p {
+  font-size: 24px;
+  font-weight: 600;
 }
 
-.inscription-image img {
-    width: 200%;
-    height: 100%;
-    object-fit: cover;
+/* --- Partie droite : formulaire --- */
+.register-form {
+  flex: 1;
+  background-color: white;
+  padding: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* Partie gauche : Image */
-.inscription-image {
-    width: 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
-.inscription-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 100%;
-    background-color: rgba(2, 52, 48, 0.5);
-    /* 50% de transparence */
+.logo-container .logo {
+  width: 40px;
+  height: auto;
 }
 
-/* Partie droite : Formulaire */
-.inscription-form {
-    width: 50%;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.logo-container span {
+  font-family: 'Jim Nightshade', cursive;
+  font-size: 20px;
+  color: #00251a;
 }
 
-/* Conteneur du formulaire */
-.inscription-form form {
-    width: 100%;
-    max-width: 350px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 190px;
+.register-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-/* Titre */
-h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.register-form p {
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
-/* Texte sous le titre */
-p {
-    font-size: 14px;
-    margin-bottom: 20px;
+.register-form a {
+  color: #004d40;
+  text-decoration: none;
 }
 
-p a {
-    color: #004d40;
-    text-decoration: none;
+.register-form a:hover {
+  text-decoration: underline;
 }
 
-p a:hover {
-    text-decoration: underline;
+form {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-
-
-/* -- Groupement des champs nom/prénom sur la même ligne -- */
 .input-group {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 10px;
 }
 
-/* -- Champs de texte -- */
-.inscription-form input {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 11.5px;
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
 }
 
-/* Bouton */
 button {
-    background-color: #00251a;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: #00251a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #004d40;
+  background-color: #004d40;
 }
 
-.image-text {
-    position: absolute;
-    top: 68%;
-    /* Place le texte au centre */
-    left: 35%;
-    transform: translate(-50%, -50%);
-    font-size: 60px;
-    /* Taille du texte */
-    color: #023430;
-    /* Couleur */
-    font-weight: bold;
-    width: 60%;
-    z-index: 2;
-}
-
-.texth {
-    position: absolute;
-    top: 85%;
-    /* Place le texte au centre */
-    left: 35%;
-    transform: translate(-50%, -50%);
-    font-size: 17px;
-    /* Taille du texte */
-    color: #ffffff;
-    /* Couleur */
-    font-weight: bold;
-    width: 60%;
-    z-index: 2;
-}
-
-
-/* ✅ Équilibrage tablette */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .container {
-      flex-direction: row;
-      height: auto;
-    }
-  
-    .inscription-image {
-      width: 50%;
-      height: 100vh;
-    }
-  
-    .inscription-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  
-    .inscription-form {
-      width: 50%;
-      padding: 2rem;
-      justify-content: center;
-    }
-  
-    .image-text {
-      font-size: 40px;
-      left: 50%;
-      width: 80%;
-    }
-  
-    .texth {
-      font-size: 14px;
-      left: 50%;
-      width: 80%;
-    }
+/* --- Responsive --- */
+@media screen and (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
   }
-  
-  /* ✅ Mobile : masquer image */
-  @media (max-width: 767px) {
-    .container {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .inscription-image {
-      display: none;
-    }
-  
-    .inscription-form {
-      width: 100%;
-      padding: 2rem;
-    }
+
+  .register-image {
+    display: none;
   }
-  
+
+  .register-form {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}

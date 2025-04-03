@@ -19,6 +19,18 @@
   padding: 0 20px;
 }
 
+.date-display {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Segoe UI', sans-serif;
+  white-space: nowrap;
+}
+
+
 .profil-search-div {
   display: flex;
   align-items: center;
@@ -34,9 +46,10 @@
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 8px 12px;
+  padding: 8px 12px 8px 36px;
   font-size: 14px;
   width: 100%;
+
 }
 
 .search:focus {
@@ -45,11 +58,20 @@
 
 .search-icon {
   position: absolute;
-  right: 10px;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+  pointer-events: none;
 }
+
+.search:focus + .search-icon {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(22%) sepia(80%) saturate(635%) hue-rotate(120deg) brightness(95%) contrast(92%);
+}
+
 
 .search-dropdown {
   position: absolute;
@@ -269,4 +291,73 @@
 .info-button:hover {
   background-color: black;
   border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #topbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .logo-div {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .profil-search-div {
+    flex: 3;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .search-wrapper {
+    width: 70%;
+    min-width: 200px;
+  }
+
+  .profil {
+    width: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #topbar {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .logo-div {
+    width: 100%;
+  }
+
+  .profil-search-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-wrapper {
+    width: 80%;
+  }
+
+  .profil {
+    width: 30px;
+    height: 30px;
+  }
+
+  .search {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
 }

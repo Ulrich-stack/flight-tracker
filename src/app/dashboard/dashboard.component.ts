@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   @Input() flights?: any[];
   @Input() user?: any;
 
+  currentDate: Date = new Date() ;
   userId!: any;
   userData!: UserData;
   isModalOpen = false;
@@ -78,6 +79,10 @@ export class DashboardComponent implements OnInit {
         console.warn('Aucun utilisateur connecté !');
       }
     });
+
+    setInterval(() => {
+      this.currentDate = new Date();
+    }, 1000);
   }
 
   /**
@@ -148,7 +153,7 @@ export class DashboardComponent implements OnInit {
     return `
     <div>
       <span style="color: #808080; font-size: 10px; font-weight: 600">
-        ${flight[1] || 'N/A'}
+        ${flight[1] || 'N/A' } (${flight[0] || 'N/A' })
       </span>
       <button id="fav-btn-${flight[0]}"
         title="${isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'}"

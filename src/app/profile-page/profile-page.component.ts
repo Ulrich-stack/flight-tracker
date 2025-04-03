@@ -50,10 +50,6 @@ export class ProfilePageComponent implements OnInit {
     this.editMode = false;
   }
 
-  goToStats() {
-    this.router.navigate(['/statistiques']);
-  }
-
   logOut() {
     this.authService.logOut();
   }

@@ -31,13 +31,11 @@ const routes: Routes = [
   { path: 'verification-email', component: VerificationEmailComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
 
-  // Redirection par défaut : si aucune route n'est spécifiée, on redirige vers le dashboard.
   {
     path: '',
     component: DashboardComponent,
     ...canActivate(redirectUnauthorizedToLogin),
   },
-  // Route wildcard pour rediriger toutes les routes non définies
   { path: 'statistiques', component: StatsPageComponent },
   { path: 'profile', component: ProfilePageComponent }
 

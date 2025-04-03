@@ -4,6 +4,10 @@
     <img src="assets/CLOUDtrack.png" width="30" alt="Logo" />
     <span>CLOUDtrack</span>
   </div>
+  <div class="date-display">
+    {{ currentDate | date: 'HH:mm:ss' }}
+  </div>
+
   <div class="profil-search-div">
     <div class="search-wrapper">
       <input
@@ -16,7 +20,7 @@
         (input)="filterFavorites()"
         (keyup.enter)="searchFlight()"
       />
-
+      <img src="assets/loupe.png" alt="Loupe" class="search-icon" />
       <ul
         *ngIf="showDropdown && filteredFavorites.length > 0"
         class="search-dropdown"
@@ -30,6 +34,7 @@
         </li>
       </ul>
     </div>
+    
 
     <img
       class="profil"
