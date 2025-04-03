@@ -102,14 +102,6 @@ export class DashboardComponent implements OnInit {
   }
 
   private fetchFlights(): void {
-    // this.http.get('../assets/flightsOpenSky.json').subscribe((response) => {
-    //   // on utilise un fichier json avec des exemples pour la demo
-    //   this.data = response;
-    //   console.log('Vols récupérés :', this.data);
-
-    //   this.updateMap(this.data);
-    // });
-
     this.api.getFlights().subscribe((response) => {
       this.data = response;
       this.updateMap(this.data);
@@ -122,10 +114,10 @@ export class DashboardComponent implements OnInit {
     //   this.flightsByAirport = response.data.slice(0, 5);
     //   console.log('Vols par aéroport : ', this.flightsByAirport);
     // });
-    // this.api.getFlightsByAirpot(airport).subscribe((response) =>{
-    //   this.flightsByAirport = response.data;
-    //   console.log('Vols par aéroport : ', this.flightsByAirport);
-    // })
+    this.api.getFlightsByAirpot(airport).subscribe((response) =>{
+      this.flightsByAirport = response.data;
+      console.log('Vols par aéroport : ', this.flightsByAirport);
+    })
   }
 
   private getPlaneIcon(): L.Icon {
@@ -168,7 +160,7 @@ export class DashboardComponent implements OnInit {
         <div style="display: flex; align-items: center; gap: 8px">
           <img src="assets/plane-up.png" style="width: 20px; height: 20px;" />
           <div style="display: flex; flex-direction: column; gap: 8px">
-            <span style="color: #808080">Pays d'origine</span>
+            <span style="color: #808080">Pays d'immatriculation</span>
             <span style="font-weight: 600">${flight[2] || 'Non spécifié'}</span>
           </div>
         </div>
@@ -204,11 +196,11 @@ export class DashboardComponent implements OnInit {
           <span>Ouvrir maps</span>
           <img src="assets/carte.png" style="width: 15px;" />
         </a>
+<button id="info-btn-${flight[0]}"
+style=" padding: 8px; border: none; border-radius: 2px; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<img src="assets/info.png" style="width: 20px;" />
+</button>
 
-        <button id="info-btn-${flight[0]}"
-          style=" padding: 8px; border: none; border-radius: 2px; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer">
-          <img src="assets/info.png" style="width: 20px;" />
-        </button>
       </div>
     </div>
   `;
@@ -319,10 +311,13 @@ export class DashboardComponent implements OnInit {
   }
 
   private showFlightInfo(openSkyFlightInfo: any) {
-    console.log('Voici openskyflightinfo: ', openSkyFlightInfo);
+    // console.log('Voici openskyflightinfo: ', openSkyFlightInfo);
+    this.toggleFlightInfoModal();
 
-    // this.api.getFlightInfoByIcao24("AI8105").subscribe(response => {
+    // this.api.getFlightInfoByIcao24(openSkyFlightInfo[1].trim()).subscribe(response => {
     //   const aviationStackFlightInfo = response;
+    //   console.log("Response: ", response);
+      
     //   this.currentFlightInfo = this.buildFlightModel(
     //     openSkyFlightInfo,
     //     aviationStackFlightInfo
@@ -339,7 +334,6 @@ export class DashboardComponent implements OnInit {
       );
     });
 
-    this.toggleFlightInfoModal();
     this.hideSidebar();
     console.log(
       'Flight info: ',
@@ -519,3 +513,9 @@ export class DashboardComponent implements OnInit {
     setTimeout(() => (this.showDropdown = false), 150);
   }
 }
+
+
+/*<button id="info-btn-${flight[0]}"
+style=" padding: 8px; border: none; border-radius: 2px; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<img src="assets/info.png" style="width: 20px;" />
+</button>*/

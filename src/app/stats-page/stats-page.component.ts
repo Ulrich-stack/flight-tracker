@@ -204,7 +204,8 @@ export class StatsPageComponent implements OnInit {
         const sorted = Object.entries(companyCounts)
           .sort((a, b) => b[1] - a[1])
           .slice(0, 8);
-
+        console.log("Sorted: ", sorted);
+        
         this.companyChartData = {
           labels: sorted.map(([code]) => this.getAirlineName(code)),
           datasets: [

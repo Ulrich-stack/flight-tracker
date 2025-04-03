@@ -1,77 +1,78 @@
-<div id="map"></div>
-<div id="topbar">
-  <div class="logo-div">
-    <img src="assets/CLOUDtrack.png" width="30" alt="Logo" />
-    <span>CLOUDtrack</span>
-  </div>
-  <div class="date-display">
-    {{ currentDate | date: 'HH:mm:ss' }}
-  </div>
-
-  <div class="profil-search-div">
-    <div class="search-wrapper">
-      <input
-        type="text"
-        [(ngModel)]="searchValueICAO"
-        class="search"
-        placeholder="Rechercher un vol"
-        (focus)="showDropdown = true"
-        (blur)="hideDropdownWithDelay()"
-        (input)="filterFavorites()"
-        (keyup.enter)="searchFlight()"
-      />
-      <img src="assets/loupe.png" alt="Loupe" class="search-icon" />
-      <ul
-        *ngIf="showDropdown && filteredFavorites.length > 0"
-        class="search-dropdown"
-      >
-        <li
-          *ngFor="let flight of filteredFavorites"
-          class="dropdown-item"
-          (mousedown)="selectFavorite(flight)"
-        >
-          {{ flight }}
-        </li>
-      </ul>
+  <div id="map"></div>
+  <div id="topbar">
+    <div class="logo-div">
+      <img src="assets/CLOUDtrack.png" width="30" alt="Logo" />
+      <span>CLOUDTRACK</span>
+    </div>
+    <div class="date-display">
+      {{ currentDate | date: 'HH:mm:ss' }}
     </div>
     
 
-    <img
-      class="profil"
-      src="assets/profil.png"
-      width="30"
-      alt="Profil logo"
-      (click)="toggleModal()"
-    />
-    <app-profile-modal
-      [isOpen]="isModalOpen"
-      (closeModal)="toggleModal()"
-    ></app-profile-modal>
-  </div>
-</div>
-<div class="arrow" [ngClass]="{ hidden: sibebarOpen }">
-  <button (click)="toggleSidebar()">
-    <img src="assets/droit.png" alt="arrow-right" width="30" />
-  </button>
-</div>
-<div id="sidebar" [ngClass]="{ open: sibebarOpen }" *ngIf="flightsByAirport">
-  <div id="sidebar-header">
-    <span class="favori">
-      Aéroport d'arrivée favori:
-      <strong>{{ flightsByAirport[0].arrival.airport }}</strong></span
-    >
-    <button (click)="hideSidebar()">
-      <img src="assets/close.png" alt="close" width="15" />
-    </button>
-  </div>
-  <div class="list-card">
-    <div *ngFor="let flight of flightsByAirport">
-      <app-card [flight]="flight"></app-card>
+    <div class="profil-search-div">
+      <div class="search-wrapper">
+        <input
+          type="text"
+          [(ngModel)]="searchValueICAO"
+          class="search"
+          placeholder="Rechercher un vol"
+          (focus)="showDropdown = true"
+          (blur)="hideDropdownWithDelay()"
+          (input)="filterFavorites()"
+          (keyup.enter)="searchFlight()"
+        />
+        <img src="assets/loupe.png" alt="Loupe" class="search-icon" />
+        <ul
+          *ngIf="showDropdown && filteredFavorites.length > 0"
+          class="search-dropdown"
+        >
+          <li
+            *ngFor="let flight of filteredFavorites"
+            class="dropdown-item"
+            (mousedown)="selectFavorite(flight)"
+          >
+            {{ flight }}
+          </li>
+        </ul>
+      </div>
+      
+
+      <img
+        class="profil"
+        src="assets/profil.png"
+        width="30"
+        alt="Profil logo"
+        (click)="toggleModal()"
+      />
+      <app-profile-modal
+        [isOpen]="isModalOpen"
+        (closeModal)="toggleModal()"
+      ></app-profile-modal>
     </div>
   </div>
-</div>
-<app-flight-sidebar
-  [flight]="currentFlightInfo"
-  [showModal]="sidebarFlightInfoOpen"
-  (closeModal)="hideFlightInfoModal()"
-/>
+  <div class="arrow" [ngClass]="{ hidden: sibebarOpen }">
+    <button (click)="toggleSidebar()">
+      <img src="assets/droit.png" alt="arrow-right" width="30" />
+    </button>
+  </div>
+  <div id="sidebar" [ngClass]="{ open: sibebarOpen }" *ngIf="flightsByAirport">
+    <div id="sidebar-header">
+      <span class="favori">
+        Aéroport d'arrivée favori:
+        <strong>{{ flightsByAirport[0].arrival.airport }}</strong></span
+      >
+      <button (click)="hideSidebar()">
+        <img src="assets/close.png" alt="close" width="15" />
+      </button>
+    </div>
+    <div class="list-card">
+      <div *ngFor="let flight of flightsByAirport">
+        <app-card [flight]="flight"></app-card>
+      </div>
+    </div>
+  </div>
+  <app-flight-sidebar
+    [flight]="currentFlightInfo"
+    [showModal]="sidebarFlightInfoOpen"
+    (closeModal)="hideFlightInfoModal()"
+  />

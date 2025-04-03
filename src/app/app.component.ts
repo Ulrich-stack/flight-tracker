@@ -11,18 +11,10 @@ import { AuthService } from './auth.service';
 export class AppComponent implements OnInit{
   title = 'flight-tracker';
   constructor(private api : ApiService, private authService: AuthService){}
-  // public flights? : AviationState[];
   @Input() flights? : Flight[];
 
-  public ngOnInit(): void {
-      // this.api.getFlights().subscribe((results)=> {
-      //   this.flights= results.data;
-      //   console.log(results.data);
-        
-      // })
+  ngOnInit(): void {
       this.authService.loadUserDataOnAppStart();
-
-      
   }
 
 }

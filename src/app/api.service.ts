@@ -16,7 +16,7 @@ export class ApiService {
 
   // API Aviationstack (pour les infos complémentaires)
   private baseUrlAviationSky: string = 'https://api.aviationstack.com/v1';
-  private apiKey: string = '5381652b51416c715b2eb2900eca0dfe';
+  private apiKey: string = '789d2ccc28e02115aa438798fbf8a121';
 
   constructor(private http: HttpClient) {}
 
@@ -28,7 +28,7 @@ export class ApiService {
     const params = {
       access_key: this.apiKey,
       arr_icao: icao,
-      limit: 5,
+      limit: 20,
     };
     return this.http.get<any>(this.baseUrlAviationSky + '/flights', { params });
   }
@@ -48,13 +48,13 @@ export class ApiService {
     });
   }
 
-  public getFlightInfoByIcao24(icao: string): Observable<any> {
+  public getFlightInfoByIcao24(iata: string): Observable<any> {
     return this.http.get<any>(
       this.baseUrlAviationSky +
         '/flights?access_key=' +
         this.apiKey +
         '&flight_iata=' +
-        icao
+        iata
     );
   }
 

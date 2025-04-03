@@ -20,14 +20,12 @@
 }
 
 .date-display {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1;
+  text-align: center;
   color: white;
   font-size: 14px;
   font-weight: 500;
   font-family: 'Segoe UI', sans-serif;
-  white-space: nowrap;
 }
 
 
@@ -58,13 +56,14 @@
 
 .search-icon {
   position: absolute;
-  left: 10px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
   opacity: 0.6;
   pointer-events: none;
+  z-index: 1;
 }
 
 .search:focus + .search-icon {
@@ -293,6 +292,29 @@
   border-radius: 4px;
 }
 
+.live-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1a8d75;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.live-btn:hover {
+  background-color: #0d5f52;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #topbar {
     flex-direction: row;
@@ -324,6 +346,10 @@
   .profil {
     width: 28px;
   }
+
+  /* .search-icon{
+    display: none;
+  } */
 }
 
 @media screen and (max-width: 767px) {
@@ -359,5 +385,8 @@
     width: 100%;
     font-size: 14px;
     padding: 8px;
+  }
+  .search-icon{
+    display: none;
   }
 }

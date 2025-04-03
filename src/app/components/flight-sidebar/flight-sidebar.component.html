@@ -9,8 +9,8 @@
             <div class="flight-header">
               <div class="flight-number">
                 <!-- Afficher le flightNumber + callsign ou autre identifiant -->
-                <span class="callsign">{{ flight.flightNumber }}</span>
-                <small>({{ flight.callsign }})</small>
+                <span class="callsign">{{ flight.callsign }}</span>
+                <small>({{ flight.icao24 }})</small>
               </div>
               
             </div>
@@ -24,8 +24,7 @@
             </div> -->
           
             <!-- Bloc Départ / Arrivée -->
-            <div class="flight-schedule">
-              <!-- Départ -->
+            <!-- <div class="flight-schedule">
               <div class="schedule-block  departure">
                 <img src="assets/plane-up.png" alt="Departure" class="icon" width="20"/>
                 <div class="airport">
@@ -35,7 +34,6 @@
                 </div>
               </div>
           
-              <!-- Arrivée -->
               <div class="schedule-block arrival">
                 <img src="assets/plane-down.png" alt="Arrival" class="icon" width="20" />
                 <div class="airport">
@@ -69,7 +67,7 @@
                 <div class="status" [ngClass]="getTranslatedStatus(flight.flightStatus).class"></div>
                 <span class="status-value scheduled">{{ getTranslatedStatus(flight.flightStatus).label }}</span>
             </div>
-          
+           -->
             <!-- Bloc Informations live (OpenSky) -->
             <div class="live-info">
               <div class="item"><strong>Position: </strong> {{ flight.latitude }}, {{ flight.longitude }}</div>
