@@ -1,0 +1,111 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Card style */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    border: 2px solid #2d6a4f; /* Encadré vert foncé */
+}
+
+/* Logo style */
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+/* Icon style */
+.icon svg {
+    width: 50px;
+    height: 50px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Title style */
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Text style */
+.text {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Form Style */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Field Style */
+input[type="email"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus {
+    border-color: #2d6a4f;
+    outline: none;
+}
+
+/* Button style */
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #2d6a4f; /* Vert foncé */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #1d4e36; /* Vert foncé au survol */
+}
+
+/* Home button style */
+.home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2d6a4f; /* Vert foncé */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #1d4e36; /* Vert foncé au survol */
+}

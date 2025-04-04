@@ -80,7 +80,7 @@ export class AuthService {
         });
       })
       .then(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/verification-email']);
       })
       .catch((error) => {
         console.error('Erreur:', error.code, error.message);
