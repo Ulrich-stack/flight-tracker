@@ -4,6 +4,12 @@ Suivi des vols en temps réel : carte des avions (données OpenSky Network), rec
 détail et trajectoire d'un vol, alertes, arrivées par aéroport et statistiques.
 Angular 17, Leaflet, Firebase (Auth, Firestore, Hosting, Cloud Functions).
 
+## Documentation
+
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : flux de données, proxy OpenSky, rendu de
+  la carte, services, Firestore.
+- [DESIGN.md](DESIGN.md) : couleurs, typographie, composants et règles visuelles.
+
 ## Installation
 
 ```bash
@@ -32,6 +38,18 @@ navigateur).
   quota est épuisé.
 - Avec un compte gratuit (~4 000 crédits par jour) : créez un « API client » sur
   opensky-network.org puis renseignez `functions/.env` à partir de `functions/.env.example`.
+
+## Sources et attributions
+
+| Source | Usage | Conditions |
+|---|---|---|
+| [OpenSky Network](https://opensky-network.org) | positions et trajectoires des avions | usage non commercial ; citer OpenSky Network |
+| [Esri](https://www.esri.com) (World Dark Gray Canvas) | fond de carte | attribution affichée sur la carte |
+| [aviationstack](https://aviationstack.com) | arrivées CDG et ORY (exports dans `src/assets/`) | données d'exemple, non actualisées |
+| [Leaflet](https://leafletjs.com) | bibliothèque de carte | licence BSD-2 |
+
+Les attributions Esri et OpenSky sont affichées dans l'application (carte et pages de
+connexion). Un usage commercial demande l'accord d'OpenSky.
 
 ## Déploiement Firebase
 
