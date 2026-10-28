@@ -250,12 +250,13 @@
 
 
 
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
 import 'leaflet-rotatedmarker';
+import { addBaseLayers, planeIcon, positionedStates } from '../map-utils';
 
 @Component({
   selector: 'app-dashboard',
@@ -265,14 +266,22 @@ import 'leaflet-rotatedmarker';
 export class DashboardComponent implements OnInit, OnDestroy {
   private data: any | null = null;
   private map!: L.Map;
-  private markers: { [key: string]: L.Marker } = {};
+  private resizeObserver?: ResizeObserver;
+  private selectedMarker?: L.Marker;
+
+  private readonly planeIcon = planeIcon('#d9dcdf', 14);
+  private readonly selectedIcon = planeIcon('#3fa58f', 22);
 
   @Input() flightsByAirport: any | null = null;
   @Input() flights?: any[];
   @Input() user?: any;
   isModalOpen = false;
+  boardCollapsed = false;
 
+  /** État OpenSky de l'avion sélectionné sur la carte. */
+  selected: any[] | null = null;
   liveCount = 0;
+
   currentTime: string = '';  // 🕒 Propriété pour stocker l'heure
   utcTime: string = '';
   private clockInterval: any; // Intervalle pour l'horloge
@@ -280,7 +289,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthService,
     private api: ApiService,
-    private http: HttpClient
+    private http: HttpClient,
+    private host: ElementRef<HTMLElement>
   ) {}
 
   ngOnInit(): void {
@@ -300,14 +310,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (this.clockInterval) {
       clearInterval(this.clockInterval);
     }
+    this.resizeObserver?.disconnect();
+    this.map?.remove();
   }
 
   private updateClock(): void {
     const now = new Date();
-    const fmt = (h: number, m: number, s: number) =>
-      [h, m, s].map((n) => n.toString().padStart(2, '0')).join(':');
-    this.currentTime = fmt(now.getHours(), now.getMinutes(), now.getSeconds());
-    this.utcTime = fmt(now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+    const fmt = (h: number, m: number) =>
+      [h, m].map((n) => n.toString().padStart(2, '0')).join(':');
+    this.currentTime = fmt(now.getHours(), now.getMinutes());
+    this.utcTime = fmt(now.getUTCHours(), now.getUTCMinutes());
   }
 
   toggleModal(): void {
@@ -319,30 +331,51 @@ export class DashboardComponent implements OnInit, OnDestroy {
     console.log('User logged out');
   }
 
+  flightLevel(altitudeMeters: number): string {
+    return 'FL' + Math.round((altitudeMeters * 3.28084) / 100).toString().padStart(3, '0');
+  }
+
+  clearSelection(): void {
+    this.selectedMarker?.setIcon(this.planeIcon).setZIndexOffset(0);
+    this.selectedMarker = undefined;
+    this.selected = null;
+  }
+
+  private select(marker: L.Marker, state: any[]): void {
+    this.clearSelection();
+    marker.setIcon(this.selectedIcon).setZIndexOffset(1000);
+    this.selectedMarker = marker;
+    this.selected = state;
+  }
+
   private initMap(): void {
-    this.map = L.map('map', { zoomControl: false }).setView(
-      [48.8566, 2.3522],
-      5
-    );
-
+    const mapEl = this.host.nativeElement.querySelector<HTMLElement>('#map')!;
+    this.map = L.map(mapEl, { zoomControl: false }).setView([48.8566, 2.3522], 5);
     L.control.zoom({ position: 'bottomright' }).addTo(this.map);
+    L.control.scale({ position: 'bottomleft', imperial: false, maxWidth: 120 }).addTo(this.map);
+    addBaseLayers(this.map);
 
-    const esri = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas';
-    L.tileLayer(`${esri}/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}`, {
-      attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
-      minZoom: 2,
-      maxZoom: 16,
+    L.marker([49.0097, 2.5479], {
+      icon: L.divIcon({
+        className: 'airport-symbol',
+        html: '<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="5" fill="#121314" stroke="#3fa58f" stroke-width="2.5"/></svg><span>CDG</span>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+      }),
+      interactive: false,
+      zIndexOffset: 500,
     }).addTo(this.map);
-    L.tileLayer(`${esri}/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, {
-      minZoom: 2,
-      maxZoom: 16,
-    }).addTo(this.map);
+
+    this.map.on('click', () => this.clearSelection());
+
+    // Le tableau des arrivées se replie : la carte doit recalculer sa taille.
+    this.resizeObserver = new ResizeObserver(() => this.map.invalidateSize());
+    this.resizeObserver.observe(mapEl);
   }
 
   private fetchFlights(): void {
     this.http.get('../assets/flightsOpenSky.json').subscribe((response) => {
       this.data = response;
-      console.log("Vols: ", this.data);
       this.updateMap(this.data);
     });
   }
@@ -350,83 +383,24 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private fetchFlightsByAirport(airport: string): void {
     this.http.get<any>('../assets/flightsToCDG.json').subscribe((response) => {
       this.flightsByAirport = response.data.slice(0, 5);
-      console.log("Vols par aéroport: ", this.flightsByAirport);
     });
-  }
-
-  openMaps(lat: number, lng: number): void {
-    const url = `https://www.google.com/maps?q=${lat},${lng}`;
-    window.open(url, '_blank');
-  }
-
-  // Avion orienté vers le nord : la rotation correspond directement au cap.
-  private readonly planeIcon = L.icon({
-    iconUrl:
-      'data:image/svg+xml,' +
-      encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#5eead4" stroke="#021f1c" stroke-width="0.8" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>'
-      ),
-    iconSize: [18, 18],
-    iconAnchor: [9, 9],
-    popupAnchor: [0, -10],
-  });
-
-  private getPlaneIcon(): L.Icon {
-    return this.planeIcon;
   }
 
   private updateMap(flightsResponse: any): void {
-    const flights = flightsResponse.states.filter((flight: any) => flight[5] && flight[6]).slice(0, 1000);
-    console.log("Vols triés: ", flights);
+    const flights = positionedStates(flightsResponse);
     this.liveCount = flights.length;
-    
-    this.map.eachLayer((layer: any) => {
-      if (layer instanceof L.Marker) {
-        this.map.removeLayer(layer);
-      }
-    });
 
-    flights.forEach((flight: any) => {
-      if (flight[5] && flight[6]) {
-        const markerOptions = {
-          icon: this.getPlaneIcon(),
-          rotationAngle: flight[10] || 0,
-          rotationOrigin: 'center',
-        };
-        const liveMarker = L.marker(
-          [flight[6], flight[5]], // OpenSky : [5] = longitude, [6] = latitude
-          markerOptions
-        ).addTo(this.map);
+    for (const state of flights) {
+      const marker = L.marker([state[6], state[5]], {
+        icon: this.planeIcon,
+        rotationAngle: state[10] || 0,
+        rotationOrigin: 'center',
+      } as L.MarkerOptions).addTo(this.map);
 
-        liveMarker.bindPopup(
-          `
-          <div class="fp">
-            <div class="fp-header">
-              <span class="fp-callsign">${flight[1]?.trim() || 'N/A'}</span>
-              <span class="fp-country">${flight[2] || 'Pays non spécifié'}</span>
-            </div>
-            <div class="fp-grid">
-              <div class="fp-stat">
-                <span class="fp-label">Altitude</span>
-                <span class="fp-value">${flight[7] ? flight[7].toFixed(0) + ' m' : 'N/A'}</span>
-              </div>
-              <div class="fp-stat">
-                <span class="fp-label">Vitesse</span>
-                <span class="fp-value">${flight[9] ? (flight[9] * 3.6).toFixed(0) + ' km/h' : 'N/A'}</span>
-              </div>
-              <div class="fp-stat">
-                <span class="fp-label">Cap</span>
-                <span class="fp-value">${flight[10] ? flight[10].toFixed(0) + '°' : 'N/A'}</span>
-              </div>
-            </div>
-            <a class="fp-link" target="_blank" rel="noopener" href="https://www.google.com/maps?q=${flight[6]},${flight[5]}">
-              Ouvrir dans Maps ↗
-            </a>
-          </div>
-        `,
-          { className: 'flight-popup' }
-        );
-      }
-    });
+      marker.on('click', (e) => {
+        L.DomEvent.stopPropagation(e);
+        this.select(marker, state);
+      });
+    }
   }
 }

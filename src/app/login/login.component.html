@@ -1,73 +1,55 @@
+<app-map-backdrop></app-map-backdrop>
+
 <div class="auth">
-  <aside class="auth-hero">
-    <div class="hero-brand">
-      <img src="assets/CLOUDtrack.png" alt="" class="hero-logo" />
-      <span>CLOUDtrack</span>
-    </div>
+  <a routerLink="/login" class="auth-brand">
+    <img src="assets/CLOUDtrack.png" alt="" />
+    <span>CLOUDtrack</span>
+  </a>
 
-    <div class="hero-copy">
-      <h1>Suivez tous les vols du monde, en toute simplicité.</h1>
-      <p>
-        Positions en temps réel, itinéraires, horaires et bien plus encore,
-        réunis sur une seule carte.
-      </p>
-    </div>
+  <div class="auth-body">
+    <h1>Connexion</h1>
+    <p class="auth-lede">
+      Pas encore de compte ? <a routerLink="/signin">Inscrivez-vous</a>
+    </p>
 
-    <ul class="hero-features">
-      <li>Carte des vols en direct</li>
-      <li>Aéroports favoris</li>
-      <li>Altitude, vitesse et cap</li>
-    </ul>
-  </aside>
-
-  <main class="auth-panel">
-    <div class="auth-form">
-      <div class="form-head">
-        <h2>Connexion</h2>
-        <p>
-          Pas encore de compte ?
-          <a routerLink="/signin">Inscrivez-vous</a>
-        </p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          class="input"
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="vous@exemple.com"
+          autocomplete="email"
+        />
+        <span
+          class="field-error"
+          *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+        >
+          Saisissez une adresse email valide.
+        </span>
       </div>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
-        <div class="field">
-          <label for="email">Email</label>
-          <input
-            class="input"
-            type="email"
-            id="email"
-            formControlName="email"
-            placeholder="vous@exemple.com"
-            autocomplete="email"
-          />
-          <span
-            class="field-error"
-            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
-          >
-            Saisissez une adresse email valide.
-          </span>
+      <div class="field">
+        <div class="label-row">
+          <label for="password">Mot de passe</label>
+          <a routerLink="/forgot-password">Mot de passe oublié ?</a>
         </div>
+        <input
+          class="input"
+          type="password"
+          id="password"
+          formControlName="password"
+          autocomplete="current-password"
+        />
+      </div>
 
-        <div class="field">
-          <div class="label-row">
-            <label for="password">Mot de passe</label>
-            <a routerLink="/forgot-password" class="forgot">Mot de passe oublié ?</a>
-          </div>
-          <input
-            class="input"
-            type="password"
-            id="password"
-            formControlName="password"
-            placeholder="••••••••"
-            autocomplete="current-password"
-          />
-        </div>
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+        Se connecter
+      </button>
+    </form>
+  </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
-          Se connecter
-        </button>
-      </form>
-    </div>
-  </main>
+  <p class="auth-foot">Positions en direct · données OpenSky Network</p>
 </div>

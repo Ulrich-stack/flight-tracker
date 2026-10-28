@@ -1,59 +1,33 @@
-<article class="card">
-  <header class="card-header">
-    <div class="card-id">
-      <span class="flight-code">{{ flight.flight.iata }}</span>
-      <span class="airline">{{ flight.airline?.name }}</span>
-    </div>
-    <div class="card-actions">
-      <span class="status" [attr.data-status]="flight.flight_status">
-        {{ statusLabel }}
-      </span>
-      <button
-        type="button"
-        class="fav"
-        [class.is-active]="isFavorite"
-        [attr.aria-pressed]="isFavorite"
-        [attr.aria-label]="isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'"
-        (click)="isFavorite = !isFavorite"
-      >
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-          <path
-            d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
-  </header>
-
-  <div class="route">
-    <div class="leg">
-      <span class="iata">{{ flight.departure.iata }}</span>
-      <span class="time">{{ flight.departure.scheduled | date: 'HH:mm' : 'UTC' }}</span>
-    </div>
-
-    <div class="path" aria-hidden="true">
-      <span class="line"></span>
-      <svg viewBox="0 0 24 24" width="14" height="14">
-        <path
-          fill="currentColor"
-          d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"
-          transform="rotate(90 12 12)"
-        />
-      </svg>
-      <span class="line"></span>
-    </div>
-
-    <div class="leg leg-end">
-      <span class="iata">{{ flight.arrival.iata }}</span>
-      <span class="time">{{ flight.arrival.scheduled | date: 'HH:mm' : 'UTC' }}</span>
-    </div>
-  </div>
-
-  <footer class="card-footer">
-    <span class="airport-name" [title]="flight.departure.airport">{{ flight.departure.airport }}</span>
-    <span class="delay" *ngIf="flight.departure.delay">+{{ flight.departure.delay }} min</span>
-  </footer>
-</article>
+<td class="col-flight">
+  <span class="code">{{ flight.flight.iata }}</span>
+  <span class="muted">{{ flight.airline?.name }}</span>
+</td>
+<td class="col-from">
+  <span class="code">{{ flight.departure.iata }}</span>
+  <span class="muted">{{ flight.departure.airport }}</span>
+</td>
+<td class="col-time col-dep num">{{ flight.departure.scheduled | date: 'HH:mm' : 'UTC' }}</td>
+<td class="col-time num">{{ flight.arrival.scheduled | date: 'HH:mm' : 'UTC' }}</td>
+<td class="col-status" [attr.data-status]="flight.flight_status">
+  {{ statusLabel }}
+  <span class="delay num" *ngIf="flight.departure.delay">+{{ flight.departure.delay }} min</span>
+</td>
+<td class="col-fav">
+  <button
+    type="button"
+    class="fav"
+    [class.is-active]="isFavorite"
+    [attr.aria-pressed]="isFavorite"
+    [attr.aria-label]="isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'"
+    (click)="isFavorite = !isFavorite"
+  >
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+      <path
+        d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+</td>

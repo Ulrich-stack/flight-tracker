@@ -1,13 +1,19 @@
-<div class="simple-page">
-  <div class="simple-card">
-    <img src="assets/CLOUDtrack.png" alt="CLOUDtrack" class="brand-mark" />
-    <div>
-      <h1>Vérifiez votre boîte mail</h1>
-      <p>
-        Nous venons de vous envoyer un lien. Ouvrez-le pour continuer. Pensez à
-        regarder dans vos spams si vous ne le trouvez pas.
-      </p>
-    </div>
+<app-map-backdrop></app-map-backdrop>
+
+<div class="auth">
+  <a routerLink="/login" class="auth-brand">
+    <img src="assets/CLOUDtrack.png" alt="" />
+    <span>CLOUDtrack</span>
+  </a>
+
+  <div class="auth-body">
+    <h1>Vérifiez votre boîte mail</h1>
+    <p class="auth-lede">
+      Nous venons de vous envoyer un lien. Ouvrez-le pour continuer. Pensez à
+      regarder dans vos spams si vous ne le trouvez pas.
+    </p>
     <a routerLink="/login" class="btn btn-primary">Retour à la connexion</a>
   </div>
+
+  <p class="auth-foot">Positions en direct · données OpenSky Network</p>
 </div>

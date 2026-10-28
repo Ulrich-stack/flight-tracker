@@ -10,7 +10,7 @@ const STATUS_LABELS: Record<string, string> = {
 };
 
 @Component({
-  selector: 'app-card',
+  selector: 'tr[app-card]',
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })

@@ -1,16 +1,14 @@
 .menu {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 8px);
   right: 0;
   z-index: 1100;
   width: 200px;
-  padding: 6px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
+  padding: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 }
 
 .menu button {
@@ -20,24 +18,23 @@
   width: 100%;
   padding: 9px 10px;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background: transparent;
-  color: var(--glass-text);
   font-size: 14px;
   text-align: left;
   cursor: pointer;
 }
 
 .menu button:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--surface-hover);
 }
 
 .menu .danger {
-  color: #fca5a5;
+  color: var(--danger);
 }
 
 .divider {
   height: 1px;
   margin: 4px 0;
-  background: var(--glass-border);
+  background: var(--border);
 }

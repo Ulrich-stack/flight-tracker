@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -18,6 +20,9 @@ import { CardComponent } from './card/card.component';
 import { ProfileModalComponent } from './profile-modal/profile-modal.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { MapBackdropComponent } from './map-backdrop/map-backdrop.component';
+
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -29,6 +34,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     ProfileModalComponent,
     VerificationEmailComponent,
     ForgotPasswordComponent,
+    MapBackdropComponent,
   ],
   imports: [
     FormsModule,
@@ -40,7 +46,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [ApiService],
+  providers: [ApiService, { provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
