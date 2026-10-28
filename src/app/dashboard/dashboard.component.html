@@ -1,40 +1,68 @@
 <div id="map"></div>
-<div id="topbar">
-  <div class="logo-div">
-    <img src="assets/CLOUDtrack.png" width="30" alt="Logo" />
 
+<header id="topbar" class="glass">
+  <div class="brand">
+    <img src="assets/CLOUDtrack.png" alt="" />
     <span>CLOUDtrack</span>
   </div>
-  <div class="clock">{{ currentTime }}</div>
 
-  <div class="profil-search-div">
-    <div class="search-container">
-      <input type="text" placeholder="Rechercher un vol" class="search" />
-      <img src="assets/loupe.png" class="search-icon" alt="Rechercher" />
+  <div class="search">
+    <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+      <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+    <input type="search" placeholder="Rechercher un vol, un aéroport…" aria-label="Rechercher un vol" />
+  </div>
+
+  <div class="topbar-right">
+    <div class="clock">
+      <div class="clock-item">
+        <span class="clock-label">Local</span>
+        <span class="clock-value">{{ currentTime }}</span>
+      </div>
+      <div class="clock-item">
+        <span class="clock-label">UTC</span>
+        <span class="clock-value">{{ utcTime }}</span>
+      </div>
     </div>
-    <img
-      class="profil"
-      src="assets/profil.png"
-      width="30"
-      alt="Profil logo"
-      (click)="toggleModal()"
-    />
-    <app-profile-modal
-      [isOpen]="isModalOpen"
-      (closeModal)="toggleModal()"
-    ></app-profile-modal>
+
+    <div class="profile">
+      <button
+        type="button"
+        class="avatar"
+        aria-label="Menu du profil"
+        [attr.aria-expanded]="isModalOpen"
+        (click)="toggleModal()"
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+      <app-profile-modal
+        [isOpen]="isModalOpen"
+        (closeModal)="toggleModal()"
+        (logout)="logout()"
+      ></app-profile-modal>
+    </div>
   </div>
-</div>
-<div id="sidebar">
-  <div>
-    <span class="favori">
-      Aéroport d'arrivée favori:
-      <strong>{{ flightsByAirport[0].arrival.airport }}</strong>
-    </span>
+</header>
+
+<aside id="sidebar" class="glass">
+  <div class="sidebar-head">
+    <div>
+      <span class="eyebrow">Arrivées · aéroport favori</span>
+      <h2>{{ flightsByAirport?.[0]?.arrival?.airport ?? 'Chargement…' }}</h2>
+    </div>
+    <span class="count" *ngIf="flightsByAirport">{{ flightsByAirport.length }}</span>
   </div>
+
   <div class="list-card">
-    <div *ngFor="let flight of flightsByAirport">
-      <app-card [flight]="flight"></app-card>
-    </div>
+    <app-card *ngFor="let flight of flightsByAirport" [flight]="flight"></app-card>
   </div>
+</aside>
+
+<div class="live-badge glass" *ngIf="liveCount">
+  <span class="pulse"></span>
+  {{ liveCount }} avions en direct
 </div>

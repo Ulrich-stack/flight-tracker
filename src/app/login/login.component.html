@@ -1,29 +1,73 @@
-<div class="container">
-
-    <div class="login-image">
-        <img src="assets/map2.png" alt="Image de connexion">
-        <h1 class="image-text">Suivez tous les vols du <br> monde en toute simplicité</h1>
-        <h4 class="texth">Rejoignez-nous et accédez à des informations précises sur les itinéraires, les horaires, <br>
-            et bien plus encore.</h4>
+<div class="auth">
+  <aside class="auth-hero">
+    <div class="hero-brand">
+      <img src="assets/CLOUDtrack.png" alt="" class="hero-logo" />
+      <span>CLOUDtrack</span>
     </div>
 
-    <div class="login-form">
-        <div class="cloudtrack-container">
-            <img src="assets/image.png" alt="Logo" class="logo">
-            <span class="cloudtrack-login">CLOUDTRACK</span>
+    <div class="hero-copy">
+      <h1>Suivez tous les vols du monde, en toute simplicité.</h1>
+      <p>
+        Positions en temps réel, itinéraires, horaires et bien plus encore,
+        réunis sur une seule carte.
+      </p>
+    </div>
+
+    <ul class="hero-features">
+      <li>Carte des vols en direct</li>
+      <li>Aéroports favoris</li>
+      <li>Altitude, vitesse et cap</li>
+    </ul>
+  </aside>
+
+  <main class="auth-panel">
+    <div class="auth-form">
+      <div class="form-head">
+        <h2>Connexion</h2>
+        <p>
+          Pas encore de compte ?
+          <a routerLink="/signin">Inscrivez-vous</a>
+        </p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            class="input"
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="vous@exemple.com"
+            autocomplete="email"
+          />
+          <span
+            class="field-error"
+            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+          >
+            Saisissez une adresse email valide.
+          </span>
         </div>
 
-        <h2>CONNEXION</h2>
-        <p>Pas encore de compte ? <a href="/signin">Inscrivez-vous</a></p>
+        <div class="field">
+          <div class="label-row">
+            <label for="password">Mot de passe</label>
+            <a routerLink="/forgot-password" class="forgot">Mot de passe oublié ?</a>
+          </div>
+          <input
+            class="input"
+            type="password"
+            id="password"
+            formControlName="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+        </div>
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <input type="email" id="email" formControlName="email" placeholder="Email">
-            <input type="password" id="password" formControlName="password" placeholder="Mot de passe">
-            <button type="submit">Se connecter</button>
-            <div class="links">
-                <a href="/forgot-password">Mot de passe oublié ?</a>
-            </div>
-        </form>
-
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+          Se connecter
+        </button>
+      </form>
     </div>
+  </main>
 </div>
