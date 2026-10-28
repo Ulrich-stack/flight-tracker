@@ -1,0 +1,103 @@
+<div class="content">
+  <div class="content-inner" *ngIf="airport as ap; else unknown">
+    <header class="page-head">
+      <div>
+        <h1>{{ ap.name }}</h1>
+        <p>{{ ap.city }}, {{ ap.country }} · <span class="codes">{{ ap.iata }} / {{ ap.icao }}</span></p>
+      </div>
+      <div class="head-actions">
+        <button
+          type="button"
+          class="btn"
+          [class.btn-primary]="!isFavorite"
+          [class.btn-secondary]="isFavorite"
+          [disabled]="!hasArrivals || isFavorite"
+          [title]="hasArrivals ? '' : 'Pas de données d’arrivées pour cet aéroport'"
+          (click)="makeFavorite()"
+        >
+          {{ isFavorite ? 'Aéroport favori ✓' : 'Définir comme favori' }}
+        </button>
+        <a routerLink="/aeroports" class="btn btn-secondary">Tous les aéroports</a>
+      </div>
+    </header>
+
+    <dl class="tiles">
+      <div class="tile">
+        <dt>Avions à moins de 50 km</dt>
+        <dd>{{ nearby.length | number }}</dd>
+        <small>dont {{ onGround | number }} au sol</small>
+      </div>
+      <ng-container *ngIf="hasArrivals">
+        <div class="tile">
+          <dt>Arrivées enregistrées</dt>
+          <dd>{{ arrivals.length | number }}</dd>
+        </div>
+        <div class="tile">
+          <dt>Retard moyen au départ</dt>
+          <dd>{{ avgDelay | number: '1.0-0' }} min</dd>
+          <small>{{ delayed }} vols à +15 min ou plus</small>
+        </div>
+        <div class="tile">
+          <dt>Vols annulés</dt>
+          <dd>{{ cancelled | number }}</dd>
+        </div>
+      </ng-container>
+    </dl>
+
+    <div class="airport-map"><div #map></div></div>
+
+    <div class="section-grid">
+      <section class="section" style="padding-bottom: 8px">
+        <h2>À proximité</h2>
+        <p class="section-sub">Les avions les plus proches de l’aéroport.</p>
+        <div class="table-scroll board-table" *ngIf="nearby.length; else noneNearby">
+          <table class="table">
+            <thead>
+              <tr><th>Vol</th><th>Distance</th><th>Altitude</th><th>État</th></tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let n of nearby.slice(0, 20)">
+                <td class="num"><a [routerLink]="['/vol', n.aircraft.icao24]">{{ n.aircraft.callsign || (n.aircraft.icao24 | uppercase) }}</a></td>
+                <td class="num">{{ n.distance | number: '1.0-0' }} km</td>
+                <td class="num">{{ n.aircraft.altitude != null ? (n.aircraft.altitude | number: '1.0-0') + ' m' : '—' }}</td>
+                <td>{{ n.aircraft.onGround ? 'Au sol' : 'En vol' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #noneNearby><p class="empty-note">Aucun avion dans les 50 km pour le moment.</p></ng-template>
+      </section>
+
+      <section class="section" style="padding-bottom: 8px">
+        <h2>Arrivées</h2>
+        <ng-container *ngIf="hasArrivals; else noArrivals">
+          <p class="section-sub">Données aviationstack enregistrées (heures UTC).</p>
+          <div class="table-scroll board-table">
+            <table class="table">
+              <thead>
+                <tr><th>Vol</th><th>Provenance</th><th class="col-dep">Départ</th><th>Arrivée</th><th>Statut</th><th></th></tr>
+              </thead>
+              <tbody>
+                <tr app-card *ngFor="let f of arrivals" [flight]="f"></tr>
+              </tbody>
+            </table>
+          </div>
+        </ng-container>
+        <ng-template #noArrivals>
+          <p class="empty-note">Pas encore de données d’arrivées pour cet aéroport : seuls Paris-CDG et Paris-Orly en ont.</p>
+        </ng-template>
+      </section>
+    </div>
+  </div>
+
+  <ng-template #unknown>
+    <div class="content-inner">
+      <header class="page-head">
+        <div>
+          <h1>Aéroport introuvable</h1>
+          <p>Ce code ne correspond à aucun aéroport référencé. <a routerLink="/aeroports">Voir la liste des aéroports</a>.</p>
+        </div>
+      </header>
+    </div>
+  </ng-template>
+</div>

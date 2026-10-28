@@ -11,7 +11,8 @@
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 }
 
-.menu button {
+.menu button,
+.menu a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -25,7 +26,8 @@
   cursor: pointer;
 }
 
-.menu button:hover {
+.menu button:hover,
+.menu a:hover {
   background: var(--surface-hover);
 }
 
@@ -37,4 +39,9 @@
   height: 1px;
   margin: 4px 0;
   background: var(--border);
+}
+
+.menu a {
+  color: var(--text);
+  text-decoration: none;
 }

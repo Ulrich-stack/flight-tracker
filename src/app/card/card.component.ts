@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PreferencesService } from '../preferences.service';
 
 const STATUS_LABELS: Record<string, string> = {
   scheduled: 'Programmé',
@@ -16,7 +17,16 @@ const STATUS_LABELS: Record<string, string> = {
 })
 export class CardComponent {
   @Input() flight: any;
-  isFavorite = false;
+
+  constructor(private prefs: PreferencesService) {}
+
+  get isFavorite(): boolean {
+    return this.prefs.isFavoriteFlight(this.flight?.flight?.iata);
+  }
+
+  toggleFavorite(): void {
+    this.prefs.toggleFavoriteFlight(this.flight.flight.iata);
+  }
 
   get statusLabel(): string {
     return STATUS_LABELS[this.flight?.flight_status] ?? this.flight?.flight_status ?? '—';

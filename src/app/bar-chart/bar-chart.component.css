@@ -1,0 +1,140 @@
+:host {
+  display: block;
+}
+
+/* ---------- Horizontal ---------- */
+.hrow {
+  display: grid;
+  grid-template-columns: minmax(90px, 30%) 1fr 56px;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 0;
+  border-radius: 4px;
+}
+
+.hrow:hover {
+  background: var(--surface-2);
+}
+
+.hlabel {
+  font-size: 14px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a.hlabel:hover {
+  color: var(--accent);
+}
+
+.htrack {
+  height: 10px;
+}
+
+.hbar {
+  display: block;
+  height: 100%;
+  min-width: 2px;
+  border-radius: 0 4px 4px 0;
+}
+
+.hvalue {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* ---------- Vertical ---------- */
+.vplot {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 180px;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.vcol {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.vcol:hover {
+  background: var(--surface-2);
+}
+
+.vbar {
+  display: block;
+  width: 100%;
+  min-height: 1px;
+  border-radius: 4px 4px 0 0;
+}
+
+.vaxis {
+  display: flex;
+  gap: 2px;
+  margin-top: 6px;
+}
+
+.vaxis span {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ---------- Infobulle et tableau ---------- */
+.tooltip {
+  position: fixed;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.tooltip span {
+  color: var(--text-muted);
+}
+
+.table-toggle {
+  margin-top: 12px;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.table-toggle:hover {
+  text-decoration: underline;
+}
+
+.data-table {
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.data-table th {
+  color: var(--text-muted);
+  font-weight: 500;
+}

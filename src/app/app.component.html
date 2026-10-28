@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<app-topbar *ngIf="showChrome"></app-topbar>
+<div class="page">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="toasts" aria-live="polite">
+  <div class="toast" *ngFor="let t of alerts.toasts$ | async">
+    <div class="toast-text">
+      <strong>{{ t.title }}</strong>
+      <span>{{ t.body }}</span>
+      <a *ngIf="t.icao24" [routerLink]="['/vol', t.icao24]" (click)="alerts.dismiss(t.id)">Voir sur la carte</a>
+    </div>
+    <button type="button" aria-label="Fermer" (click)="alerts.dismiss(t.id)">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+  </div>
+</div>

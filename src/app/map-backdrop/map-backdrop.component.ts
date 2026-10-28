@@ -1,10 +1,12 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
-import 'leaflet-rotatedmarker';
-import { addBaseLayers, planeIcon, positionedStates } from '../map-utils';
+import { Aircraft, fromOpenSkyState } from '../aircraft';
+import { addBaseLayers } from '../map-utils';
+import { PlaneLayer } from '../plane-layer';
 
 // Carte des vols en fond des pages d'authentification, non interactive.
+// Elle lit l'instantané local pour ne pas consommer le quota OpenSky.
 @Component({
   selector: 'app-map-backdrop',
   template: '<div #map class="backdrop-map"></div>',
@@ -36,17 +38,11 @@ export class MapBackdropComponent implements AfterViewInit, OnDestroy {
     }
     addBaseLayers(this.map);
 
-    const icon = planeIcon('#d9dcdf', 12);
-    this.http.get('assets/flightsOpenSky.json').subscribe((response) => {
-      for (const s of positionedStates(response)) {
-        L.marker([s[6], s[5]], {
-          icon,
-          interactive: false,
-          keyboard: false,
-          rotationAngle: s[10] || 0,
-          rotationOrigin: 'center',
-        } as L.MarkerOptions).addTo(this.map!);
-      }
+    const layer = new PlaneLayer({ position: (a) => [a.lat, a.lng], size: 12 }).addTo(this.map);
+    this.http.get<any>('assets/flightsOpenSky.json').subscribe((res) => {
+      layer.setPlanes(
+        (res?.states ?? []).map(fromOpenSkyState).filter((a: Aircraft | null) => a !== null)
+      );
     });
   }
 

@@ -21,6 +21,12 @@ import { ProfileModalComponent } from './profile-modal/profile-modal.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { MapBackdropComponent } from './map-backdrop/map-backdrop.component';
+import { TopbarComponent } from './topbar/topbar.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { StatsComponent } from './stats/stats.component';
+import { AirportsPageComponent } from './airports-page/airports-page.component';
+import { AirportPageComponent } from './airport-page/airport-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 registerLocaleData(localeFr);
 
@@ -35,6 +41,12 @@ registerLocaleData(localeFr);
     VerificationEmailComponent,
     ForgotPasswordComponent,
     MapBackdropComponent,
+    TopbarComponent,
+    BarChartComponent,
+    StatsComponent,
+    AirportsPageComponent,
+    AirportPageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     FormsModule,

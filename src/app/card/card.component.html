@@ -19,7 +19,7 @@
     [class.is-active]="isFavorite"
     [attr.aria-pressed]="isFavorite"
     [attr.aria-label]="isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'"
-    (click)="isFavorite = !isFavorite"
+    (click)="toggleFavorite()"
   >
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
       <path

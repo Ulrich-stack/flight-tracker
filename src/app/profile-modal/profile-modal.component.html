@@ -1,11 +1,11 @@
 <div class="menu" *ngIf="isOpen" role="menu">
-  <button type="button" role="menuitem" (click)="close()">
+  <a routerLink="/profil" role="menuitem" (click)="close()">
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
       <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8" />
       <path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
     </svg>
     Mon profil
-  </button>
+  </a>
   <div class="divider"></div>
   <button type="button" role="menuitem" class="danger" (click)="onLogout()">
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">

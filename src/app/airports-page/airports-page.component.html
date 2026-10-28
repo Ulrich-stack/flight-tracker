@@ -1,0 +1,52 @@
+<div class="content">
+  <div class="content-inner">
+    <header class="page-head">
+      <div>
+        <h1>Aéroports</h1>
+        <p>Trafic en temps réel autour des principaux aéroports (rayon de 50 km).</p>
+      </div>
+      <input
+        class="input"
+        style="max-width: 280px"
+        type="search"
+        placeholder="Filtrer : ville, code, pays…"
+        aria-label="Filtrer les aéroports"
+        [value]="filter"
+        (input)="filter = $any($event.target).value"
+      />
+    </header>
+
+    <section class="section" style="padding: 0">
+      <div class="table-scroll">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Aéroport</th>
+              <th>Ville</th>
+              <th>Pays</th>
+              <th>Avions à proximité</th>
+              <th>Arrivées</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of filtered">
+              <td class="num"><a [routerLink]="['/aeroport', r.airport.iata]">{{ r.airport.iata }}</a></td>
+              <td>
+                <a [routerLink]="['/aeroport', r.airport.iata]">{{ r.airport.name }}</a>
+                <span *ngIf="prefs.value.favoriteAirport === r.airport.iata" class="empty-note"> · favori</span>
+              </td>
+              <td>{{ r.airport.city }}</td>
+              <td>{{ r.airport.country }}</td>
+              <td class="num">{{ r.nearby | number }}</td>
+              <td class="empty-note">{{ r.airport.arrivalsFile ? 'Disponibles' : '—' }}</td>
+            </tr>
+            <tr *ngIf="!filtered.length">
+              <td colspan="6" class="empty-note">Aucun aéroport ne correspond à « {{ filter }} ».</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

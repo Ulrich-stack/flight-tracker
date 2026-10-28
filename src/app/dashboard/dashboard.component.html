@@ -1,51 +1,74 @@
-<header class="topbar">
-  <div class="brand">
-    <img src="assets/CLOUDtrack.png" alt="" />
-    <span>CLOUDtrack</span>
-  </div>
-
-  <div class="search">
-    <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-      <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
-      <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-    </svg>
-    <input type="search" placeholder="Rechercher un vol ou un aéroport" aria-label="Rechercher un vol" />
-  </div>
-
-  <div class="topbar-right">
-    <span class="live" *ngIf="liveCount"><span class="dot"></span>{{ liveCount }} avions</span>
-    <span class="clock" title="Heure locale : {{ currentTime }}">{{ utcTime }} UTC</span>
-
-    <div class="profile">
-      <button
-        type="button"
-        class="avatar"
-        aria-label="Menu du profil"
-        [attr.aria-expanded]="isModalOpen"
-        (click)="toggleModal()"
-      >
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8" />
-          <path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-        </svg>
-      </button>
-      <app-profile-modal
-        [isOpen]="isModalOpen"
-        (closeModal)="toggleModal()"
-        (logout)="logout()"
-      ></app-profile-modal>
-    </div>
-  </div>
-</header>
-
 <main class="map-area">
   <div id="map"></div>
 
+  <!-- Filtres -->
+  <div class="map-tools">
+    <button
+      type="button"
+      class="tool-btn"
+      [class.is-on]="filtersOpen || filtersActive"
+      [attr.aria-expanded]="filtersOpen"
+      (click)="filtersOpen = !filtersOpen"
+    >
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      Filtres
+      <span class="tool-count">{{ visible.length | number }}<ng-container *ngIf="filtersActive"> / {{ all.length | number }}</ng-container></span>
+    </button>
+
+    <section class="filters" *ngIf="filtersOpen" aria-label="Filtres de la carte">
+      <fieldset>
+        <legend>Altitude</legend>
+        <label class="check">
+          <input type="checkbox" [checked]="isBandVisible('ground')" (change)="toggleBand('ground')" />
+          <span class="swatch" [style.background]="'#8b8f93'"></span>
+          Au sol
+        </label>
+        <label class="check" *ngFor="let b of bands; let i = index">
+          <input type="checkbox" [checked]="isBandVisible($any(i))" (change)="toggleBand($any(i))" />
+          <span class="swatch" [style.background]="colorByAltitude ? b.color : '#d9dcdf'"></span>
+          {{ b.label }}
+        </label>
+      </fieldset>
+
+      <div class="field">
+        <label for="country">Pays d’immatriculation</label>
+        <select id="country" class="input" [value]="country" (change)="setCountry($any($event.target).value)">
+          <option value="">Tous les pays</option>
+          <option *ngFor="let c of countries" [value]="c.name">{{ c.name }} ({{ c.count }})</option>
+        </select>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" [checked]="colorByAltitude" (change)="setColorByAltitude($any($event.target).checked)" />
+        <span>Couleur selon l’altitude</span>
+      </label>
+
+      <button type="button" class="link-btn" *ngIf="filtersActive" (click)="resetFilters()">
+        Réinitialiser les filtres
+      </button>
+    </section>
+  </div>
+
+  <!-- Légende des altitudes -->
+  <div class="legend" *ngIf="colorByAltitude" aria-label="Légende des altitudes">
+    <span class="legend-item"><span class="swatch" style="background: #8b8f93"></span>Sol</span>
+    <span class="legend-item" *ngFor="let b of bands">
+      <span class="swatch" [style.background]="b.color"></span>{{ b.label }}
+    </span>
+  </div>
+
+  <div class="feed-note" *ngIf="status.source === 'sample' && status.message">
+    {{ status.message }}
+  </div>
+
+  <!-- Détail d'un avion -->
   <aside class="detail" *ngIf="selected as s" aria-label="Détail du vol">
     <header class="detail-head">
       <div>
-        <h2>{{ s[1]?.trim() || 'Inconnu' }}</h2>
-        <p>{{ s[2] || 'Pays non spécifié' }}<ng-container *ngIf="s[8]"> · au sol</ng-container></p>
+        <h2>{{ s.callsign || (s.icao24 | uppercase) }}</h2>
+        <p>{{ s.country || 'Pays non spécifié' }} · {{ s.onGround ? 'Au sol' : verticalLabel(s.verticalRate) }}</p>
       </div>
       <button type="button" class="icon-btn" aria-label="Fermer" (click)="clearSelection()">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
@@ -54,56 +77,105 @@
       </button>
     </header>
 
+    <p class="alert" *ngIf="squawkMeaning(s.squawk) as meaning">
+      Transpondeur {{ s.squawk }} : {{ meaning }}
+    </p>
+
     <dl class="detail-data">
       <div>
         <dt>Altitude</dt>
-        <dd>{{ s[7] ? (s[7] | number: '1.0-0') + ' m' : '—' }}</dd>
-        <span *ngIf="s[7]">{{ flightLevel(s[7]) }}</span>
+        <dd>{{ s.altitude != null ? (s.altitude | number: '1.0-0') + ' m' : '—' }}</dd>
+        <span *ngIf="s.altitude">{{ flightLevel(s.altitude) }}</span>
       </div>
       <div>
         <dt>Vitesse</dt>
-        <dd>{{ s[9] ? (s[9] * 3.6 | number: '1.0-0') + ' km/h' : '—' }}</dd>
-        <span *ngIf="s[9]">{{ s[9] * 1.94384 | number: '1.0-0' }} kt</span>
+        <dd>{{ s.velocity != null ? (s.velocity * 3.6 | number: '1.0-0') + ' km/h' : '—' }}</dd>
+        <span *ngIf="s.velocity">{{ s.velocity * 1.94384 | number: '1.0-0' }} kt</span>
+      </div>
+      <div>
+        <dt>Vitesse verticale</dt>
+        <dd>{{ s.verticalRate != null ? (s.verticalRate | number: '1.1-1') + ' m/s' : '—' }}</dd>
+        <span *ngIf="s.verticalRate">{{ s.verticalRate * 196.85 | number: '1.0-0' }} ft/min</span>
       </div>
       <div>
         <dt>Cap</dt>
-        <dd>{{ s[10] != null ? (s[10] | number: '1.0-0') + '°' : '—' }}</dd>
+        <dd>{{ s.heading != null ? (s.heading | number: '1.0-0') + '°' : '—' }}</dd>
       </div>
       <div>
         <dt>Transpondeur</dt>
-        <dd>{{ s[0] | uppercase }}</dd>
+        <dd>{{ s.squawk || '—' }}</dd>
+        <span>ICAO {{ s.icao24 | uppercase }}</span>
+      </div>
+      <div>
+        <dt>Dernière position</dt>
+        <dd>{{ ageLabel(s.timePosition) }}</dd>
+        <span *ngIf="status.source === 'sample'">données d’exemple</span>
       </div>
     </dl>
 
-    <a
-      class="btn btn-secondary"
-      target="_blank"
-      rel="noopener"
-      [href]="'https://www.google.com/maps?q=' + s[6] + ',' + s[5]"
-    >
-      Voir dans Google Maps
+    <p class="track-note">
+      <ng-container *ngIf="trackLoading">Chargement de la trajectoire…</ng-container>
+      <ng-container *ngIf="!trackLoading && trackPoints">Trajectoire récente affichée ({{ trackPoints }} points).</ng-container>
+      <ng-container *ngIf="!trackLoading && !trackPoints">Trajectoire indisponible pour ce vol.</ng-container>
+    </p>
+
+    <div class="detail-actions">
+      <button type="button" class="btn" [class.btn-primary]="!isFollowed" [class.btn-secondary]="isFollowed" (click)="toggleFollow()">
+        {{ isFollowed ? 'Suivi ✓' : 'Suivre ce vol' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="copyLink()">
+        {{ linkCopied ? 'Lien copié' : 'Copier le lien' }}
+      </button>
+    </div>
+    <a class="maps-link" target="_blank" rel="noopener" [href]="'https://www.google.com/maps?q=' + s.lat + ',' + s.lng">
+      Ouvrir la position dans Google Maps ↗
     </a>
+  </aside>
+
+  <aside class="detail" *ngIf="notFound && !selected">
+    <header class="detail-head">
+      <div>
+        <h2>{{ notFound | uppercase }}</h2>
+        <p>Cet avion n’apparaît pas dans les données actuelles : il a peut-être atterri ou quitté la zone couverte.</p>
+      </div>
+      <button type="button" class="icon-btn" aria-label="Fermer" (click)="clearSelection()">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </header>
   </aside>
 </main>
 
+<!-- Tableau des arrivées -->
 <section class="board" [class.is-collapsed]="boardCollapsed" aria-label="Arrivées">
-  <button
-    type="button"
-    class="board-head"
-    [attr.aria-expanded]="!boardCollapsed"
-    (click)="boardCollapsed = !boardCollapsed"
-  >
-    <span class="board-title">
-      Arrivées <strong>{{ flightsByAirport?.[0]?.arrival?.airport ?? '…' }}</strong>
-      <span class="board-code">{{ flightsByAirport?.[0]?.arrival?.iata }}</span>
-    </span>
-    <span class="board-meta">
-      {{ flightsByAirport?.length ?? 0 }} vols
+  <div class="board-head">
+    <button
+      type="button"
+      class="board-toggle"
+      [attr.aria-expanded]="!boardCollapsed"
+      (click)="boardCollapsed = !boardCollapsed"
+    >
       <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
         <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
+      Arrivées
+    </button>
+
+    <select
+      class="airport-select"
+      aria-label="Aéroport des arrivées"
+      [value]="arrivalsAirport"
+      (change)="setArrivalsAirport($any($event.target).value)"
+    >
+      <option *ngFor="let a of arrivalAirports" [value]="a.iata">{{ a.name }} ({{ a.iata }})</option>
+    </select>
+
+    <span class="board-meta">
+      {{ arrivals.length }} vols ·
+      <a [routerLink]="['/aeroport', arrivalsAirport]">Voir l’aéroport</a>
     </span>
-  </button>
+  </div>
 
   <div class="board-body">
     <table>
@@ -118,7 +190,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr app-card *ngFor="let flight of flightsByAirport" [flight]="flight"></tr>
+        <tr app-card *ngFor="let flight of arrivals" [flight]="flight"></tr>
       </tbody>
     </table>
   </div>

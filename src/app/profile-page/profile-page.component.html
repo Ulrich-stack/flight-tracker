@@ -1,0 +1,107 @@
+<div class="content">
+  <div class="content-inner">
+    <header class="page-head">
+      <div class="identity">
+        <span class="avatar" aria-hidden="true">{{ initial }}</span>
+        <div>
+          <h1>{{ username || user?.displayName || 'Mon profil' }}</h1>
+          <p *ngIf="user; else guest">
+            {{ user.email }}
+            <ng-container *ngIf="!user.emailVerified"> · email non vérifié</ng-container>
+          </p>
+          <ng-template #guest>
+            <p>
+              Vous n’êtes pas connecté : vos préférences sont enregistrées sur cet appareil.
+              <a routerLink="/login">Se connecter</a>
+            </p>
+          </ng-template>
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary" *ngIf="user" (click)="logout()">Se déconnecter</button>
+    </header>
+
+    <div class="section-grid">
+      <section class="section">
+        <h2>Préférences</h2>
+        <p class="section-sub">{{ user ? 'Synchronisées avec votre compte.' : 'Enregistrées dans ce navigateur.' }}</p>
+        <div class="settings" *ngIf="prefs">
+          <div class="field">
+            <label for="fav-airport">Aéroport favori (tableau des arrivées)</label>
+            <select
+              id="fav-airport"
+              class="input"
+              [value]="prefs.favoriteAirport"
+              (change)="preferences.setFavoriteAirport($any($event.target).value)"
+            >
+              <option *ngFor="let a of arrivalAirports" [value]="a.iata">{{ a.name }} ({{ a.iata }})</option>
+            </select>
+          </div>
+
+          <label class="switch" *ngIf="notificationsSupported">
+            <input type="checkbox" [checked]="prefs.notifications" [disabled]="notificationsBlocked" (change)="toggleNotifications($event)" />
+            <span>Notifications du navigateur pour les vols suivis</span>
+          </label>
+          <p class="field-hint" *ngIf="notificationsBlocked">
+            Les notifications sont bloquées pour ce site dans les réglages du navigateur.
+          </p>
+          <p class="field-hint">Les alertes s’affichent aussi dans l’application tant que la page est ouverte.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Vols suivis</h2>
+        <p class="section-sub">Alertes au décollage, à l’atterrissage et à la perte du signal.</p>
+        <table class="table" *ngIf="prefs?.followed?.length; else noFollowed">
+          <thead>
+            <tr><th>Vol</th><th>État</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of prefs.followed">
+              <td class="num"><a [routerLink]="['/vol', f.icao24]">{{ f.callsign || (f.icao24 | uppercase) }}</a></td>
+              <td>
+                <ng-container *ngIf="live.get(f.icao24) as a; else gone">
+                  {{ a.onGround ? 'Au sol' : 'En vol' }}<ng-container *ngIf="a.altitude && !a.onGround"> · {{ a.altitude | number: '1.0-0' }} m</ng-container>
+                </ng-container>
+                <ng-template #gone><span class="empty-note">Hors couverture</span></ng-template>
+              </td>
+              <td style="text-align: right">
+                <button type="button" class="remove" (click)="preferences.toggleFollow(f.icao24, f.callsign)">Ne plus suivre</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #noFollowed>
+          <p class="empty-note">Aucun vol suivi. Cliquez sur un avion de la carte puis sur « Suivre ce vol ».</p>
+        </ng-template>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>Vols favoris</h2>
+      <p class="section-sub">Marqués d’une étoile dans les tableaux d’arrivées.</p>
+      <table class="table" *ngIf="favoriteFlights.length; else noFavorites">
+        <thead>
+          <tr><th>Vol</th><th>Trajet</th><th>Arrivée prévue</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of favoriteFlights">
+            <td class="num">{{ f.code }}</td>
+            <td>
+              <ng-container *ngIf="f.flight; else noInfo">
+                {{ f.flight.departure.iata }} → {{ f.flight.arrival.iata }} · {{ f.flight.airline?.name }}
+              </ng-container>
+              <ng-template #noInfo><span class="empty-note">Détails indisponibles</span></ng-template>
+            </td>
+            <td class="num">{{ f.flight ? (f.flight.arrival.scheduled | date: 'd MMM, HH:mm' : 'UTC') : '—' }}</td>
+            <td style="text-align: right">
+              <button type="button" class="remove" (click)="preferences.toggleFavoriteFlight(f.code)">Retirer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noFavorites>
+        <p class="empty-note">Aucun vol favori. Cliquez sur l’étoile d’un vol dans le tableau des arrivées.</p>
+      </ng-template>
+    </section>
+  </div>
+</div>

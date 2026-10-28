@@ -1,0 +1,77 @@
+<div class="content">
+  <div class="content-inner">
+    <header class="page-head">
+      <div>
+        <h1>Statistiques du trafic</h1>
+        <p>
+          Calculées sur les positions
+          {{ status.source === 'live' ? 'en direct' : 'de l’instantané d’exemple' }}
+          <ng-container *ngIf="dataDate"> du {{ dataDate | date: 'd MMMM y, HH:mm' }}</ng-container>.
+        </p>
+      </div>
+    </header>
+
+    <dl class="tiles">
+      <div class="tile">
+        <dt>Avions suivis</dt>
+        <dd>{{ total | number }}</dd>
+      </div>
+      <div class="tile">
+        <dt>En vol</dt>
+        <dd>{{ airborne | number }}</dd>
+        <small>{{ total ? (airborne / total * 100 | number: '1.0-0') : 0 }} % du total</small>
+      </div>
+      <div class="tile">
+        <dt>Au sol</dt>
+        <dd>{{ onGround | number }}</dd>
+      </div>
+      <div class="tile">
+        <dt>Altitude moyenne</dt>
+        <dd>{{ avgAltitude | number: '1.0-0' }} m</dd>
+        <small>avions en vol</small>
+      </div>
+      <div class="tile">
+        <dt>Vitesse moyenne</dt>
+        <dd>{{ avgSpeed | number: '1.0-0' }} km/h</dd>
+        <small>avions en vol</small>
+      </div>
+    </dl>
+
+    <div class="section-grid">
+      <section class="section">
+        <h2>Pays d’immatriculation</h2>
+        <p class="section-sub">Les 10 pays qui comptent le plus d’avions.</p>
+        <app-bar-chart [items]="countries" measure="Avions"></app-bar-chart>
+      </section>
+
+      <section class="section">
+        <h2>Trafic autour des aéroports</h2>
+        <p class="section-sub">Avions à moins de 50 km, parmi les aéroports référencés.</p>
+        <app-bar-chart [items]="airports" measure="Avions à proximité"></app-bar-chart>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>Répartition des altitudes</h2>
+      <p class="section-sub">Nombre d’avions en vol par tranche de 1 000 m.</p>
+      <app-bar-chart [items]="altitudes" orientation="vertical" measure="Avions"></app-bar-chart>
+    </section>
+
+    <div class="section-grid">
+      <section class="section" *ngIf="maxAltitude as a">
+        <h2>Le plus haut</h2>
+        <p class="section-sub">
+          <a [routerLink]="['/vol', a.icao24]">{{ a.callsign || (a.icao24 | uppercase) }}</a>
+          ({{ a.country }}) à {{ a.altitude | number: '1.0-0' }} m.
+        </p>
+      </section>
+      <section class="section" *ngIf="fastest as a">
+        <h2>Le plus rapide</h2>
+        <p class="section-sub">
+          <a [routerLink]="['/vol', a.icao24]">{{ a.callsign || (a.icao24 | uppercase) }}</a>
+          ({{ a.country }}) à {{ (a.velocity ?? 0) * 3.6 | number: '1.0-0' }} km/h sol.
+        </p>
+      </section>
+    </div>
+  </div>
+</div>

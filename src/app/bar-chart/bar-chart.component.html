@@ -1,0 +1,57 @@
+<div class="chart" [class.vertical]="orientation === 'vertical'" role="img" [attr.aria-label]="measure">
+  <ng-container *ngIf="orientation === 'horizontal'">
+    <div
+      class="hrow"
+      *ngFor="let item of items"
+      (mouseenter)="onEnter(item, $event)"
+      (mousemove)="onMove($event)"
+      (mouseleave)="hovered = null"
+    >
+      <a class="hlabel" *ngIf="item.link; else plainLabel" [routerLink]="item.link">{{ item.label }}</a>
+      <ng-template #plainLabel><span class="hlabel">{{ item.label }}</span></ng-template>
+      <span class="htrack">
+        <span class="hbar" [style.width.%]="(item.value / max) * 100" [style.background]="color"></span>
+      </span>
+      <span class="hvalue">{{ item.value | number }}</span>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="orientation === 'vertical'">
+    <div class="vplot">
+      <div
+        class="vcol"
+        *ngFor="let item of items"
+        (mouseenter)="onEnter(item, $event)"
+        (mousemove)="onMove($event)"
+        (mouseleave)="hovered = null"
+      >
+        <span class="vbar" [style.height.%]="(item.value / max) * 100" [style.background]="color"></span>
+      </div>
+    </div>
+    <div class="vaxis">
+      <span *ngFor="let item of items; let i = index">{{ i % 2 === 0 ? item.label : '' }}</span>
+    </div>
+  </ng-container>
+</div>
+
+<div class="tooltip" *ngIf="hovered" [style.left.px]="tooltip.x" [style.top.px]="tooltip.y">
+  <strong>{{ hovered.label }}</strong>
+  <span>{{ measure }} : {{ hovered.value | number }}{{ unit }}</span>
+  <span>{{ share(hovered) | number: '1.0-1' }} % du total</span>
+</div>
+
+<button type="button" class="table-toggle" (click)="showTable = !showTable" [attr.aria-expanded]="showTable">
+  {{ showTable ? 'Masquer les données' : 'Voir les données' }}
+</button>
+<table class="data-table" *ngIf="showTable">
+  <thead>
+    <tr><th>Libellé</th><th>{{ measure }}</th><th>Part</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.label }}</td>
+      <td>{{ item.value | number }}{{ unit }}</td>
+      <td>{{ share(item) | number: '1.0-1' }} %</td>
+    </tr>
+  </tbody>
+</table>

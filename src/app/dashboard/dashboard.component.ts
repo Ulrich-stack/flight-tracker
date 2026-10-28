@@ -250,13 +250,27 @@
 
 
 
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
-import { ApiService } from '../api.service';
-import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 import * as L from 'leaflet';
-import 'leaflet-rotatedmarker';
-import { addBaseLayers, planeIcon, positionedStates } from '../map-utils';
+import { Aircraft, flightLevel } from '../aircraft';
+import { AIRPORTS, findAirport } from '../airports';
+import { ArrivalsService } from '../arrivals.service';
+import { FeedStatus, FlightDataService } from '../flight-data.service';
+import { addBaseLayers } from '../map-utils';
+import { ALTITUDE_BANDS, PLANE_COLOR, PlaneLayer, altitudeColor } from '../plane-layer';
+import { PreferencesService } from '../preferences.service';
+
+/** Tranches du filtre d'altitude : 'ground' puis les index de ALTITUDE_BANDS. */
+type BandKey = 'ground' | 0 | 1 | 2 | 3;
+
+const SQUAWK_MEANING: Record<string, string> = {
+  '7500': 'Détournement',
+  '7600': 'Panne radio',
+  '7700': 'Urgence',
+};
 
 @Component({
   selector: 'app-dashboard',
@@ -264,143 +278,321 @@ import { addBaseLayers, planeIcon, positionedStates } from '../map-utils';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  private data: any | null = null;
   private map!: L.Map;
+  private planes!: PlaneLayer;
+  private trackLine?: L.Polyline;
+  private airportMarker?: L.Marker;
   private resizeObserver?: ResizeObserver;
-  private selectedMarker?: L.Marker;
+  private ticker?: ReturnType<typeof setInterval>;
+  private subs = new Subscription();
+  private pendingId: string | null = null;
 
-  private readonly planeIcon = planeIcon('#d9dcdf', 14);
-  private readonly selectedIcon = planeIcon('#3fa58f', 22);
+  readonly bands = ALTITUDE_BANDS;
+  readonly arrivalAirports = AIRPORTS.filter((a) => a.arrivalsFile);
+  readonly flightLevel = flightLevel;
 
-  @Input() flightsByAirport: any | null = null;
-  @Input() flights?: any[];
-  @Input() user?: any;
-  isModalOpen = false;
-  boardCollapsed = false;
+  all: Aircraft[] = [];
+  visible: Aircraft[] = [];
+  countries: { name: string; count: number }[] = [];
+  status: FeedStatus = { source: 'loading', dataTime: null };
 
-  /** État OpenSky de l'avion sélectionné sur la carte. */
-  selected: any[] | null = null;
-  liveCount = 0;
+  filtersOpen = false;
+  colorByAltitude = false;
+  country = '';
+  hiddenBands = new Set<BandKey>();
 
-  currentTime: string = '';  // 🕒 Propriété pour stocker l'heure
-  utcTime: string = '';
-  private clockInterval: any; // Intervalle pour l'horloge
+  selected: Aircraft | null = null;
+  notFound: string | null = null;
+  trackPoints = 0;
+  trackLoading = false;
+  linkCopied = false;
+  /** Heure courante (s), rafraîchie chaque seconde pour « il y a N s ». */
+  nowSec = Math.floor(Date.now() / 1000);
+
+  // Sur petit écran, le tableau démarre replié pour laisser la place à la carte.
+  boardCollapsed = window.innerWidth < 760;
+  arrivalsAirport = 'CDG';
+  arrivals: any[] = [];
 
   constructor(
-    private authService: AuthService,
-    private api: ApiService,
-    private http: HttpClient,
+    private data: FlightDataService,
+    readonly prefs: PreferencesService,
+    private arrivalsService: ArrivalsService,
+    private route: ActivatedRoute,
+    private location: Location,
+    private zone: NgZone,
     private host: ElementRef<HTMLElement>
   ) {}
 
   ngOnInit(): void {
     this.initMap();
-    this.fetchFlights();
-    this.fetchFlightsByAirport('CDG');
+    this.data.start();
 
-    // 🕒 Initialisation de l'horloge en temps réel
-    this.updateClock();
-    this.clockInterval = setInterval(() => {
-      this.updateClock();
-    }, 1000);
+    this.pendingId = this.route.snapshot.paramMap.get('icao24');
+
+    this.subs.add(this.data.status$.subscribe((s) => (this.status = s)));
+    this.subs.add(
+      this.data.aircraft$.subscribe((list) => {
+        this.all = list;
+        this.countries = this.countByCountry(list);
+        this.applyFilters();
+        this.refreshSelection();
+      })
+    );
+    this.subs.add(
+      this.prefs.prefs$.subscribe((p) => {
+        if (p.favoriteAirport !== this.arrivalsAirport || !this.arrivals.length) {
+          this.arrivalsAirport = p.favoriteAirport;
+          this.loadArrivals();
+        }
+      })
+    );
+
+    // Les avions avancent à l'estime chaque seconde, hors de la détection de changements.
+    this.zone.runOutsideAngular(() => {
+      this.ticker = setInterval(() => {
+        this.planes.redraw();
+        if (this.selected) {
+          this.zone.run(() => (this.nowSec = Math.floor(Date.now() / 1000)));
+        }
+      }, 1000);
+    });
   }
 
   ngOnDestroy(): void {
-    // 🛑 Nettoyage de l'intervalle pour éviter les fuites de mémoire
-    if (this.clockInterval) {
-      clearInterval(this.clockInterval);
-    }
+    clearInterval(this.ticker);
+    this.subs.unsubscribe();
     this.resizeObserver?.disconnect();
     this.map?.remove();
   }
 
-  private updateClock(): void {
-    const now = new Date();
-    const fmt = (h: number, m: number) =>
-      [h, m].map((n) => n.toString().padStart(2, '0')).join(':');
-    this.currentTime = fmt(now.getHours(), now.getMinutes());
-    this.utcTime = fmt(now.getUTCHours(), now.getUTCMinutes());
+  // ---------- Filtres ----------
+
+  isBandVisible(key: BandKey): boolean {
+    return !this.hiddenBands.has(key);
   }
 
-  toggleModal(): void {
-    this.isModalOpen = !this.isModalOpen;
+  toggleBand(key: BandKey): void {
+    this.hiddenBands.has(key) ? this.hiddenBands.delete(key) : this.hiddenBands.add(key);
+    this.applyFilters();
   }
 
-  logout(): void {
-    this.authService.logOut();
-    console.log('User logged out');
+  setCountry(value: string): void {
+    this.country = value;
+    this.applyFilters();
   }
 
-  flightLevel(altitudeMeters: number): string {
-    return 'FL' + Math.round((altitudeMeters * 3.28084) / 100).toString().padStart(3, '0');
+  setColorByAltitude(on: boolean): void {
+    this.colorByAltitude = on;
+    this.planes.setColor(on ? altitudeColor : () => PLANE_COLOR);
   }
+
+  resetFilters(): void {
+    this.hiddenBands.clear();
+    this.country = '';
+    this.applyFilters();
+  }
+
+  get filtersActive(): boolean {
+    return this.hiddenBands.size > 0 || !!this.country;
+  }
+
+  private bandOf(a: Aircraft): BandKey {
+    if (a.onGround) {
+      return 'ground';
+    }
+    const alt = a.altitude ?? a.geoAltitude ?? 0;
+    return ALTITUDE_BANDS.findIndex((b) => alt < b.max) as BandKey;
+  }
+
+  private applyFilters(): void {
+    this.visible = this.all.filter(
+      (a) =>
+        (!this.country || a.country === this.country) &&
+        !this.hiddenBands.has(this.bandOf(a))
+    );
+    this.planes.setPlanes(this.visible);
+  }
+
+  private countByCountry(list: Aircraft[]): { name: string; count: number }[] {
+    const counts = new Map<string, number>();
+    for (const a of list) {
+      if (a.country) {
+        counts.set(a.country, (counts.get(a.country) ?? 0) + 1);
+      }
+    }
+    return [...counts.entries()]
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count);
+  }
+
+  // ---------- Sélection d'un avion ----------
 
   clearSelection(): void {
-    this.selectedMarker?.setIcon(this.planeIcon).setZIndexOffset(0);
-    this.selectedMarker = undefined;
     this.selected = null;
+    this.notFound = null;
+    this.planes.setSelected(null);
+    this.trackLine?.remove();
+    this.trackLine = undefined;
+    this.location.replaceState('/');
   }
 
-  private select(marker: L.Marker, state: any[]): void {
-    this.clearSelection();
-    marker.setIcon(this.selectedIcon).setZIndexOffset(1000);
-    this.selectedMarker = marker;
-    this.selected = state;
+  private select(a: Aircraft, fly = false): void {
+    this.selected = a;
+    this.notFound = null;
+    this.linkCopied = false;
+    this.planes.setSelected(a.icao24);
+    this.location.replaceState(`/vol/${a.icao24}`);
+    if (fly) {
+      this.map.flyTo(this.data.extrapolate(a), Math.max(this.map.getZoom(), 7), { duration: 0.8 });
+    }
+    this.loadTrack(a);
   }
+
+  /** Met à jour l'avion sélectionné quand de nouvelles données arrivent. */
+  private refreshSelection(): void {
+    if (this.pendingId && this.all.length) {
+      const target = this.data.find(this.pendingId);
+      if (target) {
+        this.select(target, true);
+      } else if (this.status.source !== 'loading') {
+        this.notFound = this.pendingId;
+      }
+      this.pendingId = null;
+      return;
+    }
+    if (this.selected) {
+      const fresh = this.data.find(this.selected.icao24);
+      if (fresh) {
+        this.selected = fresh;
+      }
+    }
+  }
+
+  private loadTrack(a: Aircraft): void {
+    this.trackLine?.remove();
+    this.trackPoints = 0;
+    this.trackLoading = true;
+    this.data.track(a.icao24).subscribe((points) => {
+      if (this.selected?.icao24 !== a.icao24) {
+        return;
+      }
+      this.trackLoading = false;
+      if (points.length < 2) {
+        return;
+      }
+      this.trackPoints = points.length;
+      this.trackLine = L.polyline(
+        points.map((p) => [p[1], p[2]] as L.LatLngTuple),
+        { color: '#3fa58f', weight: 2.5, opacity: 0.9, interactive: false }
+      ).addTo(this.map);
+    });
+  }
+
+  get isFollowed(): boolean {
+    return !!this.selected && this.prefs.isFollowed(this.selected.icao24);
+  }
+
+  toggleFollow(): void {
+    if (this.selected) {
+      this.prefs.toggleFollow(this.selected.icao24, this.selected.callsign);
+    }
+  }
+
+  async copyLink(): Promise<void> {
+    if (!this.selected) {
+      return;
+    }
+    const url = `${window.location.origin}/vol/${this.selected.icao24}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      this.linkCopied = true;
+      setTimeout(() => (this.linkCopied = false), 2000);
+    } catch {
+      window.prompt('Lien vers ce vol :', url);
+    }
+  }
+
+  squawkMeaning(code: string | null): string | null {
+    return code ? SQUAWK_MEANING[code] ?? null : null;
+  }
+
+  verticalLabel(rate: number | null): string {
+    if (rate == null || Math.abs(rate) < 0.5) {
+      return 'En palier';
+    }
+    return rate > 0 ? 'En montée' : 'En descente';
+  }
+
+  ageLabel(timestamp: number | null): string {
+    if (!timestamp) {
+      return '—';
+    }
+    const age = Math.max(0, this.nowSec - timestamp);
+    if (age < 60) {
+      return `il y a ${age} s`;
+    }
+    if (age < 3600) {
+      return `il y a ${Math.floor(age / 60)} min`;
+    }
+    return new Date(timestamp * 1000).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
+  }
+
+  // ---------- Arrivées ----------
+
+  setArrivalsAirport(iata: string): void {
+    this.prefs.setFavoriteAirport(iata);
+  }
+
+  get arrivalsAirportName(): string {
+    return findAirport(this.arrivalsAirport)?.name ?? this.arrivalsAirport;
+  }
+
+  private loadArrivals(): void {
+    const airport = findAirport(this.arrivalsAirport);
+    this.arrivalsService.arrivals(this.arrivalsAirport).subscribe((list) => (this.arrivals = list));
+    if (airport && this.map) {
+      this.placeAirportMarker(airport.lat, airport.lng, airport.iata);
+    }
+  }
+
+  // ---------- Carte ----------
 
   private initMap(): void {
     const mapEl = this.host.nativeElement.querySelector<HTMLElement>('#map')!;
-    this.map = L.map(mapEl, { zoomControl: false }).setView([48.8566, 2.3522], 5);
+    this.map = L.map(mapEl, { zoomControl: false, worldCopyJump: true }).setView([48.8566, 2.3522], 5);
     L.control.zoom({ position: 'bottomright' }).addTo(this.map);
     L.control.scale({ position: 'bottomleft', imperial: false, maxWidth: 120 }).addTo(this.map);
     addBaseLayers(this.map);
 
-    L.marker([49.0097, 2.5479], {
-      icon: L.divIcon({
-        className: 'airport-symbol',
-        html: '<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="5" fill="#121314" stroke="#3fa58f" stroke-width="2.5"/></svg><span>CDG</span>',
-        iconSize: [16, 16],
-        iconAnchor: [8, 8],
-      }),
-      interactive: false,
-      zIndexOffset: 500,
+    this.planes = new PlaneLayer({
+      position: (a) => this.data.extrapolate(a),
+      color: () => PLANE_COLOR,
+      interactive: true,
+      onSelect: (a) => this.zone.run(() => (a ? this.select(a) : this.clearSelection())),
     }).addTo(this.map);
 
-    this.map.on('click', () => this.clearSelection());
+    const airport = findAirport(this.prefs.value.favoriteAirport);
+    if (airport) {
+      this.placeAirportMarker(airport.lat, airport.lng, airport.iata);
+    }
 
     // Le tableau des arrivées se replie : la carte doit recalculer sa taille.
     this.resizeObserver = new ResizeObserver(() => this.map.invalidateSize());
     this.resizeObserver.observe(mapEl);
   }
 
-  private fetchFlights(): void {
-    this.http.get('../assets/flightsOpenSky.json').subscribe((response) => {
-      this.data = response;
-      this.updateMap(this.data);
-    });
-  }
-
-  private fetchFlightsByAirport(airport: string): void {
-    this.http.get<any>('../assets/flightsToCDG.json').subscribe((response) => {
-      this.flightsByAirport = response.data.slice(0, 5);
-    });
-  }
-
-  private updateMap(flightsResponse: any): void {
-    const flights = positionedStates(flightsResponse);
-    this.liveCount = flights.length;
-
-    for (const state of flights) {
-      const marker = L.marker([state[6], state[5]], {
-        icon: this.planeIcon,
-        rotationAngle: state[10] || 0,
-        rotationOrigin: 'center',
-      } as L.MarkerOptions).addTo(this.map);
-
-      marker.on('click', (e) => {
-        L.DomEvent.stopPropagation(e);
-        this.select(marker, state);
-      });
-    }
+  private placeAirportMarker(lat: number, lng: number, code: string): void {
+    this.airportMarker?.remove();
+    this.airportMarker = L.marker([lat, lng], {
+      icon: L.divIcon({
+        className: 'airport-symbol',
+        html: `<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="5" fill="#121314" stroke="#3fa58f" stroke-width="2.5"/></svg><span>${code}</span>`,
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+      }),
+      interactive: false,
+      zIndexOffset: 500,
+    }).addTo(this.map);
   }
 }

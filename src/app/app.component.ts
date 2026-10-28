@@ -1,27 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ApiService } from './api.service';
-import { Flight } from './models';
-import { AuthService } from './auth.service';
+import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
+import { AlertsService } from './alerts.service';
+
+// Pages sans barre de navigation (authentification).
+const AUTH_ROUTES = ['/login', '/signin', '/forgot-password', '/verification-email'];
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'flight-tracker';
-  constructor(private api : ApiService, private authService: AuthService){}
-  // public flights? : AviationState[];
-  @Input() flights? : Flight[];
+  showChrome = false;
 
-  public ngOnInit(): void {
-      // this.api.getFlights().subscribe((results)=> {
-      //   this.flights= results.data;
-      //   console.log(results.data);
-        
-      // })
-
-      
+  constructor(router: Router, readonly alerts: AlertsService) {
+    router.events
+      .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
+      .subscribe((e) => {
+        const path = e.urlAfterRedirects.split(/[?#]/)[0];
+        this.showChrome = !AUTH_ROUTES.includes(path);
+      });
   }
-
 }
