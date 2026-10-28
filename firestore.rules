@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Profil créé à l'inscription (AuthService.signIn), lu à la connexion
+    // par une requête where('uid', '==', uid).
+    match /users/{docId} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['uid', 'email', 'username']);
+      allow update, delete: if false;
+    }
+
+    // Préférences (aéroport favori, vols suivis, favoris) : un document par utilisateur.
+    match /preferences/{uid} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['favoriteAirport', 'favoriteFlights', 'followed', 'notifications'])
+        && request.resource.data.favoriteFlights.size() <= 200
+        && request.resource.data.followed.size() <= 50;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

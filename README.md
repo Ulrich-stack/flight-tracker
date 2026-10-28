@@ -1,27 +1,59 @@
-# FlightTracker
+# CLOUDtrack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+Suivi des vols en temps réel : carte des avions (données OpenSky Network), recherche,
+détail et trajectoire d'un vol, alertes, arrivées par aéroport et statistiques.
+Angular 17, Leaflet, Firebase (Auth, Firestore, Hosting, Cloud Functions).
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+npm install
+cp src/env/env.example.ts src/env/env.ts
+```
 
-## Code scaffolding
+Collez dans `src/env/env.ts` la config web du projet Firebase (console Firebase >
+Paramètres du projet > Vos applications). Ce fichier n'est pas versionné.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Développement
 
-## Build
+```bash
+npm start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Ouvrez `http://localhost:4200/`. `npm start` lance `ng serve` avec `proxy.conf.json`,
+qui relaie `/opensky/**` vers l'API OpenSky (elle refuse les appels directs depuis un
+navigateur).
 
-## Running unit tests
+## Données OpenSky
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Sans compte : ~400 crédits par jour et une requête mondiale en coûte 4. L'app
+  actualise donc toutes les 60 s, en pause quand l'onglet est caché, et bascule sur
+  l'instantané `src/assets/flightsOpenSky.json` si OpenSky est injoignable ou si le
+  quota est épuisé.
+- Avec un compte gratuit (~4 000 crédits par jour) : créez un « API client » sur
+  opensky-network.org puis renseignez `functions/.env` à partir de `functions/.env.example`.
 
-## Running end-to-end tests
+## Déploiement Firebase
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Le projet doit être sur la formule **Blaze** (paiement à l'usage) pour déployer la
+Cloud Function.
 
-## Further help
+```bash
+cd functions && npm install && cd ..
+npx firebase-tools login
+npx firebase-tools deploy
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Le déploiement :
+
+- construit l'app (`npm run build`) et la publie sur Hosting (`dist/flight-tracker/browser`) ;
+- déploie la fonction `opensky` (europe-west1), vers laquelle Hosting redirige `/opensky/**`.
+  Le CDN met ses réponses en cache 30 s, ce qui partage une requête entre tous les visiteurs ;
+- publie les règles `firestore.rules` : chaque utilisateur ne lit et n'écrit que son
+  profil (`users`) et ses préférences (`preferences/{uid}`).
+
+## Tests
+
+```bash
+npm test
+```

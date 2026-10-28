@@ -32,10 +32,6 @@ export class MapBackdropComponent implements AfterViewInit, OnDestroy {
       touchZoom: false,
       attributionControl: true,
     }).setView([47.5, 6], 5);
-    // Recentre la carte dans la partie visible, à droite du panneau (420px).
-    if (window.innerWidth > 640) {
-      this.map.panBy([-210, 0], { animate: false });
-    }
     addBaseLayers(this.map);
 
     const layer = new PlaneLayer({ position: (a) => [a.lat, a.lng], size: 12 }).addTo(this.map);

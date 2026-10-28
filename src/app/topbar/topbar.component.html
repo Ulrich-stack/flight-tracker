@@ -9,45 +9,118 @@
   <a routerLink="/statistiques" routerLinkActive="is-active">Statistiques</a>
 </nav>
 
-<div class="search" role="combobox" [attr.aria-expanded]="searchOpen" aria-haspopup="listbox">
+<div class="search" [class.is-open]="searchOpen">
   <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
     <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
     <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
   </svg>
   <input
+    #searchInput
     type="search"
-    placeholder="Indicatif (AFR…) ou aéroport"
+    role="combobox"
+    placeholder="Rechercher un vol ou un aéroport"
     aria-label="Rechercher un vol ou un aéroport"
     aria-controls="search-results"
+    aria-autocomplete="list"
+    [attr.aria-expanded]="searchOpen"
+    [attr.aria-activedescendant]="searchOpen && results.length ? 'search-option-' + activeIndex : null"
     autocomplete="off"
+    spellcheck="false"
     [value]="query"
     (input)="onQuery($any($event.target).value)"
     (keydown)="onSearchKey($event)"
-    (focus)="onQuery(query)"
+    (focus)="onFocus()"
+    (blur)="searchFocused = false"
   />
+  <button type="button" class="clear" *ngIf="query" aria-label="Effacer la recherche" (click)="clear()">
+    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+    </svg>
+  </button>
+  <kbd class="shortcut" *ngIf="!query && !searchFocused" aria-hidden="true">{{ isMac ? '⌘' : 'Ctrl' }} K</kbd>
 
-  <ul id="search-results" class="results" role="listbox" *ngIf="searchOpen">
-    <li *ngIf="!results.length" class="empty">Aucun résultat pour « {{ query }} »</li>
-    <li
-      *ngFor="let r of results; let i = index"
-      role="option"
-      [attr.aria-selected]="i === activeIndex"
-      [class.is-active]="i === activeIndex"
-      (mouseenter)="activeIndex = i"
-      (mousedown)="$event.preventDefault(); choose(r)"
-    >
-      <ng-container *ngIf="r.kind === 'airport'">
-        <span class="kind">Aéroport</span>
-        <span class="code">{{ r.airport.iata }}</span>
-        <span class="label">{{ r.airport.name }}, {{ r.airport.city }}</span>
-      </ng-container>
-      <ng-container *ngIf="r.kind === 'aircraft'">
-        <span class="kind">Vol</span>
-        <span class="code">{{ r.aircraft.callsign || r.aircraft.icao24 }}</span>
-        <span class="label">{{ r.aircraft.country }} · {{ r.aircraft.onGround ? 'au sol' : 'en vol' }}</span>
-      </ng-container>
-    </li>
-  </ul>
+  <div id="search-results" class="results" role="listbox" *ngIf="searchOpen">
+    <ng-container *ngFor="let r of results; let i = index">
+      <div class="group" *ngIf="isGroupStart(i)" role="presentation">
+        <span>{{ groupLabel(r) }}</span>
+        <button
+          type="button"
+          class="group-action"
+          *ngIf="r.kind === 'recent'"
+          (mousedown)="$event.preventDefault(); clearRecents()"
+        >
+          Effacer
+        </button>
+      </div>
+
+      <div
+        class="option"
+        role="option"
+        [id]="'search-option-' + i"
+        [attr.aria-selected]="i === activeIndex"
+        [class.is-active]="i === activeIndex"
+        (mouseenter)="activeIndex = i"
+        (mousedown)="$event.preventDefault(); choose(r)"
+      >
+        <ng-container *ngIf="r.kind === 'airport'">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2" /></svg>
+          </span>
+          <span class="main">
+            <span class="code" *ngIf="highlight(r.airport.iata, 'airport') as h">{{ h.pre }}<mark>{{ h.match }}</mark>{{ h.post }}</span>
+            <span class="name" *ngIf="highlight(r.airport.name, 'airport') as h">{{ h.pre }}<mark>{{ h.match }}</mark>{{ h.post }}</span>
+          </span>
+          <span class="meta">{{ r.airport.city }}, {{ r.airport.country }}</span>
+        </ng-container>
+
+        <ng-container *ngIf="r.kind === 'aircraft'">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14" [style.transform]="'rotate(' + (r.aircraft.heading ?? 0) + 'deg)'">
+              <path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" />
+            </svg>
+          </span>
+          <span class="main">
+            <span class="code" *ngIf="highlight(r.aircraft.callsign || r.aircraft.icao24, 'aircraft') as h">{{ h.pre }}<mark>{{ h.match }}</mark>{{ h.post }}</span>
+            <span class="name">{{ r.aircraft.country }}</span>
+          </span>
+          <span class="meta num">
+            <ng-container *ngIf="r.aircraft.onGround">Au sol</ng-container>
+            <ng-container *ngIf="!r.aircraft.onGround">
+              {{ r.aircraft.altitude != null ? (r.aircraft.altitude | number: '1.0-0') + ' m' : '—' }}
+              · {{ r.aircraft.velocity != null ? (r.aircraft.velocity * 3.6 | number: '1.0-0') + ' km/h' : '—' }}
+            </ng-container>
+          </span>
+        </ng-container>
+
+        <ng-container *ngIf="r.kind === 'recent'">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14">
+              <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+              <path d="M12 8v4l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="main"><span class="code">{{ r.recent.label }}</span></span>
+          <span class="meta">{{ r.recent.kind === 'airport' ? 'Aéroport' : 'Vol' }}</span>
+        </ng-container>
+      </div>
+    </ng-container>
+
+    <p class="hint" *ngIf="!results.length && !query.trim()">
+      Tapez un indicatif (<span class="num">AFR1510</span>), un numéro de vol
+      (<span class="num">AF1510</span>), une compagnie (<span class="num">AF</span>) ou un aéroport
+      (<span class="num">CDG</span>, Nice…).
+    </p>
+    <p class="hint" *ngIf="!results.length && query.trim() && loading">Chargement des vols…</p>
+    <p class="hint" *ngIf="!results.length && query.trim() && !loading">
+      Aucun vol ni aéroport ne correspond à « {{ query.trim() }} ».
+    </p>
+
+    <footer class="keys" aria-hidden="true">
+      <span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span>
+      <span><kbd>Entrée</kbd> ouvrir</span>
+      <span><kbd>Échap</kbd> fermer</span>
+    </footer>
+  </div>
 </div>
 
 <div class="right">

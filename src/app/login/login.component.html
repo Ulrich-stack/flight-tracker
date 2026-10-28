@@ -1,16 +1,14 @@
 <app-map-backdrop></app-map-backdrop>
 
 <div class="auth">
-  <a routerLink="/login" class="auth-brand">
-    <img src="assets/CLOUDtrack.png" alt="" />
-    <span>CLOUDtrack</span>
-  </a>
+  <div class="auth-card">
+    <a routerLink="/login" class="auth-brand">
+      <img src="assets/CLOUDtrack.png" alt="" />
+      <span>CLOUDtrack</span>
+    </a>
 
-  <div class="auth-body">
     <h1>Connexion</h1>
-    <p class="auth-lede">
-      Pas encore de compte ? <a routerLink="/signin">Inscrivez-vous</a>
-    </p>
+    <p class="auth-lede">Retrouvez vos vols suivis et vos aéroports favoris.</p>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
       <div class="field">
@@ -49,6 +47,8 @@
         Se connecter
       </button>
     </form>
+
+    <p class="auth-switch">Pas encore de compte ? <a routerLink="/signin">Créer un compte</a></p>
   </div>
 
   <p class="auth-foot">Positions en direct · données OpenSky Network</p>

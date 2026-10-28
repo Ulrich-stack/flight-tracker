@@ -1,0 +1,12 @@
+{
+  "name": "cloudtrack-functions",
+  "description": "Relais OpenSky pour CLOUDtrack (Firebase Hosting -> Cloud Functions)",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.6.0"
+  }
+}

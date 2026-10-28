@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Aircraft } from '../aircraft';
@@ -8,7 +8,33 @@ import { FeedStatus, FlightDataService } from '../flight-data.service';
 
 type SearchResult =
   | { kind: 'aircraft'; aircraft: Aircraft }
-  | { kind: 'airport'; airport: Airport };
+  | { kind: 'airport'; airport: Airport }
+  | { kind: 'recent'; recent: RecentSearch };
+
+interface RecentSearch {
+  kind: 'aircraft' | 'airport';
+  /** icao24 pour un avion, code IATA pour un aéroport. */
+  id: string;
+  label: string;
+}
+
+/** Texte découpé autour de la partie qui correspond à la recherche. */
+interface Highlight {
+  pre: string;
+  match: string;
+  post: string;
+}
+
+// Codes IATA (numéros commerciaux, ex. AF1510) -> codes OACI (indicatifs radio, ex. AFR1510).
+const AIRLINE_ICAO: Record<string, string> = {
+  AF: 'AFR', KL: 'KLM', BA: 'BAW', LH: 'DLH', U2: 'EZY', DS: 'EZS', FR: 'RYR', W6: 'WZZ',
+  IB: 'IBE', VY: 'VLG', AZ: 'ITY', LX: 'SWR', SN: 'BEL', TP: 'TAP', SK: 'SAS', AY: 'FIN',
+  OS: 'AUA', LO: 'LOT', EI: 'EIN', A3: 'AEE', TO: 'TVF', HV: 'TRA', EW: 'EWG', LS: 'EXS',
+  EK: 'UAE', QR: 'QTR', EY: 'ETD', TK: 'THY', DL: 'DAL', AA: 'AAL', UA: 'UAL', AC: 'ACA',
+  AT: 'RAM', SV: 'SVA', MS: 'MSR', ET: 'ETH', SQ: 'SIA', CX: 'CPA', NH: 'ANA', JL: 'JAL',
+};
+const RECENTS_KEY = 'cloudtrack.recentSearches';
+const MAX_RECENTS = 5;
 
 @Component({
   selector: 'app-topbar',
@@ -16,11 +42,18 @@ type SearchResult =
   styleUrl: './topbar.component.css',
 })
 export class TopbarComponent implements OnInit, OnDestroy {
+  @ViewChild('searchInput') private searchInput!: ElementRef<HTMLInputElement>;
+
   query = '';
   results: SearchResult[] = [];
   activeIndex = 0;
   searchOpen = false;
+  searchFocused = false;
   menuOpen = false;
+  recents: RecentSearch[] = this.readRecents();
+  /** Indicatif réellement cherché (après conversion IATA -> OACI), pour le surlignage. */
+  private effectiveQuery = '';
+  readonly isMac = /Mac|iPhone|iPad/.test(navigator.platform);
 
   status: FeedStatus = { source: 'loading', dataTime: null };
   count = 0;
@@ -66,14 +99,59 @@ export class TopbarComponent implements OnInit, OnDestroy {
     return [this.status.message, at && `Données du ${at}`].filter(Boolean).join(' — ');
   }
 
+  get loading(): boolean {
+    return this.status.source === 'loading';
+  }
+
+  /** Première ligne de chaque groupe : sert à afficher l'en-tête du groupe. */
+  isGroupStart(i: number): boolean {
+    return i === 0 || this.results[i].kind !== this.results[i - 1].kind;
+  }
+
+  groupLabel(r: SearchResult): string {
+    return r.kind === 'airport' ? 'Aéroports' : r.kind === 'aircraft' ? 'Vols en cours' : 'Recherches récentes';
+  }
+
+  highlight(text: string, kind: 'aircraft' | 'airport'): Highlight {
+    const q = (kind === 'aircraft' ? this.effectiveQuery : this.query.trim()).toUpperCase();
+    const i = q ? text.toUpperCase().indexOf(q) : -1;
+    if (i < 0) {
+      return { pre: text, match: '', post: '' };
+    }
+    return { pre: text.slice(0, i), match: text.slice(i, i + q.length), post: text.slice(i + q.length) };
+  }
+
   onQuery(value: string): void {
     this.query = value;
-    this.results = this.search(value);
+    this.results = value.trim()
+      ? this.search(value)
+      : this.recents.map((recent) => ({ kind: 'recent', recent }) as SearchResult);
     this.activeIndex = 0;
-    this.searchOpen = value.trim().length > 0;
+    this.searchOpen = true;
+  }
+
+  onFocus(): void {
+    this.searchFocused = true;
+    this.onQuery(this.query);
+  }
+
+  clear(): void {
+    this.onQuery('');
+    this.searchInput.nativeElement.focus();
+  }
+
+  clearRecents(): void {
+    this.recents = [];
+    this.writeRecents();
+    this.onQuery(this.query);
   }
 
   onSearchKey(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.searchOpen = false;
+      this.searchInput.nativeElement.blur();
+      return;
+    }
     if (!this.searchOpen || !this.results.length) {
       return;
     }
@@ -86,18 +164,33 @@ export class TopbarComponent implements OnInit, OnDestroy {
     } else if (event.key === 'Enter') {
       event.preventDefault();
       this.choose(this.results[this.activeIndex]);
-    } else if (event.key === 'Escape') {
-      this.searchOpen = false;
     }
   }
 
   choose(r: SearchResult): void {
+    const target: RecentSearch =
+      r.kind === 'aircraft'
+        ? { kind: 'aircraft', id: r.aircraft.icao24, label: r.aircraft.callsign || r.aircraft.icao24.toUpperCase() }
+        : r.kind === 'airport'
+          ? { kind: 'airport', id: r.airport.iata, label: `${r.airport.iata} · ${r.airport.name}` }
+          : r.recent;
+
+    this.remember(target);
     this.searchOpen = false;
     this.query = '';
-    if (r.kind === 'aircraft') {
-      this.router.navigate(['/vol', r.aircraft.icao24]);
-    } else {
-      this.router.navigate(['/aeroport', r.airport.iata]);
+    this.searchInput.nativeElement.blur();
+    this.router.navigate(target.kind === 'aircraft' ? ['/vol', target.id] : ['/aeroport', target.id]);
+  }
+
+  /** Ctrl+K / Cmd+K ou « / » : ouvre la recherche depuis n'importe quelle page. */
+  @HostListener('document:keydown', ['$event'])
+  onShortcut(event: KeyboardEvent): void {
+    const target = event.target as HTMLElement;
+    const typing = target.closest('input, textarea, select, [contenteditable]');
+    if ((event.key === 'k' && (event.ctrlKey || event.metaKey)) || (event.key === '/' && !typing)) {
+      event.preventDefault();
+      this.searchInput.nativeElement.focus();
+      this.searchInput.nativeElement.select();
     }
   }
 
@@ -112,6 +205,10 @@ export class TopbarComponent implements OnInit, OnDestroy {
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
+    const search = this.host.nativeElement.querySelector('.search');
+    if (search && !search.contains(event.target as Node)) {
+      this.searchOpen = false;
+    }
     if (!this.host.nativeElement.contains(event.target as Node)) {
       this.searchOpen = false;
       this.menuOpen = false;
@@ -119,30 +216,65 @@ export class TopbarComponent implements OnInit, OnDestroy {
   }
 
   private search(raw: string): SearchResult[] {
-    const q = raw.trim().toUpperCase();
-    if (q.length < 2) {
+    const q = raw.trim().toUpperCase().replace(/\s+/g, '');
+    if (!q) {
       return [];
     }
-    const airports = AIRPORTS.filter(
-      (a) =>
-        a.iata === q ||
-        a.icao === q ||
-        a.name.toUpperCase().includes(q) ||
-        a.city.toUpperCase().includes(q)
-    )
+
+    // « AF1510 » ou « AF » -> « AFR1510 » / « AFR » (indicatif radio utilisé par OpenSky).
+    const iata = /^([A-Z0-9]{2})(\d{0,4}[A-Z]?)$/.exec(q);
+    const icaoPrefix = iata ? AIRLINE_ICAO[iata[1]] : undefined;
+    const callsignQuery = icaoPrefix ? icaoPrefix + iata![2] : q;
+    this.effectiveQuery = callsignQuery;
+
+    const airports = AIRPORTS.map((airport) => {
+      const exact = airport.iata === q || airport.icao === q;
+      const text = `${airport.name} ${airport.city} ${airport.country}`.toUpperCase();
+      return { airport, score: exact ? 0 : airport.iata.startsWith(q) ? 1 : text.includes(q) ? 2 : -1 };
+    })
+      .filter((m) => m.score >= 0)
+      .sort((a, b) => a.score - b.score)
       .slice(0, 4)
-      .map((airport) => ({ kind: 'airport', airport }) as SearchResult);
+      .map(({ airport }) => ({ kind: 'airport', airport }) as SearchResult);
 
     const aircraft: SearchResult[] = [];
-    for (const a of this.data.current) {
-      if (a.callsign.toUpperCase().startsWith(q) || a.icao24.toUpperCase() === q) {
-        aircraft.push({ kind: 'aircraft', aircraft: a });
-        if (aircraft.length === 6) {
-          break;
+    if (q.length >= 2) {
+      for (const a of this.data.current) {
+        const cs = a.callsign.toUpperCase();
+        if (cs.startsWith(callsignQuery) || (icaoPrefix && cs.startsWith(q)) || a.icao24.toUpperCase() === q) {
+          aircraft.push({ kind: 'aircraft', aircraft: a });
         }
       }
+      // Correspondance exacte d'abord, puis les avions en vol, puis l'ordre alphabétique.
+      aircraft.sort((x, y) => {
+        const a = (x as { aircraft: Aircraft }).aircraft;
+        const b = (y as { aircraft: Aircraft }).aircraft;
+        const exact = Number(b.callsign === callsignQuery) - Number(a.callsign === callsignQuery);
+        return exact || Number(a.onGround) - Number(b.onGround) || a.callsign.localeCompare(b.callsign);
+      });
     }
-    return [...airports, ...aircraft];
+    return [...airports, ...aircraft.slice(0, 6)];
+  }
+
+  private remember(item: RecentSearch): void {
+    this.recents = [item, ...this.recents.filter((r) => !(r.kind === item.kind && r.id === item.id))].slice(0, MAX_RECENTS);
+    this.writeRecents();
+  }
+
+  private readRecents(): RecentSearch[] {
+    try {
+      return JSON.parse(localStorage.getItem(RECENTS_KEY) ?? '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  private writeRecents(): void {
+    try {
+      localStorage.setItem(RECENTS_KEY, JSON.stringify(this.recents));
+    } catch {
+      // stockage indisponible : les récents restent en mémoire
+    }
   }
 
   private tick(): void {

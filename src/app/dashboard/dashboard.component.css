@@ -360,13 +360,10 @@ select.input {
 
 .airport-select {
   height: 32px;
-  padding: 0 8px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg);
-  font: inherit;
+  width: auto;
+  padding: 0 32px 0 10px;
   font-size: 14px;
-  color: var(--text);
+  background-position: right 8px center;
 }
 
 .board-meta {
